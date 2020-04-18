@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SD_Gestion_Hopital</RootNamespace>
     <AssemblyName>SD_Gestion_Hopital</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,13 +35,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoucheAccess">
-      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
+      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
     </Reference>
     <Reference Include="CoucheClasses">
-      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
+      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
     </Reference>
     <Reference Include="CoucheGestion">
-      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheGestion.dll</HintPath>
+      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheGestion.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

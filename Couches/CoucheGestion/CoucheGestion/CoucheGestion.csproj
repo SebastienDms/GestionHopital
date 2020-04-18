@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="CoucheAccess">
+      <HintPath>..\..\CoucheAccess\CoucheAccess\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CoucheClasses">
+      <HintPath>..\..\CoucheAccess\CoucheAccess\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

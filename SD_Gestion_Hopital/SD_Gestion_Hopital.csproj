@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C51B2DE0-CC15-4E4C-A6DF-89A9BB8223DD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SD_Gestion_Hopital</RootNamespace>
+    <AssemblyName>SD_Gestion_Hopital</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoucheAccess">
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="CoucheClasses">
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="CoucheGestion">
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheGestion.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.1\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FicAjoutChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutChambre.Designer.cs">
+      <DependentUpon>FicAjoutChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAjoutMedecin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutMedecin.Designer.cs">
+      <DependentUpon>FicAjoutMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAjoutOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutOccupation.Designer.cs">
+      <DependentUpon>FicAjoutOccupation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAjoutPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutPatient.Designer.cs">
+      <DependentUpon>FicAjoutPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAjoutSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutSoin.Designer.cs">
+      <DependentUpon>FicAjoutSoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicAjoutSpecialite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicAjoutSpecialite.Designer.cs">
+      <DependentUpon>FicAjoutSpecialite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicChambres.Designer.cs">
+      <DependentUpon>FicChambres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicMedecins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicMedecins.Designer.cs">
+      <DependentUpon>FicMedecins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicMenu.Designer.cs">
+      <DependentUpon>FicMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicOccuper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicOccuper.Designer.cs">
+      <DependentUpon>FicOccuper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicPatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicPatients.Designer.cs">
+      <DependentUpon>FicPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSoigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSoigner.Designer.cs">
+      <DependentUpon>FicSoigner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSpecialites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSpecialites.Designer.cs">
+      <DependentUpon>FicSpecialites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FicAjoutMedecin.resx">
+      <DependentUpon>FicAjoutMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicAjoutSpecialite.resx">
+      <DependentUpon>FicAjoutSpecialite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicChambres.resx">
+      <DependentUpon>FicChambres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicMedecins.resx">
+      <DependentUpon>FicMedecins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicMenu.resx">
+      <DependentUpon>FicMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicOccuper.resx">
+      <DependentUpon>FicOccuper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicPatients.resx">
+      <DependentUpon>FicPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicSoigner.resx">
+      <DependentUpon>FicSoigner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicSpecialites.resx">
+      <DependentUpon>FicSpecialites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond_hopital.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_hopital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_hopital.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond_hopital1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

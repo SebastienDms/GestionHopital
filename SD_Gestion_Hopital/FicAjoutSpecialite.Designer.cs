@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranAjoutSpecialite));
             this.gbAjoutSpe = new System.Windows.Forms.GroupBox();
             this.tbNomSpe = new System.Windows.Forms.TextBox();
             this.tbIDSpe = new System.Windows.Forms.TextBox();
@@ -115,7 +116,9 @@
             this.Controls.Add(this.btnAnnulerAj);
             this.Controls.Add(this.btnConfirmerAj);
             this.Controls.Add(this.gbAjoutSpe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EcranAjoutSpecialite";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajout d\'une spécialité";
             this.gbAjoutSpe.ResumeLayout(false);
             this.gbAjoutSpe.PerformLayout();

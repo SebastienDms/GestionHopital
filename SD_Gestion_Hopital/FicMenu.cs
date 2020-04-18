@@ -75,7 +75,8 @@ namespace SD_Gestion_Hopital
 
         private void TSMAjChambre_Click(object sender, EventArgs e)
         {
-
+            EcranAjoutChambre eAjCha = new EcranAjoutChambre();
+            eAjCha.ShowDialog();
         }
 
         private void TSMAjPatient_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranSpecialites));
             this.dgvSpecialites = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvSpecialites);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EcranSpecialites";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Liste des spécialités";
             this.Load += new System.EventHandler(this.EcranSpecialites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).EndInit();

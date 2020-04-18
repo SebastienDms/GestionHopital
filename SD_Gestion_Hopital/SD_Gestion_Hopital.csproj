@@ -34,14 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoucheAccess">
-      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
+    <Reference Include="CoucheAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheAccess.dll</HintPath>
     </Reference>
-    <Reference Include="CoucheClasses">
-      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
+    <Reference Include="CoucheClasses, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheClasses.dll</HintPath>
     </Reference>
-    <Reference Include="CoucheGestion">
-      <HintPath>..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheGestion.dll</HintPath>
+    <Reference Include="CoucheGestion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Couches\CoucheGestion\CoucheGestion\bin\Debug\netstandard2.0\CoucheGestion.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -145,8 +148,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FicAjoutChambre.resx">
+      <DependentUpon>FicAjoutChambre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FicAjoutMedecin.resx">
       <DependentUpon>FicAjoutMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicAjoutOccupation.resx">
+      <DependentUpon>FicAjoutOccupation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicAjoutPatient.resx">
+      <DependentUpon>FicAjoutPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicAjoutSoin.resx">
+      <DependentUpon>FicAjoutSoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicAjoutSpecialite.resx">
       <DependentUpon>FicAjoutSpecialite.cs</DependentUpon>

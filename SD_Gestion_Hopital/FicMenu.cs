@@ -81,12 +81,14 @@ namespace SD_Gestion_Hopital
 
         private void TSMAjPatient_Click(object sender, EventArgs e)
         {
-
+            EcranAjoutPatient eAjPat = new EcranAjoutPatient();
+            eAjPat.ShowDialog();
         }
 
         private void TSMAjOccuper_Click(object sender, EventArgs e)
         {
-
+            EcranAjoutOccupation eAjOcc = new EcranAjoutOccupation();
+            eAjOcc.ShowDialog();
         }
 
         private void TSMAjSoigner_Click(object sender, EventArgs e)

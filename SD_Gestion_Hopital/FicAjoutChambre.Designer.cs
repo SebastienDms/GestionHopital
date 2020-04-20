@@ -68,7 +68,7 @@
             this.gbAjoutCha.Size = new System.Drawing.Size(480, 414);
             this.gbAjoutCha.TabIndex = 3;
             this.gbAjoutCha.TabStop = false;
-            this.gbAjoutCha.Text = "Fiche de la spécalité";
+            this.gbAjoutCha.Text = "Fiche d\'une chambre";
             // 
             // lblFicheAjChaServ
             // 

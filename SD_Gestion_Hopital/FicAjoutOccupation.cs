@@ -112,7 +112,7 @@ namespace SD_Gestion_Hopital
                 else
                 {
                     MessageBox.Show("Vous avez annulez la prise en charge du patient "+
-                                    dgvPatients.SelectedRows[0].Cells["Nom"] + dgvPatients.SelectedRows[0].Cells["Prénom"] +
+                                    dgvPatients.SelectedRows[0].Cells["Nom"] + " " + dgvPatients.SelectedRows[0].Cells["Prénom"] +
                                     ".", "Attention", MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
                 }

@@ -30,6 +30,8 @@ namespace SD_Gestion_Hopital
 
         private void EcranAjoutOccupation_Load(object sender, EventArgs e)
         {
+            // Permet de sélectionner une date et non une plage de date dans le calendrier \\
+            monthCalendar1.MaxSelectionCount = 1;
             AfficherPatients();
             AfficherChambres();
         }
@@ -73,6 +75,54 @@ namespace SD_Gestion_Hopital
         private void btnAjouterChaOcc_Click(object sender, EventArgs e)
         {
             tbAjOccIDCha.Text = dgvChambres.SelectedRows[0].Cells["ID"].Value.ToString();
+        }
+        private void btnAjDateEntreeOcc_Click(object sender, EventArgs e)
+        {
+            tbAjOccDateEntree.Text = monthCalendar1.SelectionStart.ToShortDateString().ToString();
+        }
+
+        private void btnAjDateSortieOcc_Click(object sender, EventArgs e)
+        {
+            tbAjOccDateSortie.Text = monthCalendar1.SelectionStart.ToShortDateString().ToString();
+        }
+
+        private void btnConfirmerAjOcc_Click(object sender, EventArgs e)
+        {
+            if (tbAjOccIDPat.Text == "" || tbAjOccIDCha.Text == "" || tbAjOccDateEntree.Text == "" || tbAjOccDateSortie.Text == "" ||
+                tbAjOccPrixJour.Text == "")
+            {
+                MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("La chambre " + dgvChambres.SelectedRows[0].Cells["Numéro"].Value.ToString() +
+                                    " a été réservée pour " +
+                                    dgvPatients.SelectedRows[0].Cells["Nom"].Value.ToString() + dgvPatients.SelectedRows[0].Cells["Prénom"].Value.ToString() +
+                                    " en date du " + tbAjOccDateEntree.Text + ".",
+                              "Info:", MessageBoxButtons.OKCancel,
+                                    MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    new G_t_occuper(sConnexion).Ajouter(int.Parse(tbAjOccIDPat.Text), int.Parse(tbAjOccIDCha.Text),
+                        DateTime.Parse(tbAjOccDateEntree.Text), DateTime.Parse(tbAjOccDateSortie.Text),
+                        int.Parse(tbAjOccPrixJour.Text));
+                    MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Vous avez annulez la prise en charge du patient "+
+                                    dgvPatients.SelectedRows[0].Cells["Nom"] + dgvPatients.SelectedRows[0].Cells["Prénom"] +
+                                    ".", "Attention", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void btnAnnulerAjOcc_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La chambre ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            tbAjOccIDPat.Text = tbAjOccIDCha.Text = tbAjOccDateEntree.Text = tbAjOccDateSortie.Text = tbAjOccPrixJour.Text = "";
         }
     }
 }

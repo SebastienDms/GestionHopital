@@ -93,7 +93,8 @@ namespace SD_Gestion_Hopital
 
         private void TSMAjSoigner_Click(object sender, EventArgs e)
         {
-
+            EcranAjoutSoin eAjSoi = new EcranAjoutSoin();
+            eAjSoi.ShowDialog();
         }
         #endregion
     }

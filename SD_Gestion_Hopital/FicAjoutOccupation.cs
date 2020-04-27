@@ -32,6 +32,8 @@ namespace SD_Gestion_Hopital
         {
             // Permet de sélectionner une date et non une plage de date dans le calendrier \\
             monthCalendar1.MaxSelectionCount = 1;
+            // Empêche d'encoder une date passée \\
+            monthCalendar1.MinDate = DateTime.Today;
             AfficherPatients();
             AfficherChambres();
         }
@@ -88,7 +90,7 @@ namespace SD_Gestion_Hopital
 
         private void btnConfirmerAjOcc_Click(object sender, EventArgs e)
         {
-            if (tbAjOccIDPat.Text == "" || tbAjOccIDCha.Text == "" || tbAjOccDateEntree.Text == "" || tbAjOccDateSortie.Text == "" ||
+            if (tbAjOccIDPat.Text == "" || tbAjOccIDCha.Text == "" || tbAjOccDateEntree.Text == "" ||
                 tbAjOccPrixJour.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
@@ -120,7 +122,7 @@ namespace SD_Gestion_Hopital
         }
         private void btnAnnulerAjOcc_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La chambre ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
+            MessageBox.Show("La réservation ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             tbAjOccIDPat.Text = tbAjOccIDCha.Text = tbAjOccDateEntree.Text = tbAjOccDateSortie.Text = tbAjOccPrixJour.Text = "";
         }

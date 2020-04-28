@@ -116,6 +116,42 @@
     <Compile Include="FicMenu.Designer.cs">
       <DependentUpon>FicMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicModifChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifChambre.Designer.cs">
+      <DependentUpon>FicModifChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicModifMedecin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifMedecin.Designer.cs">
+      <DependentUpon>FicModifMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicModifOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifOccupation.Designer.cs">
+      <DependentUpon>FicModifOccupation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicModifPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifPatient.Designer.cs">
+      <DependentUpon>FicModifPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicModifSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifSoin.Designer.cs">
+      <DependentUpon>FicModifSoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicModifSpecialite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicModifSpecialite.Designer.cs">
+      <DependentUpon>FicModifSpecialite.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicOccuper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +210,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicMenu.resx">
       <DependentUpon>FicMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifChambre.resx">
+      <DependentUpon>FicModifChambre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifMedecin.resx">
+      <DependentUpon>FicModifMedecin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifOccupation.resx">
+      <DependentUpon>FicModifOccupation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifPatient.resx">
+      <DependentUpon>FicModifPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifSoin.resx">
+      <DependentUpon>FicModifSoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicModifSpecialite.resx">
+      <DependentUpon>FicModifSpecialite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicOccuper.resx">
       <DependentUpon>FicOccuper.cs</DependentUpon>

@@ -53,6 +53,10 @@ namespace SD_Gestion_Hopital
             }
             else
             {
+                // Force la majuscule au nom et au prénom \\
+                tbMedNom.Text = tbMedNom.Text[0].ToString().ToUpper() + tbMedNom.Text.Substring(1);
+                tbMedPrenom.Text = tbMedPrenom.Text[0].ToString().ToUpper() + tbMedPrenom.Text.Substring(1);
+                // Ajout du médecin \\
                 new G_t_medecins(sConnexion).Ajouter(tbMedNom.Text, tbMedPrenom.Text, int.Parse(tbMedGSM.Text),
                     int.Parse(tbMedIDSpe.Text));
                 MessageBox.Show("Le médecin a été ajoutée", "Info:", MessageBoxButtons.OK,

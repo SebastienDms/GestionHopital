@@ -27,13 +27,16 @@ namespace SD_Gestion_Hopital
         {
             if (tbNomSpe.Text == "")
             {
-                MessageBox.Show("Veuillez saisir le nom de la spécialité à ajouter", "Attention", MessageBoxButtons.OK,
+                MessageBox.Show("Veuillez saisir le nom de la spécialité à ajouter.", "Attention", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
             else
             {
+                // Force la majuscule au nom de la spécialité \\
+                tbNomSpe.Text = tbNomSpe.Text[0].ToString().ToUpper() + tbNomSpe.Text.Substring(1);
+
                 new G_t_specialites(sConnexion).Ajouter(tbNomSpe.Text);
-                MessageBox.Show("La spécialité a été ajoutée", "Info:", MessageBoxButtons.OK,
+                MessageBox.Show("La spécialité a été ajoutée.", "Info:", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 tbNomSpe.Text = "";
             }
@@ -41,7 +44,7 @@ namespace SD_Gestion_Hopital
 
         private void btnAnnulerAj_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La spécialité ne sera pas ajoutée", "Attention", MessageBoxButtons.OK,
+            MessageBox.Show("La spécialité ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             tbNomSpe.Text = "";
         }

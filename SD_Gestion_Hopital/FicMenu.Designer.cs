@@ -44,6 +44,20 @@
             this.TSMAjPatient = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMAjOccuper = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMAjSoigner = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spécialitéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.médecinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chambresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.priseEnChargeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spécilitéToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.médecinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chambreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patientToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.priseEnChargeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.soinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MSHopital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +68,9 @@
             this.MSHopital.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.MSHopital.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMAfficher,
-            this.TSMAjouter});
+            this.TSMAjouter,
+            this.modifierToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
             this.MSHopital.Location = new System.Drawing.Point(0, 0);
             this.MSHopital.Name = "MSHopital";
             this.MSHopital.Size = new System.Drawing.Size(800, 29);
@@ -171,6 +187,106 @@
             this.TSMAjSoigner.Text = "Soin d\'un patient";
             this.TSMAjSoigner.Click += new System.EventHandler(this.TSMAjSoigner_Click);
             // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.spécialitéToolStripMenuItem,
+            this.médecinsToolStripMenuItem,
+            this.chambresToolStripMenuItem,
+            this.patientToolStripMenuItem,
+            this.priseEnChargeToolStripMenuItem,
+            this.soinToolStripMenuItem});
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            // 
+            // spécialitéToolStripMenuItem
+            // 
+            this.spécialitéToolStripMenuItem.Name = "spécialitéToolStripMenuItem";
+            this.spécialitéToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.spécialitéToolStripMenuItem.Text = "Spécialité";
+            this.spécialitéToolStripMenuItem.Click += new System.EventHandler(this.spécialitéToolStripMenuItem_Click);
+            // 
+            // médecinsToolStripMenuItem
+            // 
+            this.médecinsToolStripMenuItem.Name = "médecinsToolStripMenuItem";
+            this.médecinsToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.médecinsToolStripMenuItem.Text = "Médecin";
+            this.médecinsToolStripMenuItem.Click += new System.EventHandler(this.médecinsToolStripMenuItem_Click);
+            // 
+            // chambresToolStripMenuItem
+            // 
+            this.chambresToolStripMenuItem.Name = "chambresToolStripMenuItem";
+            this.chambresToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.chambresToolStripMenuItem.Text = "Chambre";
+            // 
+            // patientToolStripMenuItem
+            // 
+            this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.patientToolStripMenuItem.Text = "Patient";
+            // 
+            // priseEnChargeToolStripMenuItem
+            // 
+            this.priseEnChargeToolStripMenuItem.Name = "priseEnChargeToolStripMenuItem";
+            this.priseEnChargeToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.priseEnChargeToolStripMenuItem.Text = "Prise en charge";
+            // 
+            // soinToolStripMenuItem
+            // 
+            this.soinToolStripMenuItem.Name = "soinToolStripMenuItem";
+            this.soinToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.soinToolStripMenuItem.Text = "Soin";
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.spécilitéToolStripMenuItem,
+            this.médecinToolStripMenuItem,
+            this.chambreToolStripMenuItem,
+            this.patientToolStripMenuItem1,
+            this.priseEnChargeToolStripMenuItem1,
+            this.soinToolStripMenuItem1});
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(96, 25);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            // 
+            // spécilitéToolStripMenuItem
+            // 
+            this.spécilitéToolStripMenuItem.Name = "spécilitéToolStripMenuItem";
+            this.spécilitéToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.spécilitéToolStripMenuItem.Text = "Spécilité";
+            // 
+            // médecinToolStripMenuItem
+            // 
+            this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
+            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.médecinToolStripMenuItem.Text = "Médecin";
+            // 
+            // chambreToolStripMenuItem
+            // 
+            this.chambreToolStripMenuItem.Name = "chambreToolStripMenuItem";
+            this.chambreToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.chambreToolStripMenuItem.Text = "Chambre";
+            // 
+            // patientToolStripMenuItem1
+            // 
+            this.patientToolStripMenuItem1.Name = "patientToolStripMenuItem1";
+            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.patientToolStripMenuItem1.Text = "Patient";
+            // 
+            // priseEnChargeToolStripMenuItem1
+            // 
+            this.priseEnChargeToolStripMenuItem1.Name = "priseEnChargeToolStripMenuItem1";
+            this.priseEnChargeToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.priseEnChargeToolStripMenuItem1.Text = "Prise en charge";
+            // 
+            // soinToolStripMenuItem1
+            // 
+            this.soinToolStripMenuItem1.Name = "soinToolStripMenuItem1";
+            this.soinToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.soinToolStripMenuItem1.Text = "Soin";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -221,5 +337,19 @@
         private System.Windows.Forms.ToolStripMenuItem TSMAjPatient;
         private System.Windows.Forms.ToolStripMenuItem TSMAjOccuper;
         private System.Windows.Forms.ToolStripMenuItem TSMAjSoigner;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spécialitéToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem médecinsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chambresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem priseEnChargeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem spécilitéToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem médecinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chambreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem priseEnChargeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem soinToolStripMenuItem1;
     }
 }

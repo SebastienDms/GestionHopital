@@ -106,7 +106,7 @@ namespace SD_Gestion_Hopital
                                     MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     new G_t_occuper(sConnexion).Ajouter(int.Parse(tbAjOccIDPat.Text), int.Parse(tbAjOccIDCha.Text),
-                        DateTime.Parse(tbAjOccDateEntree.Text), DateTime.Parse(tbAjOccDateSortie.Text),
+                        DateTime.Parse(tbAjOccDateEntree.Text), VerifieDateSortie(),
                         int.Parse(tbAjOccPrixJour.Text));
                     MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
@@ -125,6 +125,18 @@ namespace SD_Gestion_Hopital
             MessageBox.Show("La réservation ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             tbAjOccIDPat.Text = tbAjOccIDCha.Text = tbAjOccDateEntree.Text = tbAjOccDateSortie.Text = tbAjOccPrixJour.Text = "";
+        }
+        private DateTime VerifieDateSortie()
+        {
+            if (tbAjOccDateSortie.Text == "")
+            {
+                return new DateTime(1753, 1, 1);
+
+            }
+            else
+            {
+                return DateTime.Parse(tbAjOccDateSortie.Text);
+            }
         }
     }
 }

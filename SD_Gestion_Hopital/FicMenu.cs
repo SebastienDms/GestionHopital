@@ -97,5 +97,17 @@ namespace SD_Gestion_Hopital
             eAjSoi.ShowDialog();
         }
         #endregion
+
+        private void spécialitéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranModifSpecialite eModSpe = new EcranModifSpecialite();
+            eModSpe.ShowDialog();
+        }
+
+        private void médecinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranModifMedecin eModMed = new EcranModifMedecin();
+            eModMed.ShowDialog();
+        }
     }
 }

@@ -115,5 +115,10 @@ namespace SD_Gestion_Hopital
             EcranModifChambre eModCha = new EcranModifChambre();
             eModCha.ShowDialog();
         }
+
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -130,7 +130,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
             }
-
+            AfficherChambres();
         }
 
         private void btnAnnulerModifCha_Click(object sender, EventArgs e)

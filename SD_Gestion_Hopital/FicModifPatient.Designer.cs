@@ -32,7 +32,7 @@
             this.gbAjMedSpe = new System.Windows.Forms.GroupBox();
             this.btnAjouterMedSpe = new System.Windows.Forms.Button();
             this.dgvSpecialites = new System.Windows.Forms.DataGridView();
-            this.gbAjMed = new System.Windows.Forms.GroupBox();
+            this.gbModifPat = new System.Windows.Forms.GroupBox();
             this.lblFicheAjMedSpe = new System.Windows.Forms.Label();
             this.lblFicheAjMedGSM = new System.Windows.Forms.Label();
             this.lblFicheAjMedPrenom = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.btnConfirmerAjMed = new System.Windows.Forms.Button();
             this.gbAjMedSpe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).BeginInit();
-            this.gbAjMed.SuspendLayout();
+            this.gbModifPat.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAjMedSpe
@@ -79,25 +79,25 @@
             this.dgvSpecialites.Size = new System.Drawing.Size(381, 305);
             this.dgvSpecialites.TabIndex = 0;
             // 
-            // gbAjMed
+            // gbModifPat
             // 
-            this.gbAjMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedSpe);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedGSM);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedPrenom);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedNom);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedID);
-            this.gbAjMed.Controls.Add(this.tbMedIDSpe);
-            this.gbAjMed.Controls.Add(this.tbMedGSM);
-            this.gbAjMed.Controls.Add(this.tbMedPrenom);
-            this.gbAjMed.Controls.Add(this.tbMedNom);
-            this.gbAjMed.Controls.Add(this.tbIDMed);
-            this.gbAjMed.Location = new System.Drawing.Point(12, 12);
-            this.gbAjMed.Name = "gbAjMed";
-            this.gbAjMed.Size = new System.Drawing.Size(377, 378);
-            this.gbAjMed.TabIndex = 8;
-            this.gbAjMed.TabStop = false;
-            this.gbAjMed.Text = "Fiche du médecin";
+            this.gbModifPat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbModifPat.Controls.Add(this.lblFicheAjMedSpe);
+            this.gbModifPat.Controls.Add(this.lblFicheAjMedGSM);
+            this.gbModifPat.Controls.Add(this.lblFicheAjMedPrenom);
+            this.gbModifPat.Controls.Add(this.lblFicheAjMedNom);
+            this.gbModifPat.Controls.Add(this.lblFicheAjMedID);
+            this.gbModifPat.Controls.Add(this.tbMedIDSpe);
+            this.gbModifPat.Controls.Add(this.tbMedGSM);
+            this.gbModifPat.Controls.Add(this.tbMedPrenom);
+            this.gbModifPat.Controls.Add(this.tbMedNom);
+            this.gbModifPat.Controls.Add(this.tbIDMed);
+            this.gbModifPat.Location = new System.Drawing.Point(12, 12);
+            this.gbModifPat.Name = "gbModifPat";
+            this.gbModifPat.Size = new System.Drawing.Size(377, 378);
+            this.gbModifPat.TabIndex = 8;
+            this.gbModifPat.TabStop = false;
+            this.gbModifPat.Text = "Fiche du patient :";
             // 
             // lblFicheAjMedSpe
             // 
@@ -205,7 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gbAjMedSpe);
-            this.Controls.Add(this.gbAjMed);
+            this.Controls.Add(this.gbModifPat);
             this.Controls.Add(this.btnAnnulerAjMed);
             this.Controls.Add(this.btnConfirmerAjMed);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -213,8 +213,8 @@
             this.Text = "Modification d\'un patient";
             this.gbAjMedSpe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).EndInit();
-            this.gbAjMed.ResumeLayout(false);
-            this.gbAjMed.PerformLayout();
+            this.gbModifPat.ResumeLayout(false);
+            this.gbModifPat.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,7 +224,7 @@
         private System.Windows.Forms.GroupBox gbAjMedSpe;
         private System.Windows.Forms.Button btnAjouterMedSpe;
         private System.Windows.Forms.DataGridView dgvSpecialites;
-        private System.Windows.Forms.GroupBox gbAjMed;
+        private System.Windows.Forms.GroupBox gbModifPat;
         private System.Windows.Forms.Label lblFicheAjMedSpe;
         private System.Windows.Forms.Label lblFicheAjMedGSM;
         private System.Windows.Forms.Label lblFicheAjMedPrenom;

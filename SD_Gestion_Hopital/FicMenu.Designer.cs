@@ -226,6 +226,7 @@
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
             this.patientToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.patientToolStripMenuItem.Text = "Patient";
+            this.patientToolStripMenuItem.Click += new System.EventHandler(this.patientToolStripMenuItem_Click);
             // 
             // priseEnChargeToolStripMenuItem
             // 

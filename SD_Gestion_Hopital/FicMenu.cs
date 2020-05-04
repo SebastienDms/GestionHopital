@@ -121,5 +121,11 @@ namespace SD_Gestion_Hopital
             EcranModifPatient eModPat = new EcranModifPatient();
             eModPat.ShowDialog();
         }
+
+        private void priseEnChargeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranModifOccupation eModOcc = new EcranModifOccupation();
+            eModOcc.ShowDialog();
+        }
     }
 }

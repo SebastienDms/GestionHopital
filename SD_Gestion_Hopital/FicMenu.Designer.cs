@@ -235,6 +235,7 @@
             this.priseEnChargeToolStripMenuItem.Name = "priseEnChargeToolStripMenuItem";
             this.priseEnChargeToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.priseEnChargeToolStripMenuItem.Text = "Prise en charge";
+            this.priseEnChargeToolStripMenuItem.Click += new System.EventHandler(this.priseEnChargeToolStripMenuItem_Click);
             // 
             // soinToolStripMenuItem
             // 

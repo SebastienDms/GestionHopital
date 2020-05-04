@@ -118,7 +118,8 @@ namespace SD_Gestion_Hopital
 
         private void patientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EcranModifPatient eModPat = new EcranModifPatient();
+            eModPat.ShowDialog();
         }
     }
 }

@@ -65,7 +65,7 @@
             // 
             // MSHopital
             // 
-            this.MSHopital.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.MSHopital.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.MSHopital.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMAfficher,
             this.TSMAjouter,
@@ -73,7 +73,7 @@
             this.supprimerToolStripMenuItem});
             this.MSHopital.Location = new System.Drawing.Point(0, 0);
             this.MSHopital.Name = "MSHopital";
-            this.MSHopital.Size = new System.Drawing.Size(800, 29);
+            this.MSHopital.Size = new System.Drawing.Size(800, 38);
             this.MSHopital.TabIndex = 0;
             this.MSHopital.Text = "menuStrip1";
             // 
@@ -86,49 +86,50 @@
             this.TSMAfPatients,
             this.TSMAfOccuper,
             this.TSMAfSoigner});
+            this.TSMAfficher.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.TSMAfficher.Name = "TSMAfficher";
-            this.TSMAfficher.Size = new System.Drawing.Size(76, 25);
+            this.TSMAfficher.Size = new System.Drawing.Size(100, 34);
             this.TSMAfficher.Text = "Afficher";
             // 
             // TSMAfSpécialités
             // 
             this.TSMAfSpécialités.Name = "TSMAfSpécialités";
-            this.TSMAfSpécialités.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfSpécialités.Size = new System.Drawing.Size(296, 34);
             this.TSMAfSpécialités.Text = "Spécialités";
             this.TSMAfSpécialités.Click += new System.EventHandler(this.TSMAfSpécialités_Click);
             // 
             // TSMAfMédecins
             // 
             this.TSMAfMédecins.Name = "TSMAfMédecins";
-            this.TSMAfMédecins.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfMédecins.Size = new System.Drawing.Size(296, 34);
             this.TSMAfMédecins.Text = "Médecins";
             this.TSMAfMédecins.Click += new System.EventHandler(this.TSMAfMédecins_Click);
             // 
             // TSMAfChambres
             // 
             this.TSMAfChambres.Name = "TSMAfChambres";
-            this.TSMAfChambres.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfChambres.Size = new System.Drawing.Size(296, 34);
             this.TSMAfChambres.Text = "Chambres";
             this.TSMAfChambres.Click += new System.EventHandler(this.TSMAfChambres_Click);
             // 
             // TSMAfPatients
             // 
             this.TSMAfPatients.Name = "TSMAfPatients";
-            this.TSMAfPatients.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfPatients.Size = new System.Drawing.Size(296, 34);
             this.TSMAfPatients.Text = "Patients";
             this.TSMAfPatients.Click += new System.EventHandler(this.TSMAfPatients_Click);
             // 
             // TSMAfOccuper
             // 
             this.TSMAfOccuper.Name = "TSMAfOccuper";
-            this.TSMAfOccuper.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfOccuper.Size = new System.Drawing.Size(296, 34);
             this.TSMAfOccuper.Text = "Occupation chambres";
             this.TSMAfOccuper.Click += new System.EventHandler(this.TSMAfOccuper_Click);
             // 
             // TSMAfSoigner
             // 
             this.TSMAfSoigner.Name = "TSMAfSoigner";
-            this.TSMAfSoigner.Size = new System.Drawing.Size(231, 26);
+            this.TSMAfSoigner.Size = new System.Drawing.Size(296, 34);
             this.TSMAfSoigner.Text = "Soins";
             this.TSMAfSoigner.Click += new System.EventHandler(this.TSMAfSoigner_Click);
             // 
@@ -141,49 +142,50 @@
             this.TSMAjPatient,
             this.TSMAjOccuper,
             this.TSMAjSoigner});
+            this.TSMAjouter.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.TSMAjouter.Name = "TSMAjouter";
-            this.TSMAjouter.Size = new System.Drawing.Size(73, 25);
+            this.TSMAjouter.Size = new System.Drawing.Size(96, 34);
             this.TSMAjouter.Text = "Ajouter";
             // 
             // TSMAjSpécialité
             // 
             this.TSMAjSpécialité.Name = "TSMAjSpécialité";
-            this.TSMAjSpécialité.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjSpécialité.Size = new System.Drawing.Size(307, 34);
             this.TSMAjSpécialité.Text = "Spécialité";
             this.TSMAjSpécialité.Click += new System.EventHandler(this.TSMAjSpécialité_Click);
             // 
             // TSMAjMédecin
             // 
             this.TSMAjMédecin.Name = "TSMAjMédecin";
-            this.TSMAjMédecin.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjMédecin.Size = new System.Drawing.Size(307, 34);
             this.TSMAjMédecin.Text = "Médecin";
             this.TSMAjMédecin.Click += new System.EventHandler(this.TSMAjMédecin_Click);
             // 
             // TSMAjChambre
             // 
             this.TSMAjChambre.Name = "TSMAjChambre";
-            this.TSMAjChambre.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjChambre.Size = new System.Drawing.Size(307, 34);
             this.TSMAjChambre.Text = "Chambre";
             this.TSMAjChambre.Click += new System.EventHandler(this.TSMAjChambre_Click);
             // 
             // TSMAjPatient
             // 
             this.TSMAjPatient.Name = "TSMAjPatient";
-            this.TSMAjPatient.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjPatient.Size = new System.Drawing.Size(307, 34);
             this.TSMAjPatient.Text = "Patient";
             this.TSMAjPatient.Click += new System.EventHandler(this.TSMAjPatient_Click);
             // 
             // TSMAjOccuper
             // 
             this.TSMAjOccuper.Name = "TSMAjOccuper";
-            this.TSMAjOccuper.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjOccuper.Size = new System.Drawing.Size(307, 34);
             this.TSMAjOccuper.Text = "Prise en charge patient";
             this.TSMAjOccuper.Click += new System.EventHandler(this.TSMAjOccuper_Click);
             // 
             // TSMAjSoigner
             // 
             this.TSMAjSoigner.Name = "TSMAjSoigner";
-            this.TSMAjSoigner.Size = new System.Drawing.Size(238, 26);
+            this.TSMAjSoigner.Size = new System.Drawing.Size(307, 34);
             this.TSMAjSoigner.Text = "Soin d\'un patient";
             this.TSMAjSoigner.Click += new System.EventHandler(this.TSMAjSoigner_Click);
             // 
@@ -197,47 +199,47 @@
             this.priseEnChargeToolStripMenuItem,
             this.soinToolStripMenuItem});
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(108, 34);
             this.modifierToolStripMenuItem.Text = "Modifier";
             // 
             // spécialitéToolStripMenuItem
             // 
             this.spécialitéToolStripMenuItem.Name = "spécialitéToolStripMenuItem";
-            this.spécialitéToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.spécialitéToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.spécialitéToolStripMenuItem.Text = "Spécialité";
             this.spécialitéToolStripMenuItem.Click += new System.EventHandler(this.spécialitéToolStripMenuItem_Click);
             // 
             // médecinsToolStripMenuItem
             // 
             this.médecinsToolStripMenuItem.Name = "médecinsToolStripMenuItem";
-            this.médecinsToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.médecinsToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.médecinsToolStripMenuItem.Text = "Médecin";
             this.médecinsToolStripMenuItem.Click += new System.EventHandler(this.médecinsToolStripMenuItem_Click);
             // 
             // chambresToolStripMenuItem
             // 
             this.chambresToolStripMenuItem.Name = "chambresToolStripMenuItem";
-            this.chambresToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.chambresToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.chambresToolStripMenuItem.Text = "Chambre";
             this.chambresToolStripMenuItem.Click += new System.EventHandler(this.chambresToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.patientToolStripMenuItem.Text = "Patient";
             this.patientToolStripMenuItem.Click += new System.EventHandler(this.patientToolStripMenuItem_Click);
             // 
             // priseEnChargeToolStripMenuItem
             // 
             this.priseEnChargeToolStripMenuItem.Name = "priseEnChargeToolStripMenuItem";
-            this.priseEnChargeToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.priseEnChargeToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.priseEnChargeToolStripMenuItem.Text = "Prise en charge";
             // 
             // soinToolStripMenuItem
             // 
             this.soinToolStripMenuItem.Name = "soinToolStripMenuItem";
-            this.soinToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.soinToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.soinToolStripMenuItem.Text = "Soin";
             // 
             // supprimerToolStripMenuItem
@@ -250,52 +252,52 @@
             this.priseEnChargeToolStripMenuItem1,
             this.soinToolStripMenuItem1});
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(96, 25);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(127, 34);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             // 
             // spécilitéToolStripMenuItem
             // 
             this.spécilitéToolStripMenuItem.Name = "spécilitéToolStripMenuItem";
-            this.spécilitéToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.spécilitéToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.spécilitéToolStripMenuItem.Text = "Spécilité";
             // 
             // médecinToolStripMenuItem
             // 
             this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
-            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.médecinToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.médecinToolStripMenuItem.Text = "Médecin";
             // 
             // chambreToolStripMenuItem
             // 
             this.chambreToolStripMenuItem.Name = "chambreToolStripMenuItem";
-            this.chambreToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.chambreToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.chambreToolStripMenuItem.Text = "Chambre";
             // 
             // patientToolStripMenuItem1
             // 
             this.patientToolStripMenuItem1.Name = "patientToolStripMenuItem1";
-            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.patientToolStripMenuItem1.Text = "Patient";
             // 
             // priseEnChargeToolStripMenuItem1
             // 
             this.priseEnChargeToolStripMenuItem1.Name = "priseEnChargeToolStripMenuItem1";
-            this.priseEnChargeToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.priseEnChargeToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.priseEnChargeToolStripMenuItem1.Text = "Prise en charge";
             // 
             // soinToolStripMenuItem1
             // 
             this.soinToolStripMenuItem1.Name = "soinToolStripMenuItem1";
-            this.soinToolStripMenuItem1.Size = new System.Drawing.Size(186, 26);
+            this.soinToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.soinToolStripMenuItem1.Text = "Soin";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::SD_Gestion_Hopital.Properties.Resources.fond_hopital1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 38);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 421);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 412);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;

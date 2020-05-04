@@ -29,213 +29,240 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranModifChambre));
-            this.gbAjMedSpe = new System.Windows.Forms.GroupBox();
-            this.btnAjouterMedSpe = new System.Windows.Forms.Button();
-            this.dgvSpecialites = new System.Windows.Forms.DataGridView();
-            this.gbAjMed = new System.Windows.Forms.GroupBox();
-            this.lblFicheAjMedSpe = new System.Windows.Forms.Label();
-            this.lblFicheAjMedGSM = new System.Windows.Forms.Label();
-            this.lblFicheAjMedPrenom = new System.Windows.Forms.Label();
-            this.lblFicheAjMedNom = new System.Windows.Forms.Label();
-            this.lblFicheAjMedID = new System.Windows.Forms.Label();
-            this.tbMedIDSpe = new System.Windows.Forms.TextBox();
-            this.tbMedGSM = new System.Windows.Forms.TextBox();
-            this.tbMedPrenom = new System.Windows.Forms.TextBox();
-            this.tbMedNom = new System.Windows.Forms.TextBox();
-            this.tbIDMed = new System.Windows.Forms.TextBox();
-            this.btnAnnulerAjMed = new System.Windows.Forms.Button();
-            this.btnConfirmerAjMed = new System.Windows.Forms.Button();
-            this.gbAjMedSpe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).BeginInit();
-            this.gbAjMed.SuspendLayout();
+            this.gbAfficheChaModif = new System.Windows.Forms.GroupBox();
+            this.btnModifCha = new System.Windows.Forms.Button();
+            this.dgvChambresModif = new System.Windows.Forms.DataGridView();
+            this.gbModifCha = new System.Windows.Forms.GroupBox();
+            this.lblFicheModifChaService = new System.Windows.Forms.Label();
+            this.lblFicheModifChaType = new System.Windows.Forms.Label();
+            this.lblFicheModifChaNbrLit = new System.Windows.Forms.Label();
+            this.lblFicheModifChaNom = new System.Windows.Forms.Label();
+            this.lblFicheModifChaID = new System.Windows.Forms.Label();
+            this.tbModifServiceCha = new System.Windows.Forms.TextBox();
+            this.tbModifTypeCha = new System.Windows.Forms.TextBox();
+            this.tbModifQuantiteLit = new System.Windows.Forms.TextBox();
+            this.tbModifChaNom = new System.Windows.Forms.TextBox();
+            this.tbIDCha = new System.Windows.Forms.TextBox();
+            this.btnAnnulerModifCha = new System.Windows.Forms.Button();
+            this.btnConfirmerModifCha = new System.Windows.Forms.Button();
+            this.lblFicheModifChaEtage = new System.Windows.Forms.Label();
+            this.tbModifEtageCha = new System.Windows.Forms.TextBox();
+            this.gbAfficheChaModif.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChambresModif)).BeginInit();
+            this.gbModifCha.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gbAjMedSpe
+            // gbAfficheChaModif
             // 
-            this.gbAjMedSpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.gbAjMedSpe.Controls.Add(this.btnAjouterMedSpe);
-            this.gbAjMedSpe.Controls.Add(this.dgvSpecialites);
-            this.gbAjMedSpe.Location = new System.Drawing.Point(395, 12);
-            this.gbAjMedSpe.Name = "gbAjMedSpe";
-            this.gbAjMedSpe.Size = new System.Drawing.Size(393, 378);
-            this.gbAjMedSpe.TabIndex = 9;
-            this.gbAjMedSpe.TabStop = false;
-            this.gbAjMedSpe.Text = "Liste des spécialités";
+            this.gbAfficheChaModif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gbAfficheChaModif.Controls.Add(this.btnModifCha);
+            this.gbAfficheChaModif.Controls.Add(this.dgvChambresModif);
+            this.gbAfficheChaModif.Location = new System.Drawing.Point(395, 12);
+            this.gbAfficheChaModif.Name = "gbAfficheChaModif";
+            this.gbAfficheChaModif.Size = new System.Drawing.Size(393, 378);
+            this.gbAfficheChaModif.TabIndex = 9;
+            this.gbAfficheChaModif.TabStop = false;
+            this.gbAfficheChaModif.Text = "Liste des chambres :";
             // 
-            // btnAjouterMedSpe
+            // btnModifCha
             // 
-            this.btnAjouterMedSpe.Location = new System.Drawing.Point(123, 330);
-            this.btnAjouterMedSpe.Name = "btnAjouterMedSpe";
-            this.btnAjouterMedSpe.Size = new System.Drawing.Size(158, 42);
-            this.btnAjouterMedSpe.TabIndex = 6;
-            this.btnAjouterMedSpe.Text = "<----    A J O U T E R";
-            this.btnAjouterMedSpe.UseVisualStyleBackColor = true;
+            this.btnModifCha.Location = new System.Drawing.Point(113, 330);
+            this.btnModifCha.Name = "btnModifCha";
+            this.btnModifCha.Size = new System.Drawing.Size(158, 42);
+            this.btnModifCha.TabIndex = 6;
+            this.btnModifCha.Text = "<----    A J O U T E R";
+            this.btnModifCha.UseVisualStyleBackColor = true;
+            this.btnModifCha.Click += new System.EventHandler(this.btnModifCha_Click);
             // 
-            // dgvSpecialites
+            // dgvChambresModif
             // 
-            this.dgvSpecialites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpecialites.Location = new System.Drawing.Point(6, 19);
-            this.dgvSpecialites.Name = "dgvSpecialites";
-            this.dgvSpecialites.Size = new System.Drawing.Size(381, 305);
-            this.dgvSpecialites.TabIndex = 0;
+            this.dgvChambresModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChambresModif.Location = new System.Drawing.Point(6, 19);
+            this.dgvChambresModif.Name = "dgvChambresModif";
+            this.dgvChambresModif.Size = new System.Drawing.Size(381, 305);
+            this.dgvChambresModif.TabIndex = 0;
             // 
-            // gbAjMed
+            // gbModifCha
             // 
-            this.gbAjMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedSpe);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedGSM);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedPrenom);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedNom);
-            this.gbAjMed.Controls.Add(this.lblFicheAjMedID);
-            this.gbAjMed.Controls.Add(this.tbMedIDSpe);
-            this.gbAjMed.Controls.Add(this.tbMedGSM);
-            this.gbAjMed.Controls.Add(this.tbMedPrenom);
-            this.gbAjMed.Controls.Add(this.tbMedNom);
-            this.gbAjMed.Controls.Add(this.tbIDMed);
-            this.gbAjMed.Location = new System.Drawing.Point(12, 12);
-            this.gbAjMed.Name = "gbAjMed";
-            this.gbAjMed.Size = new System.Drawing.Size(377, 378);
-            this.gbAjMed.TabIndex = 8;
-            this.gbAjMed.TabStop = false;
-            this.gbAjMed.Text = "Fiche du médecin";
+            this.gbModifCha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaEtage);
+            this.gbModifCha.Controls.Add(this.tbModifEtageCha);
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaService);
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaType);
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaNbrLit);
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaNom);
+            this.gbModifCha.Controls.Add(this.lblFicheModifChaID);
+            this.gbModifCha.Controls.Add(this.tbModifServiceCha);
+            this.gbModifCha.Controls.Add(this.tbModifTypeCha);
+            this.gbModifCha.Controls.Add(this.tbModifQuantiteLit);
+            this.gbModifCha.Controls.Add(this.tbModifChaNom);
+            this.gbModifCha.Controls.Add(this.tbIDCha);
+            this.gbModifCha.Location = new System.Drawing.Point(12, 12);
+            this.gbModifCha.Name = "gbModifCha";
+            this.gbModifCha.Size = new System.Drawing.Size(377, 378);
+            this.gbModifCha.TabIndex = 8;
+            this.gbModifCha.TabStop = false;
+            this.gbModifCha.Text = "Fiche de la chambre :";
             // 
-            // lblFicheAjMedSpe
+            // lblFicheModifChaService
             // 
-            this.lblFicheAjMedSpe.AutoSize = true;
-            this.lblFicheAjMedSpe.Location = new System.Drawing.Point(42, 311);
-            this.lblFicheAjMedSpe.Name = "lblFicheAjMedSpe";
-            this.lblFicheAjMedSpe.Size = new System.Drawing.Size(59, 13);
-            this.lblFicheAjMedSpe.TabIndex = 9;
-            this.lblFicheAjMedSpe.Text = "Spécialité :";
+            this.lblFicheModifChaService.AutoSize = true;
+            this.lblFicheModifChaService.Location = new System.Drawing.Point(42, 312);
+            this.lblFicheModifChaService.Name = "lblFicheModifChaService";
+            this.lblFicheModifChaService.Size = new System.Drawing.Size(49, 13);
+            this.lblFicheModifChaService.TabIndex = 9;
+            this.lblFicheModifChaService.Text = "Service :";
             // 
-            // lblFicheAjMedGSM
+            // lblFicheModifChaType
             // 
-            this.lblFicheAjMedGSM.AutoSize = true;
-            this.lblFicheAjMedGSM.Location = new System.Drawing.Point(42, 228);
-            this.lblFicheAjMedGSM.Name = "lblFicheAjMedGSM";
-            this.lblFicheAjMedGSM.Size = new System.Drawing.Size(37, 13);
-            this.lblFicheAjMedGSM.TabIndex = 8;
-            this.lblFicheAjMedGSM.Text = "GSM :";
+            this.lblFicheModifChaType.AutoSize = true;
+            this.lblFicheModifChaType.Location = new System.Drawing.Point(42, 218);
+            this.lblFicheModifChaType.Name = "lblFicheModifChaType";
+            this.lblFicheModifChaType.Size = new System.Drawing.Size(37, 13);
+            this.lblFicheModifChaType.TabIndex = 8;
+            this.lblFicheModifChaType.Text = "Type :";
             // 
-            // lblFicheAjMedPrenom
+            // lblFicheModifChaNbrLit
             // 
-            this.lblFicheAjMedPrenom.AutoSize = true;
-            this.lblFicheAjMedPrenom.Location = new System.Drawing.Point(42, 168);
-            this.lblFicheAjMedPrenom.Name = "lblFicheAjMedPrenom";
-            this.lblFicheAjMedPrenom.Size = new System.Drawing.Size(49, 13);
-            this.lblFicheAjMedPrenom.TabIndex = 7;
-            this.lblFicheAjMedPrenom.Text = "Prénom :";
+            this.lblFicheModifChaNbrLit.AutoSize = true;
+            this.lblFicheModifChaNbrLit.Location = new System.Drawing.Point(42, 168);
+            this.lblFicheModifChaNbrLit.Name = "lblFicheModifChaNbrLit";
+            this.lblFicheModifChaNbrLit.Size = new System.Drawing.Size(75, 13);
+            this.lblFicheModifChaNbrLit.TabIndex = 7;
+            this.lblFicheModifChaNbrLit.Text = "Nombre de lit :";
             // 
-            // lblFicheAjMedNom
+            // lblFicheModifChaNom
             // 
-            this.lblFicheAjMedNom.AutoSize = true;
-            this.lblFicheAjMedNom.Location = new System.Drawing.Point(42, 103);
-            this.lblFicheAjMedNom.Name = "lblFicheAjMedNom";
-            this.lblFicheAjMedNom.Size = new System.Drawing.Size(35, 13);
-            this.lblFicheAjMedNom.TabIndex = 6;
-            this.lblFicheAjMedNom.Text = "Nom :";
+            this.lblFicheModifChaNom.AutoSize = true;
+            this.lblFicheModifChaNom.Location = new System.Drawing.Point(42, 112);
+            this.lblFicheModifChaNom.Name = "lblFicheModifChaNom";
+            this.lblFicheModifChaNom.Size = new System.Drawing.Size(35, 13);
+            this.lblFicheModifChaNom.TabIndex = 6;
+            this.lblFicheModifChaNom.Text = "Nom :";
             // 
-            // lblFicheAjMedID
+            // lblFicheModifChaID
             // 
-            this.lblFicheAjMedID.AutoSize = true;
-            this.lblFicheAjMedID.Location = new System.Drawing.Point(42, 41);
-            this.lblFicheAjMedID.Name = "lblFicheAjMedID";
-            this.lblFicheAjMedID.Size = new System.Drawing.Size(24, 13);
-            this.lblFicheAjMedID.TabIndex = 5;
-            this.lblFicheAjMedID.Text = "ID :";
+            this.lblFicheModifChaID.AutoSize = true;
+            this.lblFicheModifChaID.Location = new System.Drawing.Point(42, 41);
+            this.lblFicheModifChaID.Name = "lblFicheModifChaID";
+            this.lblFicheModifChaID.Size = new System.Drawing.Size(24, 13);
+            this.lblFicheModifChaID.TabIndex = 5;
+            this.lblFicheModifChaID.Text = "ID :";
             // 
-            // tbMedIDSpe
+            // tbModifServiceCha
             // 
-            this.tbMedIDSpe.Location = new System.Drawing.Point(45, 330);
-            this.tbMedIDSpe.Name = "tbMedIDSpe";
-            this.tbMedIDSpe.Size = new System.Drawing.Size(100, 20);
-            this.tbMedIDSpe.TabIndex = 4;
+            this.tbModifServiceCha.Location = new System.Drawing.Point(45, 331);
+            this.tbModifServiceCha.Name = "tbModifServiceCha";
+            this.tbModifServiceCha.Size = new System.Drawing.Size(135, 20);
+            this.tbModifServiceCha.TabIndex = 4;
             // 
-            // tbMedGSM
+            // tbModifTypeCha
             // 
-            this.tbMedGSM.Location = new System.Drawing.Point(45, 244);
-            this.tbMedGSM.Name = "tbMedGSM";
-            this.tbMedGSM.Size = new System.Drawing.Size(282, 20);
-            this.tbMedGSM.TabIndex = 3;
+            this.tbModifTypeCha.Location = new System.Drawing.Point(45, 234);
+            this.tbModifTypeCha.Name = "tbModifTypeCha";
+            this.tbModifTypeCha.Size = new System.Drawing.Size(135, 20);
+            this.tbModifTypeCha.TabIndex = 3;
             // 
-            // tbMedPrenom
+            // tbModifQuantiteLit
             // 
-            this.tbMedPrenom.Location = new System.Drawing.Point(45, 184);
-            this.tbMedPrenom.Name = "tbMedPrenom";
-            this.tbMedPrenom.Size = new System.Drawing.Size(282, 20);
-            this.tbMedPrenom.TabIndex = 2;
+            this.tbModifQuantiteLit.Location = new System.Drawing.Point(45, 184);
+            this.tbModifQuantiteLit.Name = "tbModifQuantiteLit";
+            this.tbModifQuantiteLit.Size = new System.Drawing.Size(135, 20);
+            this.tbModifQuantiteLit.TabIndex = 2;
             // 
-            // tbMedNom
+            // tbModifChaNom
             // 
-            this.tbMedNom.Location = new System.Drawing.Point(45, 128);
-            this.tbMedNom.Name = "tbMedNom";
-            this.tbMedNom.Size = new System.Drawing.Size(282, 20);
-            this.tbMedNom.TabIndex = 1;
+            this.tbModifChaNom.Location = new System.Drawing.Point(45, 128);
+            this.tbModifChaNom.Name = "tbModifChaNom";
+            this.tbModifChaNom.Size = new System.Drawing.Size(135, 20);
+            this.tbModifChaNom.TabIndex = 1;
             // 
-            // tbIDMed
+            // tbIDCha
             // 
-            this.tbIDMed.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tbIDMed.Location = new System.Drawing.Point(45, 57);
-            this.tbIDMed.Name = "tbIDMed";
-            this.tbIDMed.ReadOnly = true;
-            this.tbIDMed.Size = new System.Drawing.Size(100, 20);
-            this.tbIDMed.TabIndex = 0;
+            this.tbIDCha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbIDCha.Location = new System.Drawing.Point(45, 57);
+            this.tbIDCha.Name = "tbIDCha";
+            this.tbIDCha.ReadOnly = true;
+            this.tbIDCha.Size = new System.Drawing.Size(100, 20);
+            this.tbIDCha.TabIndex = 0;
             // 
-            // btnAnnulerAjMed
+            // btnAnnulerModifCha
             // 
-            this.btnAnnulerAjMed.Location = new System.Drawing.Point(231, 396);
-            this.btnAnnulerAjMed.Name = "btnAnnulerAjMed";
-            this.btnAnnulerAjMed.Size = new System.Drawing.Size(158, 42);
-            this.btnAnnulerAjMed.TabIndex = 7;
-            this.btnAnnulerAjMed.Text = "A N N U L E R";
-            this.btnAnnulerAjMed.UseVisualStyleBackColor = true;
+            this.btnAnnulerModifCha.Location = new System.Drawing.Point(231, 396);
+            this.btnAnnulerModifCha.Name = "btnAnnulerModifCha";
+            this.btnAnnulerModifCha.Size = new System.Drawing.Size(158, 42);
+            this.btnAnnulerModifCha.TabIndex = 7;
+            this.btnAnnulerModifCha.Text = "A N N U L E R";
+            this.btnAnnulerModifCha.UseVisualStyleBackColor = true;
+            this.btnAnnulerModifCha.Click += new System.EventHandler(this.btnAnnulerModifCha_Click);
             // 
-            // btnConfirmerAjMed
+            // btnConfirmerModifCha
             // 
-            this.btnConfirmerAjMed.Location = new System.Drawing.Point(12, 396);
-            this.btnConfirmerAjMed.Name = "btnConfirmerAjMed";
-            this.btnConfirmerAjMed.Size = new System.Drawing.Size(158, 42);
-            this.btnConfirmerAjMed.TabIndex = 6;
-            this.btnConfirmerAjMed.Text = "C O N F I R M E R";
-            this.btnConfirmerAjMed.UseVisualStyleBackColor = true;
+            this.btnConfirmerModifCha.Location = new System.Drawing.Point(12, 396);
+            this.btnConfirmerModifCha.Name = "btnConfirmerModifCha";
+            this.btnConfirmerModifCha.Size = new System.Drawing.Size(158, 42);
+            this.btnConfirmerModifCha.TabIndex = 6;
+            this.btnConfirmerModifCha.Text = "C O N F I R M E R";
+            this.btnConfirmerModifCha.UseVisualStyleBackColor = true;
+            this.btnConfirmerModifCha.Click += new System.EventHandler(this.btnConfirmerModifCha_Click);
+            // 
+            // lblFicheModifChaEtage
+            // 
+            this.lblFicheModifChaEtage.AutoSize = true;
+            this.lblFicheModifChaEtage.Location = new System.Drawing.Point(42, 267);
+            this.lblFicheModifChaEtage.Name = "lblFicheModifChaEtage";
+            this.lblFicheModifChaEtage.Size = new System.Drawing.Size(41, 13);
+            this.lblFicheModifChaEtage.TabIndex = 11;
+            this.lblFicheModifChaEtage.Text = "Etage :";
+            // 
+            // tbModifEtageCha
+            // 
+            this.tbModifEtageCha.Location = new System.Drawing.Point(45, 283);
+            this.tbModifEtageCha.Name = "tbModifEtageCha";
+            this.tbModifEtageCha.Size = new System.Drawing.Size(135, 20);
+            this.tbModifEtageCha.TabIndex = 10;
             // 
             // EcranModifChambre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gbAjMedSpe);
-            this.Controls.Add(this.gbAjMed);
-            this.Controls.Add(this.btnAnnulerAjMed);
-            this.Controls.Add(this.btnConfirmerAjMed);
+            this.Controls.Add(this.gbAfficheChaModif);
+            this.Controls.Add(this.gbModifCha);
+            this.Controls.Add(this.btnAnnulerModifCha);
+            this.Controls.Add(this.btnConfirmerModifCha);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EcranModifChambre";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Modification d\'une chambre";
-            this.gbAjMedSpe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).EndInit();
-            this.gbAjMed.ResumeLayout(false);
-            this.gbAjMed.PerformLayout();
+            this.Load += new System.EventHandler(this.EcranModifChambre_Load);
+            this.gbAfficheChaModif.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChambresModif)).EndInit();
+            this.gbModifCha.ResumeLayout(false);
+            this.gbModifCha.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gbAjMedSpe;
-        private System.Windows.Forms.Button btnAjouterMedSpe;
-        private System.Windows.Forms.DataGridView dgvSpecialites;
-        private System.Windows.Forms.GroupBox gbAjMed;
-        private System.Windows.Forms.Label lblFicheAjMedSpe;
-        private System.Windows.Forms.Label lblFicheAjMedGSM;
-        private System.Windows.Forms.Label lblFicheAjMedPrenom;
-        private System.Windows.Forms.Label lblFicheAjMedNom;
-        private System.Windows.Forms.Label lblFicheAjMedID;
-        private System.Windows.Forms.TextBox tbMedIDSpe;
-        private System.Windows.Forms.TextBox tbMedGSM;
-        private System.Windows.Forms.TextBox tbMedPrenom;
-        private System.Windows.Forms.TextBox tbMedNom;
-        private System.Windows.Forms.TextBox tbIDMed;
-        private System.Windows.Forms.Button btnAnnulerAjMed;
-        private System.Windows.Forms.Button btnConfirmerAjMed;
+        private System.Windows.Forms.GroupBox gbAfficheChaModif;
+        private System.Windows.Forms.Button btnModifCha;
+        private System.Windows.Forms.DataGridView dgvChambresModif;
+        private System.Windows.Forms.GroupBox gbModifCha;
+        private System.Windows.Forms.Label lblFicheModifChaService;
+        private System.Windows.Forms.Label lblFicheModifChaType;
+        private System.Windows.Forms.Label lblFicheModifChaNbrLit;
+        private System.Windows.Forms.Label lblFicheModifChaNom;
+        private System.Windows.Forms.Label lblFicheModifChaID;
+        private System.Windows.Forms.TextBox tbModifServiceCha;
+        private System.Windows.Forms.TextBox tbModifTypeCha;
+        private System.Windows.Forms.TextBox tbModifQuantiteLit;
+        private System.Windows.Forms.TextBox tbModifChaNom;
+        private System.Windows.Forms.TextBox tbIDCha;
+        private System.Windows.Forms.Button btnAnnulerModifCha;
+        private System.Windows.Forms.Button btnConfirmerModifCha;
+        private System.Windows.Forms.Label lblFicheModifChaEtage;
+        private System.Windows.Forms.TextBox tbModifEtageCha;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranAjoutMedecin));
             this.btnConfirmerAjMed = new System.Windows.Forms.Button();
             this.btnAnnulerAjMed = new System.Windows.Forms.Button();
@@ -43,8 +45,8 @@
             this.tbMedNom = new System.Windows.Forms.TextBox();
             this.tbIDMed = new System.Windows.Forms.TextBox();
             this.gbAjMedSpe = new System.Windows.Forms.GroupBox();
-            this.dgvSpecialites = new System.Windows.Forms.DataGridView();
             this.btnAjouterMedSpe = new System.Windows.Forms.Button();
+            this.dgvSpecialites = new System.Windows.Forms.DataGridView();
             this.gbAjMed.SuspendLayout();
             this.gbAjMedSpe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecialites)).BeginInit();
@@ -185,14 +187,6 @@
             this.gbAjMedSpe.TabStop = false;
             this.gbAjMedSpe.Text = "Liste des spécialités";
             // 
-            // dgvSpecialites
-            // 
-            this.dgvSpecialites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSpecialites.Location = new System.Drawing.Point(6, 19);
-            this.dgvSpecialites.Name = "dgvSpecialites";
-            this.dgvSpecialites.Size = new System.Drawing.Size(381, 305);
-            this.dgvSpecialites.TabIndex = 0;
-            // 
             // btnAjouterMedSpe
             // 
             this.btnAjouterMedSpe.Location = new System.Drawing.Point(123, 330);
@@ -202,6 +196,29 @@
             this.btnAjouterMedSpe.Text = "<----    A J O U T E R";
             this.btnAjouterMedSpe.UseVisualStyleBackColor = true;
             this.btnAjouterMedSpe.Click += new System.EventHandler(this.btnAjouterMedSpe_Click);
+            // 
+            // dgvSpecialites
+            // 
+            this.dgvSpecialites.AllowUserToAddRows = false;
+            this.dgvSpecialites.AllowUserToDeleteRows = false;
+            this.dgvSpecialites.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSpecialites.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSpecialites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSpecialites.Location = new System.Drawing.Point(6, 19);
+            this.dgvSpecialites.Name = "dgvSpecialites";
+            this.dgvSpecialites.ReadOnly = true;
+            this.dgvSpecialites.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.dgvSpecialites.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSpecialites.Size = new System.Drawing.Size(381, 305);
+            this.dgvSpecialites.TabIndex = 0;
             // 
             // EcranAjoutMedecin
             // 

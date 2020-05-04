@@ -102,9 +102,9 @@
             this.lblFicheAjChaQuaLit.AutoSize = true;
             this.lblFicheAjChaQuaLit.Location = new System.Drawing.Point(32, 162);
             this.lblFicheAjChaQuaLit.Name = "lblFicheAjChaQuaLit";
-            this.lblFicheAjChaQuaLit.Size = new System.Drawing.Size(102, 15);
+            this.lblFicheAjChaQuaLit.Size = new System.Drawing.Size(87, 15);
             this.lblFicheAjChaQuaLit.TabIndex = 8;
-            this.lblFicheAjChaQuaLit.Text = "Quantité de lit(s) :";
+            this.lblFicheAjChaQuaLit.Text = "Nombre de lit :";
             // 
             // tbServCha
             // 

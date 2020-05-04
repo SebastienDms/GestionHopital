@@ -219,6 +219,7 @@
             this.chambresToolStripMenuItem.Name = "chambresToolStripMenuItem";
             this.chambresToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.chambresToolStripMenuItem.Text = "Chambre";
+            this.chambresToolStripMenuItem.Click += new System.EventHandler(this.chambresToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 

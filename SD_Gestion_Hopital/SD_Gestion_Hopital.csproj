@@ -176,6 +176,42 @@
     <Compile Include="FicSpecialites.Designer.cs">
       <DependentUpon>FicSpecialites.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicSuppriChambre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriChambre.Designer.cs">
+      <DependentUpon>FicSuppriChambre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSuppriMedecin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriMedecin.Designer.cs">
+      <DependentUpon>FicSuppriMedecin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSuppriOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriOccupation.Designer.cs">
+      <DependentUpon>FicSuppriOccupation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSuppriPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriPatient.Designer.cs">
+      <DependentUpon>FicSuppriPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSuppriSoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriSoin.Designer.cs">
+      <DependentUpon>FicSuppriSoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FicSuppriSpecialite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicSuppriSpecialite.Designer.cs">
+      <DependentUpon>FicSuppriSpecialite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicSpecialites.resx">
       <DependentUpon>FicSpecialites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicSuppriSpecialite.resx">
+      <DependentUpon>FicSuppriSpecialite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

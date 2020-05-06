@@ -261,37 +261,43 @@
             // 
             this.spécilitéToolStripMenuItem.Name = "spécilitéToolStripMenuItem";
             this.spécilitéToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
-            this.spécilitéToolStripMenuItem.Text = "Spécilité";
+            this.spécilitéToolStripMenuItem.Text = "Spécialité";
+            this.spécilitéToolStripMenuItem.Click += new System.EventHandler(this.spécilitéToolStripMenuItem_Click);
             // 
             // médecinToolStripMenuItem
             // 
             this.médecinToolStripMenuItem.Name = "médecinToolStripMenuItem";
             this.médecinToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.médecinToolStripMenuItem.Text = "Médecin";
+            this.médecinToolStripMenuItem.Click += new System.EventHandler(this.médecinToolStripMenuItem_Click);
             // 
             // chambreToolStripMenuItem
             // 
             this.chambreToolStripMenuItem.Name = "chambreToolStripMenuItem";
             this.chambreToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.chambreToolStripMenuItem.Text = "Chambre";
+            this.chambreToolStripMenuItem.Click += new System.EventHandler(this.chambreToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem1
             // 
             this.patientToolStripMenuItem1.Name = "patientToolStripMenuItem1";
             this.patientToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.patientToolStripMenuItem1.Text = "Patient";
+            this.patientToolStripMenuItem1.Click += new System.EventHandler(this.patientToolStripMenuItem1_Click);
             // 
             // priseEnChargeToolStripMenuItem1
             // 
             this.priseEnChargeToolStripMenuItem1.Name = "priseEnChargeToolStripMenuItem1";
             this.priseEnChargeToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.priseEnChargeToolStripMenuItem1.Text = "Prise en charge";
+            this.priseEnChargeToolStripMenuItem1.Click += new System.EventHandler(this.priseEnChargeToolStripMenuItem1_Click);
             // 
             // soinToolStripMenuItem1
             // 
             this.soinToolStripMenuItem1.Name = "soinToolStripMenuItem1";
             this.soinToolStripMenuItem1.Size = new System.Drawing.Size(234, 34);
             this.soinToolStripMenuItem1.Text = "Soin";
+            this.soinToolStripMenuItem1.Click += new System.EventHandler(this.soinToolStripMenuItem1_Click);
             // 
             // pictureBox1
             // 

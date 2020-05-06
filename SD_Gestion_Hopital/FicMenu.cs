@@ -98,6 +98,7 @@ namespace SD_Gestion_Hopital
         }
         #endregion
 
+        #region Modification
         private void spécialitéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EcranModifSpecialite eModSpe = new EcranModifSpecialite();
@@ -132,6 +133,38 @@ namespace SD_Gestion_Hopital
         {
             EcranModifSoin eModSoi = new EcranModifSoin();
             eModSoi.ShowDialog();
+        }
+        #endregion
+
+        private void spécilitéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranSuppriSpecialite eSupSpe = new EcranSuppriSpecialite();
+            eSupSpe.ShowDialog();
+        }
+
+        private void médecinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chambreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void patientToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void priseEnChargeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void soinToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

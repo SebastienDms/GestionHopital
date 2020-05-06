@@ -242,6 +242,7 @@
             this.soinToolStripMenuItem.Name = "soinToolStripMenuItem";
             this.soinToolStripMenuItem.Size = new System.Drawing.Size(234, 34);
             this.soinToolStripMenuItem.Text = "Soin";
+            this.soinToolStripMenuItem.Click += new System.EventHandler(this.soinToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 

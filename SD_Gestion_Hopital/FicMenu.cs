@@ -127,5 +127,11 @@ namespace SD_Gestion_Hopital
             EcranModifOccupation eModOcc = new EcranModifOccupation();
             eModOcc.ShowDialog();
         }
+
+        private void soinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranModifSoin eModSoi = new EcranModifSoin();
+            eModSoi.ShowDialog();
+        }
     }
 }

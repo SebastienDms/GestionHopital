@@ -53,11 +53,16 @@
             this.tbModifIDOcc = new System.Windows.Forms.TextBox();
             this.btnAnnulerModifOcc = new System.Windows.Forms.Button();
             this.btnConfirmerModifOcc = new System.Windows.Forms.Button();
+            this.gbAfficherOccModif = new System.Windows.Forms.GroupBox();
+            this.btnAjouterOccModif = new System.Windows.Forms.Button();
+            this.dgvOccModif = new System.Windows.Forms.DataGridView();
             this.gbModifChaOcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChambresModif)).BeginInit();
             this.gbModifPatOcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientsModif)).BeginInit();
             this.gbModifOcc.SuspendLayout();
+            this.gbAfficherOccModif.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOccModif)).BeginInit();
             this.SuspendLayout();
             // 
             // gbModifChaOcc
@@ -65,16 +70,16 @@
             this.gbModifChaOcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gbModifChaOcc.Controls.Add(this.btnAjouterChaOccModif);
             this.gbModifChaOcc.Controls.Add(this.dgvChambresModif);
-            this.gbModifChaOcc.Location = new System.Drawing.Point(792, 13);
+            this.gbModifChaOcc.Location = new System.Drawing.Point(792, 299);
             this.gbModifChaOcc.Name = "gbModifChaOcc";
-            this.gbModifChaOcc.Size = new System.Drawing.Size(393, 378);
+            this.gbModifChaOcc.Size = new System.Drawing.Size(393, 293);
             this.gbModifChaOcc.TabIndex = 15;
             this.gbModifChaOcc.TabStop = false;
             this.gbModifChaOcc.Text = "Liste des chambres :";
             // 
             // btnAjouterChaOccModif
             // 
-            this.btnAjouterChaOccModif.Location = new System.Drawing.Point(123, 330);
+            this.btnAjouterChaOccModif.Location = new System.Drawing.Point(135, 245);
             this.btnAjouterChaOccModif.Name = "btnAjouterChaOccModif";
             this.btnAjouterChaOccModif.Size = new System.Drawing.Size(158, 42);
             this.btnAjouterChaOccModif.TabIndex = 6;
@@ -85,9 +90,9 @@
             // dgvChambresModif
             // 
             this.dgvChambresModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChambresModif.Location = new System.Drawing.Point(6, 17);
+            this.dgvChambresModif.Location = new System.Drawing.Point(6, 19);
             this.dgvChambresModif.Name = "dgvChambresModif";
-            this.dgvChambresModif.Size = new System.Drawing.Size(381, 305);
+            this.dgvChambresModif.Size = new System.Drawing.Size(381, 216);
             this.dgvChambresModif.TabIndex = 0;
             // 
             // gbModifPatOcc
@@ -95,16 +100,16 @@
             this.gbModifPatOcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gbModifPatOcc.Controls.Add(this.btnAjouterPatOccModif);
             this.gbModifPatOcc.Controls.Add(this.dgvPatientsModif);
-            this.gbModifPatOcc.Location = new System.Drawing.Point(393, 13);
+            this.gbModifPatOcc.Location = new System.Drawing.Point(393, 299);
             this.gbModifPatOcc.Name = "gbModifPatOcc";
-            this.gbModifPatOcc.Size = new System.Drawing.Size(393, 378);
+            this.gbModifPatOcc.Size = new System.Drawing.Size(393, 293);
             this.gbModifPatOcc.TabIndex = 14;
             this.gbModifPatOcc.TabStop = false;
             this.gbModifPatOcc.Text = "Liste des patients :";
             // 
             // btnAjouterPatOccModif
             // 
-            this.btnAjouterPatOccModif.Location = new System.Drawing.Point(123, 330);
+            this.btnAjouterPatOccModif.Location = new System.Drawing.Point(119, 245);
             this.btnAjouterPatOccModif.Name = "btnAjouterPatOccModif";
             this.btnAjouterPatOccModif.Size = new System.Drawing.Size(158, 42);
             this.btnAjouterPatOccModif.TabIndex = 6;
@@ -117,7 +122,7 @@
             this.dgvPatientsModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientsModif.Location = new System.Drawing.Point(6, 19);
             this.dgvPatientsModif.Name = "dgvPatientsModif";
-            this.dgvPatientsModif.Size = new System.Drawing.Size(381, 305);
+            this.dgvPatientsModif.Size = new System.Drawing.Size(381, 217);
             this.dgvPatientsModif.TabIndex = 0;
             // 
             // gbModifOcc
@@ -192,9 +197,9 @@
             this.lblFicheModifOccIDCha.AutoSize = true;
             this.lblFicheModifOccIDCha.Location = new System.Drawing.Point(42, 151);
             this.lblFicheModifOccIDCha.Name = "lblFicheModifOccIDCha";
-            this.lblFicheModifOccIDCha.Size = new System.Drawing.Size(55, 13);
+            this.lblFicheModifOccIDCha.Size = new System.Drawing.Size(95, 13);
             this.lblFicheModifOccIDCha.TabIndex = 12;
-            this.lblFicheModifOccIDCha.Text = "Chambre :";
+            this.lblFicheModifOccIDCha.Text = "ID de la Chambre :";
             // 
             // tbModifOccIDCha
             // 
@@ -210,9 +215,9 @@
             this.lblFicheModifOccIDPat.AutoSize = true;
             this.lblFicheModifOccIDPat.Location = new System.Drawing.Point(42, 97);
             this.lblFicheModifOccIDPat.Name = "lblFicheModifOccIDPat";
-            this.lblFicheModifOccIDPat.Size = new System.Drawing.Size(46, 13);
+            this.lblFicheModifOccIDPat.Size = new System.Drawing.Size(74, 13);
             this.lblFicheModifOccIDPat.TabIndex = 10;
-            this.lblFicheModifOccIDPat.Text = "Patient :";
+            this.lblFicheModifOccIDPat.Text = "ID du patient :";
             // 
             // tbModifOccIDPat
             // 
@@ -295,11 +300,42 @@
             this.btnConfirmerModifOcc.UseVisualStyleBackColor = true;
             this.btnConfirmerModifOcc.Click += new System.EventHandler(this.btnConfirmerModifOcc_Click);
             // 
+            // gbAfficherOccModif
+            // 
+            this.gbAfficherOccModif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.gbAfficherOccModif.Controls.Add(this.btnAjouterOccModif);
+            this.gbAfficherOccModif.Controls.Add(this.dgvOccModif);
+            this.gbAfficherOccModif.Location = new System.Drawing.Point(393, 13);
+            this.gbAfficherOccModif.Name = "gbAfficherOccModif";
+            this.gbAfficherOccModif.Size = new System.Drawing.Size(393, 280);
+            this.gbAfficherOccModif.TabIndex = 16;
+            this.gbAfficherOccModif.TabStop = false;
+            this.gbAfficherOccModif.Text = "Liste des prises en charges :";
+            // 
+            // btnAjouterOccModif
+            // 
+            this.btnAjouterOccModif.Location = new System.Drawing.Point(119, 232);
+            this.btnAjouterOccModif.Name = "btnAjouterOccModif";
+            this.btnAjouterOccModif.Size = new System.Drawing.Size(158, 42);
+            this.btnAjouterOccModif.TabIndex = 6;
+            this.btnAjouterOccModif.Text = "<----    A J O U T E R";
+            this.btnAjouterOccModif.UseVisualStyleBackColor = true;
+            this.btnAjouterOccModif.Click += new System.EventHandler(this.btnAjouterOccModif_Click);
+            // 
+            // dgvOccModif
+            // 
+            this.dgvOccModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOccModif.Location = new System.Drawing.Point(6, 19);
+            this.dgvOccModif.Name = "dgvOccModif";
+            this.dgvOccModif.Size = new System.Drawing.Size(381, 207);
+            this.dgvOccModif.TabIndex = 0;
+            // 
             // EcranModifOccupation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1191, 646);
+            this.Controls.Add(this.gbAfficherOccModif);
             this.Controls.Add(this.gbModifChaOcc);
             this.Controls.Add(this.gbModifPatOcc);
             this.Controls.Add(this.gbModifOcc);
@@ -315,6 +351,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatientsModif)).EndInit();
             this.gbModifOcc.ResumeLayout(false);
             this.gbModifOcc.PerformLayout();
+            this.gbAfficherOccModif.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOccModif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +383,8 @@
         private System.Windows.Forms.TextBox tbModifIDOcc;
         private System.Windows.Forms.Button btnAnnulerModifOcc;
         private System.Windows.Forms.Button btnConfirmerModifOcc;
+        private System.Windows.Forms.GroupBox gbAfficherOccModif;
+        private System.Windows.Forms.Button btnAjouterOccModif;
+        private System.Windows.Forms.DataGridView dgvOccModif;
     }
 }

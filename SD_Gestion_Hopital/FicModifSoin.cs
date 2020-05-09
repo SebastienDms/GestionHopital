@@ -52,10 +52,10 @@ namespace SD_Gestion_Hopital
             t_soigner.Columns.Add(new DataColumn("Opéré le"));
             t_soigner.Columns.Add(new DataColumn("Sortie prévue le"));
             t_soigner.Columns.Add(new DataColumn("Coût de l'opération"));
-            List<C_t_medecins> lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
-            List<C_t_patients> lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
-            List<C_t_soigner> lTmp_Soin = new G_t_soigner(sConnexion).Lire("IDSoi");
-            foreach (C_t_soigner s in lTmp_Soin)
+            lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
+            lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
+            lTmp_Soi = new G_t_soigner(sConnexion).Lire("IDSoi");
+            foreach (C_t_soigner s in lTmp_Soi)
             {
                 string Medecin = "", Patient = "", Date = "";
 
@@ -234,12 +234,29 @@ namespace SD_Gestion_Hopital
             }
             else
             {
-                if (MessageBox.Show("La personne " +
-                                    dgvPatientsSoi.SelectedRows[0].Cells["Nom"].Value.ToString() + " " +
-                                    dgvPatientsSoi.SelectedRows[0].Cells["Prénom"].Value.ToString() +
-                                    " sera opérée par " +
-                                    dgvMedecinsSoi.SelectedRows[0].Cells["Nom"].Value.ToString() + " " +
-                                    dgvMedecinsSoi.SelectedRows[0].Cells["Prénom"].Value.ToString() +
+                string nom_pat = "", prenom_pat = "", nom_med = "", prenom_med = "";
+                lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
+                lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
+                foreach (C_t_medecins m in lTmp_Med)
+                {
+                    if (int.Parse(tbModifSoiIDMed.Text) == m.IDMed)
+                    {
+                        nom_med = m.NomMed;
+                        prenom_med = m.PrenomMed;
+                        break;
+                    }
+                }
+                foreach (C_t_patients p in lTmp_Pat)
+                {
+                    if (int.Parse(tbModifSoiIDPat.Text) == p.IDPat)
+                    {
+                        nom_pat = p.NomPat;
+                        prenom_pat = p.PrenomPat;
+                        break;
+                    }
+                }
+                if (MessageBox.Show("La personne " + nom_pat + " " + prenom_pat +
+                                    " sera opérée par " + nom_med + " " + prenom_med +
                                     " en date du " + tbModifSoiDateOperation.Text + ".",
                               "Info:", MessageBoxButtons.OKCancel,
                                     MessageBoxIcon.Warning) == DialogResult.OK)

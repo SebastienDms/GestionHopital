@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EcranSuppriSpecialite));
             this.gbRechercheSupSpe = new System.Windows.Forms.GroupBox();
             this.btnChercherSpe = new System.Windows.Forms.Button();
-            this.lblResultatRecherche = new System.Windows.Forms.Label();
+            this.lblResultatRechercheSpe = new System.Windows.Forms.Label();
             this.lblNomSpeSup = new System.Windows.Forms.Label();
             this.lblIDSpeSup = new System.Windows.Forms.Label();
             this.lblNomSpeRech = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             // 
             this.gbRechercheSupSpe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.gbRechercheSupSpe.Controls.Add(this.btnChercherSpe);
-            this.gbRechercheSupSpe.Controls.Add(this.lblResultatRecherche);
+            this.gbRechercheSupSpe.Controls.Add(this.lblResultatRechercheSpe);
             this.gbRechercheSupSpe.Controls.Add(this.lblNomSpeSup);
             this.gbRechercheSupSpe.Controls.Add(this.lblIDSpeSup);
             this.gbRechercheSupSpe.Controls.Add(this.lblNomSpeRech);
@@ -77,14 +77,14 @@
             this.btnChercherSpe.UseVisualStyleBackColor = true;
             this.btnChercherSpe.Click += new System.EventHandler(this.btnChercherSpe_Click);
             // 
-            // lblResultatRecherche
+            // lblResultatRechercheSpe
             // 
-            this.lblResultatRecherche.AutoSize = true;
-            this.lblResultatRecherche.Location = new System.Drawing.Point(15, 82);
-            this.lblResultatRecherche.Name = "lblResultatRecherche";
-            this.lblResultatRecherche.Size = new System.Drawing.Size(68, 17);
-            this.lblResultatRecherche.TabIndex = 6;
-            this.lblResultatRecherche.Text = "Résultat :";
+            this.lblResultatRechercheSpe.AutoSize = true;
+            this.lblResultatRechercheSpe.Location = new System.Drawing.Point(15, 82);
+            this.lblResultatRechercheSpe.Name = "lblResultatRechercheSpe";
+            this.lblResultatRechercheSpe.Size = new System.Drawing.Size(68, 17);
+            this.lblResultatRechercheSpe.TabIndex = 6;
+            this.lblResultatRechercheSpe.Text = "Résultat :";
             // 
             // lblNomSpeSup
             // 
@@ -227,7 +227,7 @@
         private System.Windows.Forms.TextBox tblIDSpeSup;
         private System.Windows.Forms.TextBox tblNomSpeRech;
         private System.Windows.Forms.DataGridView dgvSpeSup;
-        private System.Windows.Forms.Label lblResultatRecherche;
+        private System.Windows.Forms.Label lblResultatRechercheSpe;
         private System.Windows.Forms.Button btnChercherSpe;
         private System.Windows.Forms.Button btnAfficherListeSpe;
     }

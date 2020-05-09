@@ -32,7 +32,6 @@ namespace SD_Gestion_Hopital
             t_medecins.Columns.Add(new DataColumn("Nom"));
             t_medecins.Columns.Add(new DataColumn("Prénom"));
             t_medecins.Columns.Add(new DataColumn("GSM"));
-            // t_medecins.Columns.Add(new DataColumn("ID Spécialité"));
             t_medecins.Columns.Add(new DataColumn("Spécialité"));
             List<C_t_medecins> lTmp_Med = new G_t_medecins(sConnexion).Lire("Nom");
             List<C_t_specialites> lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");

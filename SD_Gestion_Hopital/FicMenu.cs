@@ -144,7 +144,8 @@ namespace SD_Gestion_Hopital
 
         private void médecinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EcranSuppriMedecin eSupMed = new EcranSuppriMedecin();
+            eSupMed.ShowDialog();
         }
 
         private void chambreToolStripMenuItem_Click(object sender, EventArgs e)

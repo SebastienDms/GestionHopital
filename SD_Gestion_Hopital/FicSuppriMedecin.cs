@@ -21,6 +21,7 @@ namespace SD_Gestion_Hopital
         private BindingSource bs_medecins;
         private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
         private List<C_t_medecins> lTmp_Med;
+        private List<C_t_specialites> lTmp_Spe;
 
         public EcranSuppriMedecin()
         {
@@ -40,7 +41,7 @@ namespace SD_Gestion_Hopital
             t_medecins.Columns.Add(new DataColumn("GSM"));
             t_medecins.Columns.Add(new DataColumn("Spécialité"));
             lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
-            List<C_t_specialites> lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
+            lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
             foreach (C_t_medecins m in lTmp_Med)
             {
                 string Nom_Spe = "";
@@ -102,6 +103,7 @@ namespace SD_Gestion_Hopital
                 tbNomMedRech.Text = tbNomMedRech.Text[0].ToString().ToUpper() + tbNomMedRech.Text.Substring(1);
                 tbPrenomMedRech.Text = tbPrenomMedRech.Text[0].ToString().ToUpper() + tbPrenomMedRech.Text.Substring(1);
                 lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
+                lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
                 foreach (C_t_medecins m in lTmp_Med)
                 {
                     if (tbNomMedRech.Text == m.NomMed && tbPrenomMedRech.Text == m.PrenomMed)
@@ -110,7 +112,14 @@ namespace SD_Gestion_Hopital
                         tbNomMedSup.Text = m.NomMed;
                         tbPrenomMedSup.Text = m.PrenomMed;
                         tbGSMMedSup.Text = m.GSMMed.ToString();
-                        //tbSpecialiteMedSup.Text = m.IDSpe.ToString();
+                        foreach (C_t_specialites s in lTmp_Spe)
+                        {
+                            if (m.IDSpe == s.IDSpe)
+                            {
+                                tbSpecialiteMedSup.Text = s.NomSpe;
+                                break;
+                            }
+                        }
                     }
                 }
                 // On teste si la recherche à trouvé l'élément \\

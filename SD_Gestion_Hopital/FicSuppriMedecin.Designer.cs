@@ -58,7 +58,7 @@
             // 
             // btnAnnulerSupMed
             // 
-            this.btnAnnulerSupMed.Location = new System.Drawing.Point(469, 566);
+            this.btnAnnulerSupMed.Location = new System.Drawing.Point(469, 533);
             this.btnAnnulerSupMed.Name = "btnAnnulerSupMed";
             this.btnAnnulerSupMed.Size = new System.Drawing.Size(150, 50);
             this.btnAnnulerSupMed.TabIndex = 7;
@@ -68,7 +68,7 @@
             // 
             // btnConfirmerSupMed
             // 
-            this.btnConfirmerSupMed.Location = new System.Drawing.Point(180, 566);
+            this.btnConfirmerSupMed.Location = new System.Drawing.Point(180, 533);
             this.btnConfirmerSupMed.Name = "btnConfirmerSupMed";
             this.btnConfirmerSupMed.Size = new System.Drawing.Size(150, 50);
             this.btnConfirmerSupMed.TabIndex = 6;
@@ -82,7 +82,7 @@
             this.gbSelectSupMed.Controls.Add(this.btnAfficherListeMed);
             this.gbSelectSupMed.Controls.Add(this.dgvMedSup);
             this.gbSelectSupMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSelectSupMed.Location = new System.Drawing.Point(12, 272);
+            this.gbSelectSupMed.Location = new System.Drawing.Point(12, 239);
             this.gbSelectSupMed.Name = "gbSelectSupMed";
             this.gbSelectSupMed.Size = new System.Drawing.Size(776, 270);
             this.gbSelectSupMed.TabIndex = 5;
@@ -282,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 631);
+            this.ClientSize = new System.Drawing.Size(800, 594);
             this.Controls.Add(this.btnAnnulerSupMed);
             this.Controls.Add(this.btnConfirmerSupMed);
             this.Controls.Add(this.gbSelectSupMed);

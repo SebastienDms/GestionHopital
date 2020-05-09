@@ -277,6 +277,9 @@
     <EmbeddedResource Include="FicSpecialites.resx">
       <DependentUpon>FicSpecialites.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FicSuppriChambre.resx">
+      <DependentUpon>FicSuppriChambre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FicSuppriMedecin.resx">
       <DependentUpon>FicSuppriMedecin.cs</DependentUpon>
     </EmbeddedResource>

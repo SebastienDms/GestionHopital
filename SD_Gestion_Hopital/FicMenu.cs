@@ -150,7 +150,8 @@ namespace SD_Gestion_Hopital
 
         private void chambreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EcranSuppriChambre eSupCha = new EcranSuppriChambre();
+            eSupCha.ShowDialog();
         }
 
         private void patientToolStripMenuItem1_Click(object sender, EventArgs e)

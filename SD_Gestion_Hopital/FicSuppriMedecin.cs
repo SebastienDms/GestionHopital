@@ -120,6 +120,7 @@ namespace SD_Gestion_Hopital
                                 break;
                             }
                         }
+                        break;
                     }
                 }
                 // On teste si la recherche à trouvé l'élément \\
@@ -157,7 +158,7 @@ namespace SD_Gestion_Hopital
                     }
                     catch (Exception exception)
                     {
-                        MessageBox.Show("Impossible de supprimer ce médecin pour une question historique des données.",
+                        MessageBox.Show("Impossible de supprimer ce médecin pour une question intégrité/historique des données.",
                             "Information", MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
                     }
@@ -191,7 +192,7 @@ namespace SD_Gestion_Hopital
                             }
                             catch (Exception exception)
                             {
-                                MessageBox.Show("Impossible de supprimer ce médecin pour une question historique des données.",
+                                MessageBox.Show("Impossible de supprimer ce médecin pour une question intégrité/historique des données.",
                                     "Information", MessageBoxButtons.OK,
                                     MessageBoxIcon.Warning);
                             }

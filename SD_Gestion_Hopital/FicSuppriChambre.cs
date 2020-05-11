@@ -93,6 +93,7 @@ namespace SD_Gestion_Hopital
                         tbTypeChaSup.Text = c.TypeCha;
                         tbEtageChaSup.Text = c.EtageCha.ToString();
                         tbServiceChaSup.Text = c.ServiceCha;
+                        break;
                     }
                 }
                 // On teste si la recherche à trouvé l'élément \\

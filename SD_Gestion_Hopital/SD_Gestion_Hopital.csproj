@@ -283,6 +283,12 @@
     <EmbeddedResource Include="FicSuppriMedecin.resx">
       <DependentUpon>FicSuppriMedecin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FicSuppriOccupation.resx">
+      <DependentUpon>FicSuppriOccupation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicSuppriPatient.resx">
+      <DependentUpon>FicSuppriPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FicSuppriSpecialite.resx">
       <DependentUpon>FicSuppriSpecialite.cs</DependentUpon>
     </EmbeddedResource>

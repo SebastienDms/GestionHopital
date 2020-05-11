@@ -156,12 +156,14 @@ namespace SD_Gestion_Hopital
 
         private void patientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            EcranSuppriPatient eSupPat = new EcranSuppriPatient();
+            eSupPat.ShowDialog();
         }
 
         private void priseEnChargeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            EcranSuppriOccupation eSupOcc= new EcranSuppriOccupation();
+            eSupOcc.ShowDialog();
         }
 
         private void soinToolStripMenuItem1_Click(object sender, EventArgs e)

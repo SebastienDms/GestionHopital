@@ -31,8 +31,8 @@ namespace SD_Gestion_Hopital
             t_soigner.Columns.Add(new DataColumn("ID", System.Type.GetType("System.Int32")));
             t_soigner.Columns.Add(new DataColumn("Médecin"));
             t_soigner.Columns.Add(new DataColumn("Patient"));
-            t_soigner.Columns.Add(new DataColumn("Opéré le"));
-            t_soigner.Columns.Add(new DataColumn("Sortie authorisée le"));
+            t_soigner.Columns.Add(new DataColumn("Opération prévue le"));
+            t_soigner.Columns.Add(new DataColumn("Sortie prévue le"));
             t_soigner.Columns.Add(new DataColumn("Coût de l'opération"));
             List<C_t_medecins> lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
             List<C_t_patients> lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");

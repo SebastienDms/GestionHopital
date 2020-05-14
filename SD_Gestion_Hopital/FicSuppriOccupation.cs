@@ -33,7 +33,14 @@ namespace SD_Gestion_Hopital
         private void EcranSuppriOccupation_Load(object sender, EventArgs e)
         {
             btnConfirmerSupOcc.Enabled = btnValiderDateEntrreOccpSup.Enabled = false;
+            dtpDateEntreeRechercheOccSup.Value = DateTime.Today;
         }
+        private void ViderDGV()
+        {
+            dgvResRecOccpSup.DataSource = null;
+            dgvResRecOccpSup.Invalidate();
+        }
+
         private void dtpDateEntreeRechercheOccSup_Enter(object sender, EventArgs e)
         {
             btnValiderDateEntrreOccpSup.Enabled = true;
@@ -160,8 +167,9 @@ namespace SD_Gestion_Hopital
                     {
                         if (tbNomPatRechOccSup.Text == "" && tbPrenomPatRechOccSup.Text == "" && tbNomChaRechOccSup.Text =="")
                         {
-                            MessageBox.Show("Veuillez saisir quelque chose dans la barre de recherche.",
+                            MessageBox.Show("Veuillez saisir quelque chose dans la partie recherche.",
                                 "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ViderDGV();
                         }
                         else
                         {
@@ -173,8 +181,9 @@ namespace SD_Gestion_Hopital
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Veuillez saisir quelque chose dans la barre de recherche.",
+                MessageBox.Show("Veuillez saisir quelque chose dans la partie recherche.",
                     "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViderDGV();
             }
         }
 

@@ -168,7 +168,8 @@ namespace SD_Gestion_Hopital
 
         private void soinToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            EcranSuppriSoin eSupSoi = new EcranSuppriSoin();
+            eSupSoi.ShowDialog();
         }
     }
 }

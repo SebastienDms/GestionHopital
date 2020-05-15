@@ -136,6 +136,7 @@ namespace SD_Gestion_Hopital
         }
         #endregion
 
+        #region Suppression
         private void spécilitéToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EcranSuppriSpecialite eSupSpe = new EcranSuppriSpecialite();
@@ -170,6 +171,14 @@ namespace SD_Gestion_Hopital
         {
             EcranSuppriSoin eSupSoi = new EcranSuppriSoin();
             eSupSoi.ShowDialog();
+        }
+
+        #endregion
+
+        private void hitParadeMédecinsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranHitParadeMedecins eHitPar = new EcranHitParadeMedecins();
+            eHitPar.ShowDialog();
         }
     }
 }

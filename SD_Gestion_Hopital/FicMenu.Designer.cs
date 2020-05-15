@@ -59,6 +59,7 @@
             this.priseEnChargeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hitParadeMédecinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MSHopital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,8 @@
             this.TSMAfficher,
             this.TSMAjouter,
             this.modifierToolStripMenuItem,
-            this.supprimerToolStripMenuItem});
+            this.supprimerToolStripMenuItem,
+            this.hitParadeMédecinsToolStripMenuItem});
             this.MSHopital.Location = new System.Drawing.Point(0, 0);
             this.MSHopital.Name = "MSHopital";
             this.MSHopital.Size = new System.Drawing.Size(800, 38);
@@ -310,6 +312,13 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // hitParadeMédecinsToolStripMenuItem
+            // 
+            this.hitParadeMédecinsToolStripMenuItem.Name = "hitParadeMédecinsToolStripMenuItem";
+            this.hitParadeMédecinsToolStripMenuItem.Size = new System.Drawing.Size(225, 34);
+            this.hitParadeMédecinsToolStripMenuItem.Text = "Hit parade médecins";
+            this.hitParadeMédecinsToolStripMenuItem.Click += new System.EventHandler(this.hitParadeMédecinsToolStripMenuItem_Click);
+            // 
             // FicMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +372,6 @@
         private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem priseEnChargeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem soinToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem hitParadeMédecinsToolStripMenuItem;
     }
 }

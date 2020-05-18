@@ -195,12 +195,28 @@ namespace SD_Gestion_Hopital
             }
             else
             {
-                if (MessageBox.Show("La chambre " + dgvChambresModif.SelectedRows[0].Cells["Numéro"].Value.ToString() +
-                                    " a été réservée pour " +
-                                    dgvPatientsModif.SelectedRows[0].Cells["Nom"].Value.ToString() + dgvPatientsModif.SelectedRows[0].Cells["Prénom"].Value.ToString() +
+                string patient = "", chambre = "";
+                lTmp_Pat = new G_t_patients(sConnexion).Lire("IDPat");
+                foreach (C_t_patients p in lTmp_Pat)
+                {
+                    if (p.IDPat == int.Parse(tbModifOccIDPat.Text))
+                    {
+                        patient = p.NomPat + " " + p.PrenomPat;
+                    }
+                }
+                lTmp_Cha = new G_t_chambres(sConnexion).Lire("IDCha");
+                foreach (C_t_chambres c in lTmp_Cha)
+                {
+                    if (c.IDCha == int.Parse(tbModifOccIDCha.Text))
+                    {
+                        chambre = c.NomCha.ToString();
+                    }
+                }
+
+                if (MessageBox.Show("La chambre " + chambre + " a été réservée pour " + patient +
                                     " en date du " + tbModifOccDateEntree.Text + ".",
-                    "Info:", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Warning) == DialogResult.OK)
+                        "Info:", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     new G_t_occuper(sConnexion).Modifier(int.Parse(tbModifIDOcc.Text),int.Parse(tbModifOccIDPat.Text), int.Parse(tbModifOccIDCha.Text),
                         DateTime.Parse(tbModifOccDateEntree.Text), VerifieDateSortie(),

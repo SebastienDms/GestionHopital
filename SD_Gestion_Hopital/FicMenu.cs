@@ -180,5 +180,11 @@ namespace SD_Gestion_Hopital
             EcranHitParadeMedecins eHitPar = new EcranHitParadeMedecins();
             eHitPar.ShowDialog();
         }
+
+        private void facturationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranFacturationDuJour eFacJour = new EcranFacturationDuJour();
+            eFacJour.ShowDialog();
+        }
     }
 }

@@ -58,8 +58,9 @@
             this.patientToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.priseEnChargeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.soinToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.hitParadeMédecinsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.facturationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MSHopital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,10 +73,11 @@
             this.TSMAjouter,
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem,
-            this.hitParadeMédecinsToolStripMenuItem});
+            this.hitParadeMédecinsToolStripMenuItem,
+            this.facturationToolStripMenuItem});
             this.MSHopital.Location = new System.Drawing.Point(0, 0);
             this.MSHopital.Name = "MSHopital";
-            this.MSHopital.Size = new System.Drawing.Size(800, 38);
+            this.MSHopital.Size = new System.Drawing.Size(1047, 38);
             this.MSHopital.TabIndex = 0;
             this.MSHopital.Text = "menuStrip1";
             // 
@@ -301,17 +303,6 @@
             this.soinToolStripMenuItem1.Text = "Soin";
             this.soinToolStripMenuItem1.Click += new System.EventHandler(this.soinToolStripMenuItem1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SD_Gestion_Hopital.Properties.Resources.fond_hopital1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 412);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // hitParadeMédecinsToolStripMenuItem
             // 
             this.hitParadeMédecinsToolStripMenuItem.Name = "hitParadeMédecinsToolStripMenuItem";
@@ -319,11 +310,29 @@
             this.hitParadeMédecinsToolStripMenuItem.Text = "Hit parade médecins";
             this.hitParadeMédecinsToolStripMenuItem.Click += new System.EventHandler(this.hitParadeMédecinsToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SD_Gestion_Hopital.Properties.Resources.fond_hopital1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1047, 412);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // facturationToolStripMenuItem
+            // 
+            this.facturationToolStripMenuItem.Name = "facturationToolStripMenuItem";
+            this.facturationToolStripMenuItem.Size = new System.Drawing.Size(131, 34);
+            this.facturationToolStripMenuItem.Text = "Facturation";
+            this.facturationToolStripMenuItem.Click += new System.EventHandler(this.facturationToolStripMenuItem_Click);
+            // 
             // FicMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1047, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MSHopital);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -373,5 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem priseEnChargeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem soinToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hitParadeMédecinsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturationToolStripMenuItem;
     }
 }

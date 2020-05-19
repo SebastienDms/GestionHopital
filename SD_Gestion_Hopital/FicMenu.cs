@@ -186,5 +186,11 @@ namespace SD_Gestion_Hopital
             EcranFacturationDuJour eFacJour = new EcranFacturationDuJour();
             eFacJour.ShowDialog();
         }
+
+        private void disponibilitéDesChambresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranDisponibiliteChambres eDispoCha = new EcranDisponibiliteChambres();
+            eDispoCha.ShowDialog();
+        }
     }
 }

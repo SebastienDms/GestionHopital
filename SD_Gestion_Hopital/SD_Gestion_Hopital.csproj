@@ -140,6 +140,12 @@
     <Compile Include="FicChambres.Designer.cs">
       <DependentUpon>FicChambres.cs</DependentUpon>
     </Compile>
+    <Compile Include="FicDisponibiliteChambres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicDisponibiliteChambres.Designer.cs">
+      <DependentUpon>FicDisponibiliteChambres.cs</DependentUpon>
+    </Compile>
     <Compile Include="FicFacturationDuJour.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FicChambres.resx">
       <DependentUpon>FicChambres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicDisponibiliteChambres.resx">
+      <DependentUpon>FicDisponibiliteChambres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FicFacturationDuJour.resx">
       <DependentUpon>FicFacturationDuJour.cs</DependentUpon>

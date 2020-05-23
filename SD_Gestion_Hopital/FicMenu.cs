@@ -15,13 +15,16 @@ namespace SD_Gestion_Hopital
         public FicMenu()
         {
             InitializeComponent();
+            dataGridView1.DataSource = GestionDGV.AfficherMedecins();
+            dataGridView2.DataSource = GestionDGV.AfficherPatients();
+            dataGridView3.DataSource = GestionDGV.AfficherChambres();
         }
 
         private void FicMenu_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
+        #region BarreMenu
         #region Affichage
         private void TSMAfSpécialités_Click(object sender, EventArgs e)
         {
@@ -174,7 +177,7 @@ namespace SD_Gestion_Hopital
         }
 
         #endregion
-
+        #region Options
         private void hitParadeMédecinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EcranHitParadeMedecins eHitPar = new EcranHitParadeMedecins();
@@ -192,5 +195,31 @@ namespace SD_Gestion_Hopital
             EcranDisponibiliteChambres eDispoCha = new EcranDisponibiliteChambres();
             eDispoCha.ShowDialog();
         }
+
+        private void visionneuseHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EcranVisionneuseHTML eVisHTML = new EcranVisionneuseHTML();
+            eVisHTML.ShowDialog();
+        }
+        #endregion
+        #endregion
+
+        #region TableauDeBord
+        private void AfficherMed()
+        {
+            dataGridView1.DataSource = GestionDGV.AfficherMedecins();
+        }
+
+        private void AfficherPat()
+        {
+            dataGridView2.DataSource = GestionDGV.AfficherPatients();
+        }
+
+        private void AfficherCha()
+        {
+            dataGridView3.DataSource = GestionDGV.AfficherChambres();
+        }
+        #endregion
+
     }
 }

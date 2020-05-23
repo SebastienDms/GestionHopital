@@ -41,6 +41,7 @@ namespace SD_Gestion_Hopital
 
             return Calendrier.GetWeekOfYear(ajd, dateforminfo.CalendarWeekRule, dateforminfo.FirstDayOfWeek);
         }
+
         public static DateTime Date_Premier_J_Semaine()
         {
             DateTimeFormatInfo dateforminfo = DateTimeFormatInfo.CurrentInfo;
@@ -48,14 +49,16 @@ namespace SD_Gestion_Hopital
             // On récupère le premier jour de l'année en cours
             DateTime premier_j_annee = new DateTime(DateTime.Today.Year, 1, 1);
             // Calcule de l'offset pur déterminer la première semaine selon la culture ( une semaine complète contient 4 jours minimum)
-            int JourOffset = (int)dateforminfo.FirstDayOfWeek - (int)premier_j_annee.DayOfWeek;
+            int JourOffset = (int) dateforminfo.FirstDayOfWeek - (int) premier_j_annee.DayOfWeek;
             // On calcule du premier de la véritale première semaine
             DateTime Date_premiere_semaine = premier_j_annee.AddDays(JourOffset);
-            int Num_premiere_semaine = Calendrier.GetWeekOfYear(premier_j_annee, dateforminfo.CalendarWeekRule, dateforminfo.FirstDayOfWeek);
+            int Num_premiere_semaine = Calendrier.GetWeekOfYear(premier_j_annee, dateforminfo.CalendarWeekRule,
+                dateforminfo.FirstDayOfWeek);
             int Num_semaine = NumeroSemaineEnCours(), nbr_semaine = 52;
 
             // On vérifie les année qui comptent 53 semaines sur l'année
-            if (DateTime.Today.Year == 2020 || DateTime.Today.Year == 2026 || DateTime.Today.Year == 2032 || DateTime.Today.Year == 2037 || DateTime.Today.Year == 2048)
+            if (DateTime.Today.Year == 2020 || DateTime.Today.Year == 2026 || DateTime.Today.Year == 2032 ||
+                DateTime.Today.Year == 2037 || DateTime.Today.Year == 2048)
             {
                 nbr_semaine = 53;
             }
@@ -115,7 +118,8 @@ namespace SD_Gestion_Hopital
                         DateTime Date_Comp = Premier_J_Semaine.AddDays(i);
                         foreach (C_t_occuper o in lTmp_Occ)
                         {
-                            if (o.IDCha == id && (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Date))
+                            if (o.IDCha == id &&
+                                (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Date))
                             {
                                 Lit_occupe[i] += 1;
                             }
@@ -160,10 +164,12 @@ namespace SD_Gestion_Hopital
                           "\r\n\t</head>" +
                           "\r\n\t<body>" +
                           "\r\n\t\t<header>" +
-                          "\r\n\t\t\t<h1 align='center'>Vue hebdomadaire de la chambre "+tbNumChaChercher.Text+" semaine "+ NumeroSemaineEnCours().ToString() + "</h1>" +
+                          "\r\n\t\t\t<h1 align='center'>Vue hebdomadaire de la chambre " + tbNumChaChercher.Text +
+                          " semaine " + NumeroSemaineEnCours().ToString() + "</h1>" +
                           "\r\n\t\t</header><br>";
             //Table start.
-            html += "<table align='center' cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
+            html +=
+                "<table align='center' cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
 
             //Adding HeaderRow.
             html += "<tr>";
@@ -171,6 +177,7 @@ namespace SD_Gestion_Hopital
             {
                 html += "<th style='background-color: #B8DBFD;border: 1px solid #ccc'>" + column.HeaderText + "</th>";
             }
+
             html += "</tr>";
 
             //Adding DataRow.
@@ -181,6 +188,7 @@ namespace SD_Gestion_Hopital
                 {
                     html += "<td style='width:120px;border: 1px solid #ccc'>" + cell.Value.ToString() + "</td>";
                 }
+
                 html += "</tr>";
             }
 
@@ -193,8 +201,8 @@ namespace SD_Gestion_Hopital
                     "\r\n\t</body>" +
                     "\r\n</html>";
 
-            File.WriteAllText(@"C:\Users\sebas\Documents\HEL - Informatique\Dispo_chambres\"+
-                              NumeroSemaineEnCours().ToString()+"-"+tbNumChaChercher.Text+".html", html);
+            File.WriteAllText(@"C:\Users\sebas\Documents\HEL - Informatique\Dispo_chambres\" +
+                              NumeroSemaineEnCours().ToString() + "-" + tbNumChaChercher.Text + ".html", html);
             MessageBox.Show("Fichier sauvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

@@ -122,11 +122,13 @@ namespace SD_Gestion_Hopital
                         Date_Sortie = o.DateSortie.ToShortDateString();
                         Prix_journalier = o.PrixJournalier.ToString();
                         Nbr_jour_sejour = (o.DateSortie - o.DateEntree).Days;
+                        if (Nbr_jour_sejour==0)
+                            Nbr_jour_sejour = 1;
                         Prix_total_sejour = Nbr_jour_sejour * int.Parse(Prix_journalier);
                     }
                 }
 
-                PdfWriter writer = new PdfWriter("C:\\Users\\sebas\\Documents\\HEL - Informatique\\Facturations\\Facture "+
+                PdfWriter writer = new PdfWriter(@"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Facturations\Facture " +
                                                  Liste_Num_Fac[i] + ".pdf");
                 PdfDocument pdf = new PdfDocument(writer);
                 Document document = new Document(pdf);

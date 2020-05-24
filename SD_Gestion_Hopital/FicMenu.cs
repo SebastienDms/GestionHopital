@@ -27,10 +27,10 @@ namespace SD_Gestion_Hopital
             //DateTime[] liste = new DateTime[];
             //foreach (DateTime dateTime in liste)
             //{
-                //int i = 0;
-                //liste[i].
+            //int i = 0;
+            //liste[i].
             //}
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             //monthCalendar1.BoldedDates = liste;
             //monthCalendar1.UpdateBoldedDates();
         }
@@ -231,8 +231,24 @@ namespace SD_Gestion_Hopital
         }
         #endregion
 
+        private void AjouterClient()
+        {
+            MessageBox.Show("Nombre de ligne est : " + dataGridView2.RowCount.ToString());
+        }
         private void AnnulerDate()
         {
+        }
+
+        private void btnAjouterPat_Click(object sender, EventArgs e)
+        {
+            AjouterClient();
+        }
+
+        private void dataGridView2_DoubleClick(object sender, EventArgs e)
+        {
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.ReadOnly = false;
+            //dataGridView2.Rows[dataGridView2.Rows.Count - 1].ReadOnly = false;
         }
     }
 }

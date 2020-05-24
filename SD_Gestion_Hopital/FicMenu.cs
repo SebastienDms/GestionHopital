@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace SD_Gestion_Hopital
 {
     public partial class FicMenu : Form
     {
+        Calendar calendrier = new GregorianCalendar();
         public FicMenu()
         {
             InitializeComponent();
@@ -22,7 +24,15 @@ namespace SD_Gestion_Hopital
 
         private void FicMenu_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //DateTime[] liste = new DateTime[];
+            //foreach (DateTime dateTime in liste)
+            //{
+                //int i = 0;
+                //liste[i].
+            //}
+            //this.WindowState = FormWindowState.Maximized;
+            //monthCalendar1.BoldedDates = liste;
+            //monthCalendar1.UpdateBoldedDates();
         }
         #region BarreMenu
         #region Affichage
@@ -221,5 +231,8 @@ namespace SD_Gestion_Hopital
         }
         #endregion
 
+        private void AnnulerDate()
+        {
+        }
     }
 }

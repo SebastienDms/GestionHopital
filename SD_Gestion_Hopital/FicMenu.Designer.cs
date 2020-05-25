@@ -527,11 +527,11 @@
             // btnAjouterPat
             // 
             this.btnAjouterPat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterPat.Location = new System.Drawing.Point(649, 505);
+            this.btnAjouterPat.Location = new System.Drawing.Point(612, 507);
             this.btnAjouterPat.Name = "btnAjouterPat";
-            this.btnAjouterPat.Size = new System.Drawing.Size(142, 39);
+            this.btnAjouterPat.Size = new System.Drawing.Size(293, 39);
             this.btnAjouterPat.TabIndex = 8;
-            this.btnAjouterPat.Text = "A J O U T E R";
+            this.btnAjouterPat.Text = "A J O U T E R     P A T I E N T";
             this.btnAjouterPat.UseVisualStyleBackColor = true;
             this.btnAjouterPat.Click += new System.EventHandler(this.btnAjouterPat_Click);
             // 

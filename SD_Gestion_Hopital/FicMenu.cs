@@ -231,24 +231,31 @@ namespace SD_Gestion_Hopital
         }
         #endregion
 
-        private void AjouterClient()
-        {
-            MessageBox.Show("Nombre de ligne est : " + dataGridView2.RowCount.ToString());
-        }
         private void AnnulerDate()
         {
         }
 
         private void btnAjouterPat_Click(object sender, EventArgs e)
         {
-            AjouterClient();
+            GestionAjoutDonnees.AjouterPat(dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Nom"].Value.ToString(),
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Prénom"].Value.ToString(),
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Adresse"].Value.ToString(),
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["GSM"].Value.ToString());
+            ViderDGV2();
+            dataGridView2.DataSource = GestionDGV.ReafficherPatients();
+            dataGridView2.AllowUserToAddRows = true;
         }
-
+        private void ViderDGV2()
+        {
+            //GestionDGV.t_patients = null;
+            GestionDGV.t_patients.Clear();
+            dataGridView2.DataSource = null;
+            dataGridView2.Invalidate();
+        }
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.ReadOnly = false;
-            //dataGridView2.Rows[dataGridView2.Rows.Count - 1].ReadOnly = false;
         }
     }
 }

@@ -69,5 +69,59 @@ namespace SD_Gestion_Hopital
             }
 
         }
+
+        public static void AjouterSoi(string IDPat, string nom_pat, string prenom_pat, string IDMed, string nom_med, string prenom_med, string DateOpe,string DateSortie, string PrixOpe)
+        {
+            if (IDPat == "" || IDMed == "" || DateOpe == "" || DateSortie == "" || PrixOpe == "")
+            {
+                MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("La personne " + nom_pat + " " + prenom_pat + " sera opérée par " +
+                                    nom_med + " " + nom_med + " en date du " + DateOpe + ".",
+                              "Info:", MessageBoxButtons.OKCancel,
+                                    MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    new G_t_soigner(TablesDeDonnees.SConnexion).Ajouter(int.Parse(IDMed), int.Parse(IDPat),
+                        DateTime.Parse(DateOpe), DateTime.Parse(DateSortie), int.Parse(PrixOpe));
+                    MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Vous avez annulez l'organisation de l'opération du patient " +
+                                    nom_pat + " " + prenom_pat + ".", "Attention", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        public static void AjouterOcc(string IDPat, string nom_pat, string prenom_pat, string IDCha, string numero_cha, string DateEntree, string DateSortie, string PrixJour)
+        {
+            if (IDPat == "" || IDCha == "" || DateEntree == "" || DateSortie == "" || PrixJour == "")
+            {
+                MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (MessageBox.Show("La chambre " + numero_cha + " a été réservée pour " + nom_pat + "" + prenom_pat + " en date du " + DateEntree + ".",
+                    "Info:", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    new G_t_occuper(TablesDeDonnees.SConnexion).Ajouter(int.Parse(IDPat), int.Parse(IDCha),
+                        DateTime.Parse(DateEntree), DateTime.Parse(DateSortie), int.Parse(PrixJour));
+                    MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Vous avez annulez la prise en charge du patient " + nom_pat + "" + prenom_pat + ".",
+                        "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+        }
     }
 }

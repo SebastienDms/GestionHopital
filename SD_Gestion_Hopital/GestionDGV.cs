@@ -14,7 +14,6 @@ namespace SD_Gestion_Hopital
     static class GestionDGV
     {
         public static DataTable t_patients;
-        //public static DataTable T_patients { get => t_patients; set => t_patients = value; }
         public static BindingSource AfficherMedecins()
         {
             DataTable t_medecins = TablesDeDonnees.t_medecins;
@@ -82,11 +81,6 @@ namespace SD_Gestion_Hopital
         public static BindingSource ReafficherPatients()
         {
             t_patients = TablesDeDonnees.t_patients;
-            //t_patients.Columns.Add(new DataColumn("ID", System.Type.GetType("System.Int32")));
-            //t_patients.Columns.Add(new DataColumn("Nom"));
-            //t_patients.Columns.Add(new DataColumn("Prénom"));
-            //t_patients.Columns.Add(new DataColumn("Adresse"));
-            //t_patients.Columns.Add(new DataColumn("GSM"));
             List<C_t_patients> lTmp_Pat = new G_t_patients(TablesDeDonnees.SConnexion).Lire("ID");
             foreach (C_t_patients pat in lTmp_Pat)
             {

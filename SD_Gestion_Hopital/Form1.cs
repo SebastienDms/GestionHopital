@@ -21,5 +21,10 @@ namespace SD_Gestion_Hopital
         {
             Close();
         }
+
+        private void EcranAccueil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,14 +67,38 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label4 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnAjouterPat = new System.Windows.Forms.Button();
+            this.dgvDispoChambre = new System.Windows.Forms.DataGridView();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.btnAjouterPat = new System.Windows.Forms.Button();
+            this.btnAjouterRDV = new System.Windows.Forms.Button();
+            this.btnAjouterOcc = new System.Windows.Forms.Button();
+            this.gbAj = new System.Windows.Forms.GroupBox();
+            this.btnAjouterID2 = new System.Windows.Forms.Button();
+            this.btnAjouterID1 = new System.Windows.Forms.Button();
+            this.btnAnnulerAj = new System.Windows.Forms.Button();
+            this.btnAjDateOut = new System.Windows.Forms.Button();
+            this.btnConfirmerAj = new System.Windows.Forms.Button();
+            this.btnAjDateIn = new System.Windows.Forms.Button();
+            this.tbAjDateOut = new System.Windows.Forms.TextBox();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.tbAjDateIn = new System.Windows.Forms.TextBox();
+            this.lblFicheAjID2 = new System.Windows.Forms.Label();
+            this.tbAjID2 = new System.Windows.Forms.TextBox();
+            this.lblFicheAjID1 = new System.Windows.Forms.Label();
+            this.tbAjID1 = new System.Windows.Forms.TextBox();
+            this.lblFicheAjPrix = new System.Windows.Forms.Label();
+            this.lblFicheAjDateOut = new System.Windows.Forms.Label();
+            this.lblFicheAjDateIn = new System.Windows.Forms.Label();
+            this.tbAjPrix = new System.Windows.Forms.TextBox();
+            this.btnSemaineSuivante = new System.Windows.Forms.Button();
+            this.btnSemainePrecedente = new System.Windows.Forms.Button();
             this.MSHopital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -88,6 +112,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDispoChambre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
@@ -96,6 +121,7 @@
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            this.gbAj.SuspendLayout();
             this.SuspendLayout();
             // 
             // MSHopital
@@ -391,6 +417,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(427, 398);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // dataGridView2
             // 
@@ -421,22 +448,47 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(414, 398);
             this.dataGridView3.TabIndex = 4;
+            this.dataGridView3.DoubleClick += new System.EventHandler(this.dataGridView3_DoubleClick);
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Location = new System.Drawing.Point(0, 83);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.monthCalendar1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1481, 398);
+            this.splitContainer1.Size = new System.Drawing.Size(1481, 631);
             this.splitContainer1.SplitterDistance = 427;
             this.splitContainer1.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 581);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(405, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Date(s) en gras le médecin est déjà en opération.";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.monthCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(93, 410);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.ShowTodayCircle = false;
+            this.monthCalendar1.TabIndex = 7;
             // 
             // splitContainer2
             // 
@@ -446,14 +498,42 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Panel1.Controls.Add(this.btnAjouterPat);
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.btnSemainePrecedente);
+            this.splitContainer2.Panel2.Controls.Add(this.btnSemaineSuivante);
+            this.splitContainer2.Panel2.Controls.Add(this.dgvDispoChambre);
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer2.Size = new System.Drawing.Size(1050, 398);
+            this.splitContainer2.Size = new System.Drawing.Size(1050, 631);
             this.splitContainer2.SplitterDistance = 632;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btnAjouterPat
+            // 
+            this.btnAjouterPat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterPat.Location = new System.Drawing.Point(163, 410);
+            this.btnAjouterPat.Name = "btnAjouterPat";
+            this.btnAjouterPat.Size = new System.Drawing.Size(293, 39);
+            this.btnAjouterPat.TabIndex = 8;
+            this.btnAjouterPat.Text = "A J O U T E R     P A T I E N T";
+            this.btnAjouterPat.UseVisualStyleBackColor = true;
+            this.btnAjouterPat.Click += new System.EventHandler(this.btnAjouterPat_Click);
+            // 
+            // dgvDispoChambre
+            // 
+            this.dgvDispoChambre.AllowUserToAddRows = false;
+            this.dgvDispoChambre.AllowUserToDeleteRows = false;
+            this.dgvDispoChambre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvDispoChambre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDispoChambre.Location = new System.Drawing.Point(3, 404);
+            this.dgvDispoChambre.Name = "dgvDispoChambre";
+            this.dgvDispoChambre.ReadOnly = true;
+            this.dgvDispoChambre.Size = new System.Drawing.Size(408, 116);
+            this.dgvDispoChambre.TabIndex = 11;
             // 
             // splitContainer3
             // 
@@ -518,30 +598,240 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Chambres :";
             // 
-            // monthCalendar1
+            // btnAjouterRDV
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(88, 493);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 7;
+            this.btnAjouterRDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterRDV.Location = new System.Drawing.Point(1498, 41);
+            this.btnAjouterRDV.Name = "btnAjouterRDV";
+            this.btnAjouterRDV.Size = new System.Drawing.Size(183, 36);
+            this.btnAjouterRDV.TabIndex = 9;
+            this.btnAjouterRDV.Text = "Ajouter rendez-vous";
+            this.btnAjouterRDV.UseVisualStyleBackColor = true;
+            this.btnAjouterRDV.Click += new System.EventHandler(this.btnAjouterRDV_Click);
             // 
-            // btnAjouterPat
+            // btnAjouterOcc
             // 
-            this.btnAjouterPat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouterPat.Location = new System.Drawing.Point(612, 507);
-            this.btnAjouterPat.Name = "btnAjouterPat";
-            this.btnAjouterPat.Size = new System.Drawing.Size(293, 39);
-            this.btnAjouterPat.TabIndex = 8;
-            this.btnAjouterPat.Text = "A J O U T E R     P A T I E N T";
-            this.btnAjouterPat.UseVisualStyleBackColor = true;
-            this.btnAjouterPat.Click += new System.EventHandler(this.btnAjouterPat_Click);
+            this.btnAjouterOcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjouterOcc.Location = new System.Drawing.Point(1703, 41);
+            this.btnAjouterOcc.Name = "btnAjouterOcc";
+            this.btnAjouterOcc.Size = new System.Drawing.Size(209, 36);
+            this.btnAjouterOcc.TabIndex = 10;
+            this.btnAjouterOcc.Text = "Ajouter prise en charge";
+            this.btnAjouterOcc.UseVisualStyleBackColor = true;
+            this.btnAjouterOcc.Click += new System.EventHandler(this.btnAjouterOcc_Click);
+            // 
+            // gbAj
+            // 
+            this.gbAj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbAj.Controls.Add(this.btnAjouterID2);
+            this.gbAj.Controls.Add(this.btnAjouterID1);
+            this.gbAj.Controls.Add(this.btnAnnulerAj);
+            this.gbAj.Controls.Add(this.btnAjDateOut);
+            this.gbAj.Controls.Add(this.btnConfirmerAj);
+            this.gbAj.Controls.Add(this.btnAjDateIn);
+            this.gbAj.Controls.Add(this.tbAjDateOut);
+            this.gbAj.Controls.Add(this.monthCalendar2);
+            this.gbAj.Controls.Add(this.tbAjDateIn);
+            this.gbAj.Controls.Add(this.lblFicheAjID2);
+            this.gbAj.Controls.Add(this.tbAjID2);
+            this.gbAj.Controls.Add(this.lblFicheAjID1);
+            this.gbAj.Controls.Add(this.tbAjID1);
+            this.gbAj.Controls.Add(this.lblFicheAjPrix);
+            this.gbAj.Controls.Add(this.lblFicheAjDateOut);
+            this.gbAj.Controls.Add(this.lblFicheAjDateIn);
+            this.gbAj.Controls.Add(this.tbAjPrix);
+            this.gbAj.Location = new System.Drawing.Point(1521, 83);
+            this.gbAj.Name = "gbAj";
+            this.gbAj.Size = new System.Drawing.Size(377, 631);
+            this.gbAj.TabIndex = 14;
+            this.gbAj.TabStop = false;
+            this.gbAj.Text = "Fiche d\'opération :";
+            // 
+            // btnAjouterID2
+            // 
+            this.btnAjouterID2.Location = new System.Drawing.Point(19, 105);
+            this.btnAjouterID2.Name = "btnAjouterID2";
+            this.btnAjouterID2.Size = new System.Drawing.Size(158, 29);
+            this.btnAjouterID2.TabIndex = 22;
+            this.btnAjouterID2.Text = "A J O U T E R   ---->";
+            this.btnAjouterID2.UseVisualStyleBackColor = true;
+            this.btnAjouterID2.Click += new System.EventHandler(this.btnAjouterID2_Click);
+            // 
+            // btnAjouterID1
+            // 
+            this.btnAjouterID1.Location = new System.Drawing.Point(19, 51);
+            this.btnAjouterID1.Name = "btnAjouterID1";
+            this.btnAjouterID1.Size = new System.Drawing.Size(158, 29);
+            this.btnAjouterID1.TabIndex = 21;
+            this.btnAjouterID1.Text = "A J O U T E R   ---->";
+            this.btnAjouterID1.UseVisualStyleBackColor = true;
+            this.btnAjouterID1.Click += new System.EventHandler(this.btnAjouterID1_Click);
+            // 
+            // btnAnnulerAj
+            // 
+            this.btnAnnulerAj.Location = new System.Drawing.Point(213, 559);
+            this.btnAnnulerAj.Name = "btnAnnulerAj";
+            this.btnAnnulerAj.Size = new System.Drawing.Size(158, 42);
+            this.btnAnnulerAj.TabIndex = 16;
+            this.btnAnnulerAj.Text = "A N N U L E R";
+            this.btnAnnulerAj.UseVisualStyleBackColor = true;
+            this.btnAnnulerAj.Click += new System.EventHandler(this.btnAnnulerAj_Click);
+            // 
+            // btnAjDateOut
+            // 
+            this.btnAjDateOut.Location = new System.Drawing.Point(184, 428);
+            this.btnAjDateOut.Name = "btnAjDateOut";
+            this.btnAjDateOut.Size = new System.Drawing.Size(114, 34);
+            this.btnAjDateOut.TabIndex = 20;
+            this.btnAjDateOut.Text = "Ajouter authorisation de sortie";
+            this.btnAjDateOut.UseVisualStyleBackColor = true;
+            this.btnAjDateOut.Click += new System.EventHandler(this.btnAjDateOut_Click);
+            // 
+            // btnConfirmerAj
+            // 
+            this.btnConfirmerAj.Location = new System.Drawing.Point(6, 559);
+            this.btnConfirmerAj.Name = "btnConfirmerAj";
+            this.btnConfirmerAj.Size = new System.Drawing.Size(158, 42);
+            this.btnConfirmerAj.TabIndex = 15;
+            this.btnConfirmerAj.Text = "C O N F I R M E R";
+            this.btnConfirmerAj.UseVisualStyleBackColor = true;
+            this.btnConfirmerAj.Click += new System.EventHandler(this.btnConfirmerAj_Click);
+            // 
+            // btnAjDateIn
+            // 
+            this.btnAjDateIn.Location = new System.Drawing.Point(49, 428);
+            this.btnAjDateIn.Name = "btnAjDateIn";
+            this.btnAjDateIn.Size = new System.Drawing.Size(113, 34);
+            this.btnAjDateIn.TabIndex = 19;
+            this.btnAjDateIn.Text = "Ajouter date opération";
+            this.btnAjDateIn.UseVisualStyleBackColor = true;
+            this.btnAjDateIn.Click += new System.EventHandler(this.btnAjDateIn_Click);
+            // 
+            // tbAjDateOut
+            // 
+            this.tbAjDateOut.Location = new System.Drawing.Point(198, 218);
+            this.tbAjDateOut.Name = "tbAjDateOut";
+            this.tbAjDateOut.ReadOnly = true;
+            this.tbAjDateOut.Size = new System.Drawing.Size(100, 20);
+            this.tbAjDateOut.TabIndex = 18;
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar2.Location = new System.Drawing.Point(49, 254);
+            this.monthCalendar2.MaxSelectionCount = 1;
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.ShowWeekNumbers = true;
+            this.monthCalendar2.TabIndex = 17;
+            // 
+            // tbAjDateIn
+            // 
+            this.tbAjDateIn.Location = new System.Drawing.Point(198, 165);
+            this.tbAjDateIn.Name = "tbAjDateIn";
+            this.tbAjDateIn.ReadOnly = true;
+            this.tbAjDateIn.Size = new System.Drawing.Size(100, 20);
+            this.tbAjDateIn.TabIndex = 16;
+            // 
+            // lblFicheAjID2
+            // 
+            this.lblFicheAjID2.AutoSize = true;
+            this.lblFicheAjID2.Location = new System.Drawing.Point(195, 94);
+            this.lblFicheAjID2.Name = "lblFicheAjID2";
+            this.lblFicheAjID2.Size = new System.Drawing.Size(54, 13);
+            this.lblFicheAjID2.TabIndex = 12;
+            this.lblFicheAjID2.Text = "Médecin :";
+            // 
+            // tbAjID2
+            // 
+            this.tbAjID2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbAjID2.Location = new System.Drawing.Point(198, 110);
+            this.tbAjID2.Name = "tbAjID2";
+            this.tbAjID2.ReadOnly = true;
+            this.tbAjID2.Size = new System.Drawing.Size(100, 20);
+            this.tbAjID2.TabIndex = 11;
+            // 
+            // lblFicheAjID1
+            // 
+            this.lblFicheAjID1.AutoSize = true;
+            this.lblFicheAjID1.Location = new System.Drawing.Point(195, 40);
+            this.lblFicheAjID1.Name = "lblFicheAjID1";
+            this.lblFicheAjID1.Size = new System.Drawing.Size(46, 13);
+            this.lblFicheAjID1.TabIndex = 10;
+            this.lblFicheAjID1.Text = "Patient :";
+            // 
+            // tbAjID1
+            // 
+            this.tbAjID1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbAjID1.Location = new System.Drawing.Point(198, 56);
+            this.tbAjID1.Name = "tbAjID1";
+            this.tbAjID1.ReadOnly = true;
+            this.tbAjID1.Size = new System.Drawing.Size(100, 20);
+            this.tbAjID1.TabIndex = 9;
+            // 
+            // lblFicheAjPrix
+            // 
+            this.lblFicheAjPrix.AutoSize = true;
+            this.lblFicheAjPrix.Location = new System.Drawing.Point(48, 484);
+            this.lblFicheAjPrix.Name = "lblFicheAjPrix";
+            this.lblFicheAjPrix.Size = new System.Drawing.Size(96, 13);
+            this.lblFicheAjPrix.TabIndex = 8;
+            this.lblFicheAjPrix.Text = "Prix de l\'opération :";
+            // 
+            // lblFicheAjDateOut
+            // 
+            this.lblFicheAjDateOut.AutoSize = true;
+            this.lblFicheAjDateOut.Location = new System.Drawing.Point(197, 202);
+            this.lblFicheAjDateOut.Name = "lblFicheAjDateOut";
+            this.lblFicheAjDateOut.Size = new System.Drawing.Size(117, 13);
+            this.lblFicheAjDateOut.TabIndex = 7;
+            this.lblFicheAjDateOut.Text = "Authorisation de sortie :";
+            // 
+            // lblFicheAjDateIn
+            // 
+            this.lblFicheAjDateIn.AutoSize = true;
+            this.lblFicheAjDateIn.Location = new System.Drawing.Point(197, 149);
+            this.lblFicheAjDateIn.Name = "lblFicheAjDateIn";
+            this.lblFicheAjDateIn.Size = new System.Drawing.Size(91, 13);
+            this.lblFicheAjDateIn.TabIndex = 6;
+            this.lblFicheAjDateIn.Text = "Date d\'opération :";
+            // 
+            // tbAjPrix
+            // 
+            this.tbAjPrix.Location = new System.Drawing.Point(49, 500);
+            this.tbAjPrix.Name = "tbAjPrix";
+            this.tbAjPrix.Size = new System.Drawing.Size(100, 20);
+            this.tbAjPrix.TabIndex = 3;
+            // 
+            // btnSemaineSuivante
+            // 
+            this.btnSemaineSuivante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSemaineSuivante.Location = new System.Drawing.Point(223, 538);
+            this.btnSemaineSuivante.Name = "btnSemaineSuivante";
+            this.btnSemaineSuivante.Size = new System.Drawing.Size(188, 34);
+            this.btnSemaineSuivante.TabIndex = 15;
+            this.btnSemaineSuivante.Text = "Semaine suivante  -->";
+            this.btnSemaineSuivante.UseVisualStyleBackColor = true;
+            this.btnSemaineSuivante.Click += new System.EventHandler(this.btnSemaineSuivante_Click);
+            // 
+            // btnSemainePrecedente
+            // 
+            this.btnSemainePrecedente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSemainePrecedente.Location = new System.Drawing.Point(3, 538);
+            this.btnSemainePrecedente.Name = "btnSemainePrecedente";
+            this.btnSemainePrecedente.Size = new System.Drawing.Size(189, 34);
+            this.btnSemainePrecedente.TabIndex = 16;
+            this.btnSemainePrecedente.Text = "<--  Semaine précédente";
+            this.btnSemainePrecedente.UseVisualStyleBackColor = true;
+            this.btnSemainePrecedente.Click += new System.EventHandler(this.btnSemainePrecedente_Click);
             // 
             // FicMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 854);
-            this.Controls.Add(this.btnAjouterPat);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.gbAj);
+            this.Controls.Add(this.btnAjouterOcc);
+            this.Controls.Add(this.btnAjouterRDV);
             this.Controls.Add(this.splitContainer3);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pictureBox1);
@@ -549,7 +839,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MSHopital;
             this.Name = "FicMenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tableua de bord";
             this.Load += new System.EventHandler(this.FicMenu_Load);
             this.MSHopital.ResumeLayout(false);
@@ -559,6 +849,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -566,6 +857,7 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDispoChambre)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
@@ -577,6 +869,8 @@
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
+            this.gbAj.ResumeLayout(false);
+            this.gbAj.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,5 +924,29 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btnAjouterPat;
+        private System.Windows.Forms.Button btnAjouterRDV;
+        private System.Windows.Forms.Button btnAjouterOcc;
+        private System.Windows.Forms.DataGridView dgvDispoChambre;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox gbAj;
+        private System.Windows.Forms.Button btnAjDateOut;
+        private System.Windows.Forms.Button btnAjDateIn;
+        private System.Windows.Forms.TextBox tbAjDateOut;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.TextBox tbAjDateIn;
+        private System.Windows.Forms.Label lblFicheAjID2;
+        private System.Windows.Forms.TextBox tbAjID2;
+        private System.Windows.Forms.Label lblFicheAjID1;
+        private System.Windows.Forms.TextBox tbAjID1;
+        private System.Windows.Forms.Label lblFicheAjPrix;
+        private System.Windows.Forms.Label lblFicheAjDateOut;
+        private System.Windows.Forms.Label lblFicheAjDateIn;
+        private System.Windows.Forms.TextBox tbAjPrix;
+        private System.Windows.Forms.Button btnAnnulerAj;
+        private System.Windows.Forms.Button btnConfirmerAj;
+        private System.Windows.Forms.Button btnAjouterID2;
+        private System.Windows.Forms.Button btnAjouterID1;
+        private System.Windows.Forms.Button btnSemainePrecedente;
+        private System.Windows.Forms.Button btnSemaineSuivante;
     }
 }

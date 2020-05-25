@@ -106,7 +106,7 @@ namespace SD_Gestion_Hopital
             else
             {
                 if (MessageBox.Show("La personne " +
-                                    dgvPatientsSoi.SelectedRows[0].Cells["Nom"].Value.ToString() +
+                                    dgvPatientsSoi.SelectedRows[0].Cells["Nom"].Value.ToString() + " " +
                                     dgvPatientsSoi.SelectedRows[0].Cells["Prénom"].Value.ToString() +
                                     " sera opérée par " +
                                     dgvMedecinsSoi.SelectedRows[0].Cells["Non prénom"].Value.ToString() +

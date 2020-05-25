@@ -70,6 +70,7 @@ namespace SD_Gestion_Hopital
             this.Name = "EcranAccueil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
+            this.Load += new System.EventHandler(this.EcranAccueil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

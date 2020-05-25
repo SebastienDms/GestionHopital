@@ -13,26 +13,31 @@ namespace SD_Gestion_Hopital
 {
     public partial class FicMenu : Form
     {
-        Calendar calendrier = new GregorianCalendar();
+        private int i = 0;
+        public int I
+        {
+            get => i;
+            set
+            {
+                i = value;
+                if (i < 0)
+                {
+                    i = 0;
+                }
+            }
+        }
         public FicMenu()
         {
             InitializeComponent();
             dataGridView1.DataSource = GestionDGV.AfficherMedecins();
             dataGridView2.DataSource = GestionDGV.AfficherPatients();
             dataGridView3.DataSource = GestionDGV.AfficherChambres();
+            gbAj.Visible = false;
         }
-
         private void FicMenu_Load(object sender, EventArgs e)
         {
-            //DateTime[] liste = new DateTime[];
-            //foreach (DateTime dateTime in liste)
-            //{
-            //int i = 0;
-            //liste[i].
-            //}
             this.WindowState = FormWindowState.Maximized;
-            //monthCalendar1.BoldedDates = liste;
-            //monthCalendar1.UpdateBoldedDates();
+            monthCalendar2.MinDate = DateTime.Today;
         }
         #region BarreMenu
         #region Affichage
@@ -229,11 +234,6 @@ namespace SD_Gestion_Hopital
         {
             dataGridView3.DataSource = GestionDGV.AfficherChambres();
         }
-        #endregion
-
-        private void AnnulerDate()
-        {
-        }
 
         private void btnAjouterPat_Click(object sender, EventArgs e)
         {
@@ -247,7 +247,6 @@ namespace SD_Gestion_Hopital
         }
         private void ViderDGV2()
         {
-            //GestionDGV.t_patients = null;
             GestionDGV.t_patients.Clear();
             dataGridView2.DataSource = null;
             dataGridView2.Invalidate();
@@ -257,5 +256,156 @@ namespace SD_Gestion_Hopital
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.ReadOnly = false;
         }
+
+        private void dataGridView3_DoubleClick(object sender, EventArgs e)
+        {
+            I = 0;
+            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+        }
+        private void btnSemaineSuivante_Click(object sender, EventArgs e)
+        {
+            I++;
+            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+        }
+
+        private void btnSemainePrecedente_Click(object sender, EventArgs e)
+        {
+            I--;
+            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            monthCalendar1.BoldedDates = GestionDisponibilite.DispoMed(dataGridView1.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                dataGridView1.SelectedRows[0].Cells["Prénom"].Value.ToString()).ToArray();
+            monthCalendar1.UpdateBoldedDates();
+        }
+
+        private void btnAjouterRDV_Click(object sender, EventArgs e)
+        {
+            gbAj.Text = "Fiche d'opération :";
+            lblFicheAjID1.Text = "Patient :";
+            lblFicheAjID2.Text = "Médecin :";
+            lblFicheAjDateIn.Text = "Date d'opération :";
+            lblFicheAjDateOut.Text = "Sortie prévue le :";
+            btnAjDateIn.Text = "Ajouter date d'opération";
+            btnAjDateOut.Text = "Ajouter date de sortie prévue";
+            lblFicheAjPrix.Text = "Prix de l'opération :";
+            gbAj.Visible = true;
+        }
+
+        private void btnAjouterOcc_Click(object sender, EventArgs e)
+        {
+            gbAj.Text = "Fiche de prise en charge :";
+            lblFicheAjID1.Text = "Patient :";
+            lblFicheAjID2.Text = "Chambre :";
+            lblFicheAjDateIn.Text = "Date d'entrée :";
+            lblFicheAjDateOut.Text = "Date de sortie :";
+            btnAjDateIn.Text = "Ajouter date d'entrée";
+            btnAjDateOut.Text = "Ajouter date de sortie";
+            lblFicheAjPrix.Text = "Prix journalier :";
+            gbAj.Visible = true;
+        }
+
+        private void btnAjouterID1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nom_pat = dataGridView2.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                    prenom_pat = dataGridView2.SelectedRows[0].Cells["Prénom"].Value.ToString();
+                tbAjID1.Text = GestionRechercheID.IDPat(nom_pat, prenom_pat).ToString();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Veuillez sélectionner le patient!", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void btnAjouterID2_Click(object sender, EventArgs e)
+        {
+            if (lblFicheAjID2.Text == "Médecin :")
+            {
+                try
+                {
+                    string nom_med = dataGridView1.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                        prenom_med = dataGridView1.SelectedRows[0].Cells["Prénom"].Value.ToString();
+                    tbAjID2.Text = GestionRechercheID.IDMed(nom_med, prenom_med).ToString();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Veuillez sélectionner le médecin!", "Attention", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
+
+            if (lblFicheAjID2.Text == "Chambre :")
+            {
+                try
+                {
+                    string numero = dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString();
+                    tbAjID2.Text = GestionRechercheID.IDCha(numero).ToString();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Veuillez sélectionner la chambre!", "Attention", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void btnAjDateIn_Click(object sender, EventArgs e)
+        {
+            tbAjDateIn.Text = monthCalendar2.SelectionStart.ToShortDateString().ToString();
+        }
+
+        private void btnAjDateOut_Click(object sender, EventArgs e)
+        {
+            tbAjDateOut.Text = monthCalendar2.SelectionStart.ToShortDateString().ToString();
+        }
+
+        private void btnConfirmerAj_Click(object sender, EventArgs e)
+        {
+            if (gbAj.Text == "Fiche d'opération :")
+            {
+                string nom_pat = dataGridView2.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                    prenom_pat = dataGridView2.SelectedRows[0].Cells["Prénom"].Value.ToString(),
+                    nom_med = dataGridView1.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                    prenom_med = dataGridView1.SelectedRows[0].Cells["Prénom"].Value.ToString();
+
+                GestionAjoutDonnees.AjouterSoi(GestionRechercheID.IDPat(nom_pat, prenom_pat).ToString(), nom_pat, prenom_pat,
+                    GestionRechercheID.IDMed(nom_med, prenom_med).ToString(), nom_med, prenom_med, tbAjDateIn.Text,
+                    tbAjDateOut.Text, tbAjPrix.Text);
+            }
+
+            if (gbAj.Text == "Fiche de prise en charge :")
+            {
+                string nom_pat = dataGridView2.SelectedRows[0].Cells["Nom"].Value.ToString(),
+                    prenom_pat = dataGridView2.SelectedRows[0].Cells["Prénom"].Value.ToString(),
+                    numero = dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString();
+
+                GestionAjoutDonnees.AjouterOcc(GestionRechercheID.IDPat(nom_pat,prenom_pat).ToString(), nom_pat, prenom_pat,GestionRechercheID.IDCha(numero).ToString(),
+                    numero, tbAjDateIn.Text, tbAjDateOut.Text, tbAjPrix.Text);
+            }
+        }
+
+        private void btnAnnulerAj_Click(object sender, EventArgs e)
+        {
+            if (gbAj.Text == "Fiche d'opération :")
+            {
+                MessageBox.Show("La coordination de l'opération a été annulée.", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
+            if (gbAj.Text == "Fiche de prise en charge :")
+            {
+                MessageBox.Show("La réservation ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+        #endregion
+
     }
 }

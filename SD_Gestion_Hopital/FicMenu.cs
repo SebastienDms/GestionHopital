@@ -13,7 +13,11 @@ namespace SD_Gestion_Hopital
 {
     public partial class FicMenu : Form
     {
+        #region Donnees
         private int i = 0;
+        #endregion
+
+        #region Accesseurs
         public int I
         {
             get => i;
@@ -26,6 +30,7 @@ namespace SD_Gestion_Hopital
                 }
             }
         }
+        #endregion
         public FicMenu()
         {
             InitializeComponent();
@@ -220,6 +225,11 @@ namespace SD_Gestion_Hopital
         #endregion
 
         #region TableauDeBord
+
+        private void ViderTB()
+        {
+            tbAjID1.Text = tbAjID2.Text = tbAjDateIn.Text = tbAjDateOut.Text = tbAjPrix.Text = "";
+        }
         private void AfficherMed()
         {
             dataGridView1.DataSource = GestionDGV.AfficherMedecins();
@@ -237,13 +247,21 @@ namespace SD_Gestion_Hopital
 
         private void btnAjouterPat_Click(object sender, EventArgs e)
         {
-            GestionAjoutDonnees.AjouterPat(dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Nom"].Value.ToString(),
-                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Prénom"].Value.ToString(),
-                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Adresse"].Value.ToString(),
-                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["GSM"].Value.ToString());
-            ViderDGV2();
-            dataGridView2.DataSource = GestionDGV.ReafficherPatients();
-            dataGridView2.AllowUserToAddRows = true;
+            try
+            {
+                GestionAjoutDonnees.AjouterPat(dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Nom"].Value.ToString(),
+                    dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Prénom"].Value.ToString(),
+                    dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Adresse"].Value.ToString(),
+                    dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["GSM"].Value.ToString());
+                ViderDGV2();
+                dataGridView2.DataSource = GestionDGV.ReafficherPatients();
+                dataGridView2.AllowUserToAddRows = true;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Veuillez remplir la dernière ligne de la grille!", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
         private void ViderDGV2()
         {
@@ -259,19 +277,43 @@ namespace SD_Gestion_Hopital
 
         private void dataGridView3_DoubleClick(object sender, EventArgs e)
         {
-            I = 0;
-            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            try
+            {
+                I = 0;
+                GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Veuillez choisir la chambre!", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
         private void btnSemaineSuivante_Click(object sender, EventArgs e)
         {
-            I++;
-            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            try
+            {
+                I++;
+                GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Veuillez choisir la chambre!", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSemainePrecedente_Click(object sender, EventArgs e)
         {
-            I--;
-            GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            try
+            {
+                I--;
+                GestionDisponibilite.AfficherDispoCha(dataGridView3.SelectedRows[0].Cells["Numéro"].Value.ToString(), dgvDispoChambre, I);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Veuillez choisir la chambre!", "Attention", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
@@ -283,6 +325,7 @@ namespace SD_Gestion_Hopital
 
         private void btnAjouterRDV_Click(object sender, EventArgs e)
         {
+            ViderTB();
             gbAj.Text = "Fiche d'opération :";
             lblFicheAjID1.Text = "Patient :";
             lblFicheAjID2.Text = "Médecin :";
@@ -296,6 +339,7 @@ namespace SD_Gestion_Hopital
 
         private void btnAjouterOcc_Click(object sender, EventArgs e)
         {
+            ViderTB();
             gbAj.Text = "Fiche de prise en charge :";
             lblFicheAjID1.Text = "Patient :";
             lblFicheAjID2.Text = "Chambre :";

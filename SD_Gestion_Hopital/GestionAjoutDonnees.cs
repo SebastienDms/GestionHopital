@@ -80,7 +80,7 @@ namespace SD_Gestion_Hopital
             else
             {
                 if (MessageBox.Show("La personne " + nom_pat + " " + prenom_pat + " sera opérée par " +
-                                    nom_med + " " + nom_med + " en date du " + DateOpe + ".",
+                                    nom_med + " " + prenom_med + " en date du " + DateOpe + ".",
                               "Info:", MessageBoxButtons.OKCancel,
                                     MessageBoxIcon.Warning) == DialogResult.OK)
                 {

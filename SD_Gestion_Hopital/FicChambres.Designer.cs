@@ -35,9 +35,12 @@
             // 
             // dgvChambres
             // 
+            this.dgvChambres.AllowUserToAddRows = false;
+            this.dgvChambres.AllowUserToDeleteRows = false;
             this.dgvChambres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChambres.Location = new System.Drawing.Point(12, 12);
             this.dgvChambres.Name = "dgvChambres";
+            this.dgvChambres.ReadOnly = true;
             this.dgvChambres.Size = new System.Drawing.Size(776, 341);
             this.dgvChambres.TabIndex = 0;
             // 

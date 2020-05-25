@@ -79,9 +79,12 @@
             // 
             // dgvModifAfficheMed
             // 
+            this.dgvModifAfficheMed.AllowUserToAddRows = false;
+            this.dgvModifAfficheMed.AllowUserToDeleteRows = false;
             this.dgvModifAfficheMed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModifAfficheMed.Location = new System.Drawing.Point(6, 19);
             this.dgvModifAfficheMed.Name = "dgvModifAfficheMed";
+            this.dgvModifAfficheMed.ReadOnly = true;
             this.dgvModifAfficheMed.Size = new System.Drawing.Size(461, 305);
             this.dgvModifAfficheMed.TabIndex = 0;
             // 
@@ -233,9 +236,12 @@
             // 
             // dgvModifMedAfficheSpe
             // 
+            this.dgvModifMedAfficheSpe.AllowUserToAddRows = false;
+            this.dgvModifMedAfficheSpe.AllowUserToDeleteRows = false;
             this.dgvModifMedAfficheSpe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModifMedAfficheSpe.Location = new System.Drawing.Point(6, 19);
             this.dgvModifMedAfficheSpe.Name = "dgvModifMedAfficheSpe";
+            this.dgvModifMedAfficheSpe.ReadOnly = true;
             this.dgvModifMedAfficheSpe.Size = new System.Drawing.Size(301, 305);
             this.dgvModifMedAfficheSpe.TabIndex = 0;
             // 

@@ -102,6 +102,7 @@
             // dgvPatSup
             // 
             this.dgvPatSup.AllowUserToAddRows = false;
+            this.dgvPatSup.AllowUserToDeleteRows = false;
             this.dgvPatSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatSup.Location = new System.Drawing.Point(95, 45);
             this.dgvPatSup.Name = "dgvPatSup";

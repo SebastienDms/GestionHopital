@@ -35,9 +35,12 @@
             // 
             // dgvMedecins
             // 
+            this.dgvMedecins.AllowUserToAddRows = false;
+            this.dgvMedecins.AllowUserToDeleteRows = false;
             this.dgvMedecins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedecins.Location = new System.Drawing.Point(12, 12);
             this.dgvMedecins.Name = "dgvMedecins";
+            this.dgvMedecins.ReadOnly = true;
             this.dgvMedecins.RowHeadersVisible = false;
             this.dgvMedecins.Size = new System.Drawing.Size(776, 362);
             this.dgvMedecins.TabIndex = 0;

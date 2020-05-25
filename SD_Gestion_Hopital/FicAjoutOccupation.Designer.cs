@@ -33,6 +33,8 @@
             this.btnAjouterPatOcc = new System.Windows.Forms.Button();
             this.dgvPatients = new System.Windows.Forms.DataGridView();
             this.gbAjOcc = new System.Windows.Forms.GroupBox();
+            this.btnAjDateSortieOcc = new System.Windows.Forms.Button();
+            this.btnAjDateEntreeOcc = new System.Windows.Forms.Button();
             this.tbAjOccDateSortie = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tbAjOccDateEntree = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.gbAjChaOcc = new System.Windows.Forms.GroupBox();
             this.btnAjouterChaOcc = new System.Windows.Forms.Button();
             this.dgvChambres = new System.Windows.Forms.DataGridView();
-            this.btnAjDateEntreeOcc = new System.Windows.Forms.Button();
-            this.btnAjDateSortieOcc = new System.Windows.Forms.Button();
             this.gbAjPatOcc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
             this.gbAjOcc.SuspendLayout();
@@ -84,9 +84,12 @@
             // 
             // dgvPatients
             // 
+            this.dgvPatients.AllowUserToAddRows = false;
+            this.dgvPatients.AllowUserToDeleteRows = false;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatients.Location = new System.Drawing.Point(6, 19);
             this.dgvPatients.Name = "dgvPatients";
+            this.dgvPatients.ReadOnly = true;
             this.dgvPatients.Size = new System.Drawing.Size(381, 305);
             this.dgvPatients.TabIndex = 0;
             // 
@@ -114,6 +117,26 @@
             this.gbAjOcc.TabIndex = 8;
             this.gbAjOcc.TabStop = false;
             this.gbAjOcc.Text = "Fiche de prise en charge :";
+            // 
+            // btnAjDateSortieOcc
+            // 
+            this.btnAjDateSortieOcc.Location = new System.Drawing.Point(194, 481);
+            this.btnAjDateSortieOcc.Name = "btnAjDateSortieOcc";
+            this.btnAjDateSortieOcc.Size = new System.Drawing.Size(100, 23);
+            this.btnAjDateSortieOcc.TabIndex = 20;
+            this.btnAjDateSortieOcc.Text = "Ajouter Sortie";
+            this.btnAjDateSortieOcc.UseVisualStyleBackColor = true;
+            this.btnAjDateSortieOcc.Click += new System.EventHandler(this.btnAjDateSortieOcc_Click);
+            // 
+            // btnAjDateEntreeOcc
+            // 
+            this.btnAjDateEntreeOcc.Location = new System.Drawing.Point(45, 481);
+            this.btnAjDateEntreeOcc.Name = "btnAjDateEntreeOcc";
+            this.btnAjDateEntreeOcc.Size = new System.Drawing.Size(100, 23);
+            this.btnAjDateEntreeOcc.TabIndex = 19;
+            this.btnAjDateEntreeOcc.Text = "Ajouter entrée";
+            this.btnAjDateEntreeOcc.UseVisualStyleBackColor = true;
+            this.btnAjDateEntreeOcc.Click += new System.EventHandler(this.btnAjDateEntreeOcc_Click);
             // 
             // tbAjOccDateSortie
             // 
@@ -269,31 +292,14 @@
             // 
             // dgvChambres
             // 
+            this.dgvChambres.AllowUserToAddRows = false;
+            this.dgvChambres.AllowUserToDeleteRows = false;
             this.dgvChambres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChambres.Location = new System.Drawing.Point(6, 17);
             this.dgvChambres.Name = "dgvChambres";
+            this.dgvChambres.ReadOnly = true;
             this.dgvChambres.Size = new System.Drawing.Size(381, 305);
             this.dgvChambres.TabIndex = 0;
-            // 
-            // btnAjDateEntreeOcc
-            // 
-            this.btnAjDateEntreeOcc.Location = new System.Drawing.Point(45, 481);
-            this.btnAjDateEntreeOcc.Name = "btnAjDateEntreeOcc";
-            this.btnAjDateEntreeOcc.Size = new System.Drawing.Size(100, 23);
-            this.btnAjDateEntreeOcc.TabIndex = 19;
-            this.btnAjDateEntreeOcc.Text = "Ajouter entrée";
-            this.btnAjDateEntreeOcc.UseVisualStyleBackColor = true;
-            this.btnAjDateEntreeOcc.Click += new System.EventHandler(this.btnAjDateEntreeOcc_Click);
-            // 
-            // btnAjDateSortieOcc
-            // 
-            this.btnAjDateSortieOcc.Location = new System.Drawing.Point(194, 481);
-            this.btnAjDateSortieOcc.Name = "btnAjDateSortieOcc";
-            this.btnAjDateSortieOcc.Size = new System.Drawing.Size(100, 23);
-            this.btnAjDateSortieOcc.TabIndex = 20;
-            this.btnAjDateSortieOcc.Text = "Ajouter Sortie";
-            this.btnAjDateSortieOcc.UseVisualStyleBackColor = true;
-            this.btnAjDateSortieOcc.Click += new System.EventHandler(this.btnAjDateSortieOcc_Click);
             // 
             // EcranAjoutOccupation
             // 

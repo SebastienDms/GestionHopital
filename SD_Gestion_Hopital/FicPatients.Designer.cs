@@ -35,9 +35,12 @@
             // 
             // dgvPatients
             // 
+            this.dgvPatients.AllowUserToAddRows = false;
+            this.dgvPatients.AllowUserToDeleteRows = false;
             this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatients.Location = new System.Drawing.Point(12, 12);
             this.dgvPatients.Name = "dgvPatients";
+            this.dgvPatients.ReadOnly = true;
             this.dgvPatients.Size = new System.Drawing.Size(776, 302);
             this.dgvPatients.TabIndex = 0;
             // 

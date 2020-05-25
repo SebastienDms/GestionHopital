@@ -68,9 +68,12 @@
             // 
             // dgvModifSpecialites
             // 
+            this.dgvModifSpecialites.AllowUserToAddRows = false;
+            this.dgvModifSpecialites.AllowUserToDeleteRows = false;
             this.dgvModifSpecialites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModifSpecialites.Location = new System.Drawing.Point(6, 19);
             this.dgvModifSpecialites.Name = "dgvModifSpecialites";
+            this.dgvModifSpecialites.ReadOnly = true;
             this.dgvModifSpecialites.Size = new System.Drawing.Size(381, 305);
             this.dgvModifSpecialites.TabIndex = 0;
             // 

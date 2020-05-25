@@ -84,9 +84,12 @@
             // 
             // dgvMedecinsSoi
             // 
+            this.dgvMedecinsSoi.AllowUserToAddRows = false;
+            this.dgvMedecinsSoi.AllowUserToDeleteRows = false;
             this.dgvMedecinsSoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedecinsSoi.Location = new System.Drawing.Point(6, 17);
             this.dgvMedecinsSoi.Name = "dgvMedecinsSoi";
+            this.dgvMedecinsSoi.ReadOnly = true;
             this.dgvMedecinsSoi.Size = new System.Drawing.Size(381, 305);
             this.dgvMedecinsSoi.TabIndex = 0;
             // 
@@ -114,9 +117,12 @@
             // 
             // dgvPatientsSoi
             // 
+            this.dgvPatientsSoi.AllowUserToAddRows = false;
+            this.dgvPatientsSoi.AllowUserToDeleteRows = false;
             this.dgvPatientsSoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientsSoi.Location = new System.Drawing.Point(6, 19);
             this.dgvPatientsSoi.Name = "dgvPatientsSoi";
+            this.dgvPatientsSoi.ReadOnly = true;
             this.dgvPatientsSoi.Size = new System.Drawing.Size(381, 305);
             this.dgvPatientsSoi.TabIndex = 0;
             // 

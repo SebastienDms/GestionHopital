@@ -89,9 +89,12 @@
             // 
             // dgvChambresModif
             // 
+            this.dgvChambresModif.AllowUserToAddRows = false;
+            this.dgvChambresModif.AllowUserToDeleteRows = false;
             this.dgvChambresModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChambresModif.Location = new System.Drawing.Point(6, 19);
             this.dgvChambresModif.Name = "dgvChambresModif";
+            this.dgvChambresModif.ReadOnly = true;
             this.dgvChambresModif.Size = new System.Drawing.Size(381, 216);
             this.dgvChambresModif.TabIndex = 0;
             // 
@@ -119,9 +122,12 @@
             // 
             // dgvPatientsModif
             // 
+            this.dgvPatientsModif.AllowUserToAddRows = false;
+            this.dgvPatientsModif.AllowUserToDeleteRows = false;
             this.dgvPatientsModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatientsModif.Location = new System.Drawing.Point(6, 19);
             this.dgvPatientsModif.Name = "dgvPatientsModif";
+            this.dgvPatientsModif.ReadOnly = true;
             this.dgvPatientsModif.Size = new System.Drawing.Size(381, 217);
             this.dgvPatientsModif.TabIndex = 0;
             // 
@@ -324,9 +330,12 @@
             // 
             // dgvOccModif
             // 
+            this.dgvOccModif.AllowUserToAddRows = false;
+            this.dgvOccModif.AllowUserToDeleteRows = false;
             this.dgvOccModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOccModif.Location = new System.Drawing.Point(6, 19);
             this.dgvOccModif.Name = "dgvOccModif";
+            this.dgvOccModif.ReadOnly = true;
             this.dgvOccModif.Size = new System.Drawing.Size(381, 207);
             this.dgvOccModif.TabIndex = 0;
             // 

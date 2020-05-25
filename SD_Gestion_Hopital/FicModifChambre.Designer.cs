@@ -33,6 +33,8 @@
             this.btnModifCha = new System.Windows.Forms.Button();
             this.dgvChambresModif = new System.Windows.Forms.DataGridView();
             this.gbModifCha = new System.Windows.Forms.GroupBox();
+            this.lblFicheModifChaEtage = new System.Windows.Forms.Label();
+            this.tbModifEtageCha = new System.Windows.Forms.TextBox();
             this.lblFicheModifChaService = new System.Windows.Forms.Label();
             this.lblFicheModifChaType = new System.Windows.Forms.Label();
             this.lblFicheModifChaNbrLit = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.tbIDCha = new System.Windows.Forms.TextBox();
             this.btnAnnulerModifCha = new System.Windows.Forms.Button();
             this.btnConfirmerModifCha = new System.Windows.Forms.Button();
-            this.lblFicheModifChaEtage = new System.Windows.Forms.Label();
-            this.tbModifEtageCha = new System.Windows.Forms.TextBox();
             this.gbAfficheChaModif.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChambresModif)).BeginInit();
             this.gbModifCha.SuspendLayout();
@@ -76,9 +76,12 @@
             // 
             // dgvChambresModif
             // 
+            this.dgvChambresModif.AllowUserToAddRows = false;
+            this.dgvChambresModif.AllowUserToDeleteRows = false;
             this.dgvChambresModif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChambresModif.Location = new System.Drawing.Point(6, 19);
             this.dgvChambresModif.Name = "dgvChambresModif";
+            this.dgvChambresModif.ReadOnly = true;
             this.dgvChambresModif.Size = new System.Drawing.Size(381, 305);
             this.dgvChambresModif.TabIndex = 0;
             // 
@@ -103,6 +106,22 @@
             this.gbModifCha.TabIndex = 8;
             this.gbModifCha.TabStop = false;
             this.gbModifCha.Text = "Fiche de la chambre :";
+            // 
+            // lblFicheModifChaEtage
+            // 
+            this.lblFicheModifChaEtage.AutoSize = true;
+            this.lblFicheModifChaEtage.Location = new System.Drawing.Point(42, 267);
+            this.lblFicheModifChaEtage.Name = "lblFicheModifChaEtage";
+            this.lblFicheModifChaEtage.Size = new System.Drawing.Size(41, 13);
+            this.lblFicheModifChaEtage.TabIndex = 11;
+            this.lblFicheModifChaEtage.Text = "Etage :";
+            // 
+            // tbModifEtageCha
+            // 
+            this.tbModifEtageCha.Location = new System.Drawing.Point(45, 283);
+            this.tbModifEtageCha.Name = "tbModifEtageCha";
+            this.tbModifEtageCha.Size = new System.Drawing.Size(135, 20);
+            this.tbModifEtageCha.TabIndex = 10;
             // 
             // lblFicheModifChaService
             // 
@@ -205,22 +224,6 @@
             this.btnConfirmerModifCha.Text = "C O N F I R M E R";
             this.btnConfirmerModifCha.UseVisualStyleBackColor = true;
             this.btnConfirmerModifCha.Click += new System.EventHandler(this.btnConfirmerModifCha_Click);
-            // 
-            // lblFicheModifChaEtage
-            // 
-            this.lblFicheModifChaEtage.AutoSize = true;
-            this.lblFicheModifChaEtage.Location = new System.Drawing.Point(42, 267);
-            this.lblFicheModifChaEtage.Name = "lblFicheModifChaEtage";
-            this.lblFicheModifChaEtage.Size = new System.Drawing.Size(41, 13);
-            this.lblFicheModifChaEtage.TabIndex = 11;
-            this.lblFicheModifChaEtage.Text = "Etage :";
-            // 
-            // tbModifEtageCha
-            // 
-            this.tbModifEtageCha.Location = new System.Drawing.Point(45, 283);
-            this.tbModifEtageCha.Name = "tbModifEtageCha";
-            this.tbModifEtageCha.Size = new System.Drawing.Size(135, 20);
-            this.tbModifEtageCha.TabIndex = 10;
             // 
             // EcranModifChambre
             // 

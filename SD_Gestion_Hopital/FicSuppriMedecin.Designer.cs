@@ -102,6 +102,7 @@
             // dgvMedSup
             // 
             this.dgvMedSup.AllowUserToAddRows = false;
+            this.dgvMedSup.AllowUserToDeleteRows = false;
             this.dgvMedSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedSup.Location = new System.Drawing.Point(95, 45);
             this.dgvMedSup.Name = "dgvMedSup";

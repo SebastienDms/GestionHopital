@@ -165,6 +165,7 @@
             // dgvSpeSup
             // 
             this.dgvSpeSup.AllowUserToAddRows = false;
+            this.dgvSpeSup.AllowUserToDeleteRows = false;
             this.dgvSpeSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSpeSup.Location = new System.Drawing.Point(95, 45);
             this.dgvSpeSup.Name = "dgvSpeSup";

@@ -104,6 +104,7 @@
             // dgvChaSup
             // 
             this.dgvChaSup.AllowUserToAddRows = false;
+            this.dgvChaSup.AllowUserToDeleteRows = false;
             this.dgvChaSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChaSup.Location = new System.Drawing.Point(95, 45);
             this.dgvChaSup.Name = "dgvChaSup";

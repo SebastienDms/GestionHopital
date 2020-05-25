@@ -35,9 +35,12 @@
             // 
             // dgvOccupation
             // 
+            this.dgvOccupation.AllowUserToAddRows = false;
+            this.dgvOccupation.AllowUserToDeleteRows = false;
             this.dgvOccupation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOccupation.Location = new System.Drawing.Point(12, 12);
             this.dgvOccupation.Name = "dgvOccupation";
+            this.dgvOccupation.ReadOnly = true;
             this.dgvOccupation.Size = new System.Drawing.Size(776, 336);
             this.dgvOccupation.TabIndex = 0;
             // 

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SD_Gestion_Hopital.EcranAjoutChambre" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABARQCEAQASAAACIAAACCTAAAACAAAAHEQAAAEA=</HashCode>
+      <FileName>FicAjoutChambre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAjoutMedecin" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiBAAgAACAAACgEgAKIIBECEAgEAACAA1BAAgAIAAA=</HashCode>
+      <FileName>FicAjoutMedecin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAjoutOccupation" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAgIwCdQCQAAgCAAAiIQEADKATgAADAAJAKAIEAhgA=</HashCode>
+      <FileName>FicAjoutOccupation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAjoutPatient" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgBAAAACCCACAAAQBCIBAACAAIAAAEAAYAAAEkACAA=</HashCode>
+      <FileName>FicAjoutPatient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAjoutSoin" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAIAQAAQACQAAALAAAiYAAECAQCIQAAYAKYkw4iGAAM=</HashCode>
+      <FileName>FicAjoutSoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAjoutSpecialite" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAEAACAAAAAAAACIAEASAAAAgAAAACAAAAgAAAo=</HashCode>
+      <FileName>FicAjoutSpecialite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranChambres" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACEACAAAgAAAACIAAACIQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FicChambres.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranDisponibiliteChambres" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAgAAEAKAAAAAAUECIACACCDAAIAAAIAAACAAQQAE=</HashCode>
+      <FileName>FicDisponibiliteChambres.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranFacturationDuJour" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAQEAACJAACDABAAAEoAAAAACAAAAAQ=</HashCode>
+      <FileName>FicFacturationDuJour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranHitParadeMedecins" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAgCAAAAAABACIAgACAAAQQEAAAgAABAEAAAA=</HashCode>
+      <FileName>FicHitParadeMedecins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranMedecins" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAABAAACIAAACAQAAAAAAAAAAAAACAAE=</HashCode>
+      <FileName>FicMedecins.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.FicMenu" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oyqDiIBH1CDQDRhSeoDOgMsCrDggo7WFYQHNRCrIgqo=</HashCode>
+      <FileName>FicMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifChambre" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhgAAAAEACYAAgAAIBHJACACIJACAABAQABCgQAZAAA=</HashCode>
+      <FileName>FicModifChambre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifMedecin" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BSAoAEEAAjAECCAAgBKYABBCAwAAAQBUAAIFAAECAIE=</HashCode>
+      <FileName>FicModifMedecin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifOccupation" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQAABEJTQwAgQESQyIAFEnIFCQQARCAINICAMQAAQ=</HashCode>
+      <FileName>FicModifOccupation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifPatient" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAhAADAAiQgAQAAIECIAgACAACIgACAAIBAACQQBAA=</HashCode>
+      <FileName>FicModifPatient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifSoin" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAASBBSgGQiAAcgIEGIBgMWCUiAQEQCgIJABECDAAU=</HashCode>
+      <FileName>FicModifSoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranModifSpecialite" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAQAACABMCQEiACIABASAAAAAEACAAACAACBIAA=</HashCode>
+      <FileName>FicModifSpecialite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranOccuper" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAAQAAACIAAADAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>FicOccuper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranPatients" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACQACAAAAACIAAACAACAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>FicPatients.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSoigner" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACAAAAAAQACIAAACAEgAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FicSoigner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSpecialites" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAACAAgACIABACAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>FicSpecialites.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriChambre" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gwEAAAGGNCAABhCQAQCIAAICIZAACEACAACADAAQCAA=</HashCode>
+      <FileName>FicSuppriChambre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriMedecin" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mQEADIQAJCAMACCQAAGYAACCA0AARAgAgAEwAAACACE=</HashCode>
+      <FileName>FicSuppriMedecin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriOccupation" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAIAAICACAAABYCAUCIICADQFBAAAAkAAAQDYgAAEQ=</HashCode>
+      <FileName>FicSuppriOccupation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriPatient" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQgCAECBLSQiAGEAACCIQAAKAQKIACAAAZMgAAAAARQ=</HashCode>
+      <FileName>FicSuppriPatient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriSoin" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggCAAAQQAGBAAACAAECIQgAKAFQAQIUFCKQAEAGAAIQ=</HashCode>
+      <FileName>FicSuppriSoin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranSuppriSpecialite" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAgAxIgACAAACIAhACIEBADEAAAEAwAAABAAAAAEIA=</HashCode>
+      <FileName>FicSuppriSpecialite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranVisionneuseHTML" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAGACIAAAAAAACAQIACAABAARAAAACEAAAAAAA=</HashCode>
+      <FileName>FicVisionneuseHTML.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.EcranAccueil" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAAACAAAAAgAECAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.GestionAjoutDonnees" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>GestionAjoutDonnees.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.GestionDates" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>GestionDates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.GestionDGV" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQAAAAAAAAAAAAAAACAAAAAAACAAAAAAAE=</HashCode>
+      <FileName>GestionDGV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.GestionDisponibilite" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>GestionDisponibilite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.GestionRechercheID" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>GestionRechercheID.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.Program" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.TablesDeDonnees" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAQAAQAAgwAgAAIAhABIVAAQAAAAIAACAACAAQ=</HashCode>
+      <FileName>TablesDeDonnes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAABAAAAAAABEAAAAYAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SD_Gestion_Hopital.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

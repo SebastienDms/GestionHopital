@@ -14,6 +14,7 @@ namespace SD_Gestion_Hopital
     {
         #region ChaineDeConnexionDB
         private static string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+
         #endregion
         #region Datatables
         public static DataTable t_specialites = new DataTable();

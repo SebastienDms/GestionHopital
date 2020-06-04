@@ -18,12 +18,16 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriOccupation : Form
     {
+        #region Donnees
         private DataTable t_occuper;
         private BindingSource bs_occuper;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+
         private List<C_t_occuper> lTmp_Occ;
         private List<C_t_patients> lTmp_Pat;
         private List<C_t_chambres> lTmp_Cha;
+        #endregion
 
         public EcranSuppriOccupation()
         {
@@ -64,6 +68,7 @@ namespace SD_Gestion_Hopital
             t_occuper.Columns.Add(new DataColumn("Sortie le"));
             t_occuper.Columns.Add(new DataColumn("Coût journalier"));
             lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
+            // Recheche du patient
             if (tbNomPatRechOccSup.Text != "" && tbPrenomPatRechOccSup.Text != "")
             {
                 foreach (C_t_patients p in lTmp_Pat)
@@ -75,6 +80,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
             }
+            // Recherche de la chambre
             lTmp_Cha = new G_t_chambres(sConnexion).Lire("NomCha");
             if (tbNomChaRechOccSup.Text != "")
             {
@@ -87,23 +93,13 @@ namespace SD_Gestion_Hopital
                     }
                 }
             }
-            //lTmp_Occ = new G_t_occuper(sConnexion).Lire("IDOcc");
-            //foreach (C_t_occuper o in lTmp_Occ)
-            //{
-            //    if (id_pat == o.IDPat || id_cha == o.IDCha || DateTime.Parse(tbDateEntreeOccSup.Text) == o.DateEntree)
-            //    {
-            //        t_occuper.Rows.Add(o.IDOcc, o.IDPat, o.IDCha, o.DateEntree.ToShortDateString(),
-            //            o.DateSortie.ToShortDateString(), o.PrixJournalier.ToString());
-            //    }
-            //}
-            //bs_occuper = new BindingSource();
-            //bs_occuper.DataSource = t_occuper;
-            //dgvResRecOccpSup.DataSource = bs_occuper;
+
             try
             {
                 lTmp_Occ = new G_t_occuper(sConnexion).Lire("IDOcc");
                 if (tbDateEntreeOccSup.Text != "")
                 {
+                    // Recherche combinée date entrée et patient ou chambre
                     if (id_pat != 0 || id_cha != 0)
                     {
                         foreach (C_t_occuper o in lTmp_Occ)
@@ -122,6 +118,7 @@ namespace SD_Gestion_Hopital
                     else
                     {
                         bool trouve = false;
+                        // Recherche par date d'entrée
                         foreach (C_t_occuper o in lTmp_Occ)
                         {
                             if (DateTime.Parse(tbDateEntreeOccSup.Text) == o.DateEntree)
@@ -134,6 +131,7 @@ namespace SD_Gestion_Hopital
 
                         if (trouve)
                         {
+                            // Affiche si une occupation correspond aux citères
                             bs_occuper = new BindingSource();
                             bs_occuper.DataSource = t_occuper;
                             dgvResRecOccpSup.DataSource = bs_occuper;
@@ -150,6 +148,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (id_pat != 0 || id_cha != 0)
                     {
+                        // Recherche combinée patient et chambre
                         foreach (C_t_occuper o in lTmp_Occ)
                         {
                             if (id_pat == o.IDPat || id_cha == o.IDCha)

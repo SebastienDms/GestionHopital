@@ -17,14 +17,22 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranChambres : Form
     {
+        #region Donnees
         private DataTable t_chambres;
         private BindingSource bs_chambres;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranChambres()
         {
             InitializeComponent();
         }
+        private void EcranChambres_Load(object sender, EventArgs e)
+        {
+            AfficherChambres();
+        }
+
         private void AfficherChambres()
         {
             t_chambres = new DataTable();
@@ -44,9 +52,5 @@ namespace SD_Gestion_Hopital
             dgvChambres.DataSource = bs_chambres;
         }
 
-        private void EcranChambres_Load(object sender, EventArgs e)
-        {
-            AfficherChambres();
-        }
     }
 }

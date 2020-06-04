@@ -17,10 +17,13 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriChambre : Form
     {
+        #region Donnees
         private DataTable t_chambres;
         private BindingSource bs_chambres;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         private List<C_t_chambres> lTmp_Cha;
+        #endregion
 
         public EcranSuppriChambre()
         {
@@ -120,6 +123,7 @@ namespace SD_Gestion_Hopital
             int ID_Sup = 0;
             if (tbIDChaSup.Text != "")
             {
+                // Récupération de l'ID de la chambre à supprimer
                 ID_Sup = int.Parse(tbIDChaSup.Text);
                 if (MessageBox.Show("Souhaitez-vous supprimer la chambre " +
                                     tbNomChaSup.Text + " ?",
@@ -194,6 +198,5 @@ namespace SD_Gestion_Hopital
                 MessageBoxIcon.Warning);
             ViderRecherche();
         }
-
     }
 }

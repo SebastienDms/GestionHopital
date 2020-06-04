@@ -17,11 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutSoin : Form
     {
+        #region Donnees
         private DataTable t_patients;
         private BindingSource bs_patients;
         private DataTable t_medecins;
         private BindingSource bs_medecins;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranAjoutSoin()
         {
@@ -98,7 +101,7 @@ namespace SD_Gestion_Hopital
         private void btnConfirmerAjSoi_Click(object sender, EventArgs e)
         {
             if (tbAjSoiIDPat.Text == "" || tbAjSoiIDMed.Text == "" || tbAjSoiDateOperation.Text == "" ||
-                tbAjSoiPrixOperation.Text == "")
+                tbAjSoiDateAuthSortie.Text == "" || tbAjSoiPrixOperation.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -115,7 +118,7 @@ namespace SD_Gestion_Hopital
                                     MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     new G_t_soigner(sConnexion).Ajouter(int.Parse(tbAjSoiIDMed.Text), int.Parse(tbAjSoiIDPat.Text),
-                        DateTime.Parse(tbAjSoiDateOperation.Text), VerifieDateSortie(),
+                        DateTime.Parse(tbAjSoiDateOperation.Text), DateTime.Parse(tbAjSoiDateAuthSortie.Text)/*VerifieDateSortie()*/,
                     int.Parse(tbAjSoiPrixOperation.Text));
                     MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
@@ -139,17 +142,17 @@ namespace SD_Gestion_Hopital
             tbAjSoiIDPat.Text = tbAjSoiIDMed.Text = tbAjSoiDateOperation.Text = tbAjSoiDateAuthSortie.Text = tbAjSoiPrixOperation.Text = "";
         }
 
-        private DateTime VerifieDateSortie()
-        {
-            if (tbAjSoiDateAuthSortie.Text == "")
-            {
-                return new DateTime(1753,1,1);
+        //private DateTime VerifieDateSortie()
+        //{
+        //    if (tbAjSoiDateAuthSortie.Text == "")
+        //    {
+        //        return new DateTime(1753,1,1);
 
-            }
-            else
-            {
-                return DateTime.Parse(tbAjSoiDateAuthSortie.Text);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        return DateTime.Parse(tbAjSoiDateAuthSortie.Text);
+        //    }
+        //}
     }
 }

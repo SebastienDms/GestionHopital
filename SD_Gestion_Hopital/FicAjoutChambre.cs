@@ -17,7 +17,10 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutChambre : Form
     {
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        #region Donnees
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranAjoutChambre()
         {

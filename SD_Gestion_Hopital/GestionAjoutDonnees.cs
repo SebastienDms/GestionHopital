@@ -22,7 +22,7 @@ namespace SD_Gestion_Hopital
             else
             {
                 bool ajout_pat = false;
-
+                // Majuscule aux noms et prénoms
                 nom = nom[0].ToString().ToUpper() + nom.Substring(1);
                 prenom = prenom[0].ToString().ToUpper() + prenom.Substring(1);
 
@@ -57,17 +57,14 @@ namespace SD_Gestion_Hopital
                     new G_t_patients(TablesDeDonnees.SConnexion).Ajouter(nom, prenom, adresse,int.Parse(gsm));
                     MessageBox.Show("Le patient a été ajouté.", "Info:", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    //tbNomPat.Text = tbPrePat.Text = tbAdrPat.Text = tbGSMPat.Text = "";
                 }
                 else
                 {
                     MessageBox.Show(
                         "Le patient n'a pas été ajoutée!\nIl existe déjà dans la base de données.",
                         "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //tbNomPat.Text = tbPrePat.Text = tbAdrPat.Text = tbGSMPat.Text = "";
                 }
             }
-
         }
 
         public static void AjouterSoi(string IDPat, string nom_pat, string prenom_pat, string IDMed, string nom_med, string prenom_med, string DateOpe,string DateSortie, string PrixOpe)
@@ -121,7 +118,6 @@ namespace SD_Gestion_Hopital
                         "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
         }
     }
 }

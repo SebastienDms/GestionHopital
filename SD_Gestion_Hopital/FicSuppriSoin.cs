@@ -17,12 +17,16 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriSoin : Form
     {
+        #region Donnees
         private DataTable t_soigner;
         private BindingSource bs_soigner;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+
         private List<C_t_soigner> lTmp_Soi;
         private List<C_t_patients> lTmp_Pat;
         private List<C_t_medecins> lTmp_Med;
+        #endregion
 
         public EcranSuppriSoin()
         {
@@ -62,6 +66,7 @@ namespace SD_Gestion_Hopital
             t_soigner.Columns.Add(new DataColumn("Sortie prévue le"));
             t_soigner.Columns.Add(new DataColumn("Coût de l'opération"));
             lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
+            // Recherche du patient
             if (tbNomPatRechSoiSup.Text != "" && tbPrenomPatRechSoiSup.Text != "")
             {
                 foreach (C_t_patients p in lTmp_Pat)
@@ -75,6 +80,7 @@ namespace SD_Gestion_Hopital
                 }
             }
             lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
+            // Recherche du médecin
             if (tbNomMedRechSoiSup.Text != "" && tbPrenomMedRechSoiSup.Text != "")
             {
                 foreach (C_t_medecins m in lTmp_Med)
@@ -94,6 +100,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (id_pat != 0 || id_med != 0)
                     {
+                        // Recherche de l'opération combiné patient/médecin et date d'opération
                         foreach (C_t_soigner s in lTmp_Soi)
                         {
                             if ((id_pat == s.IDPat || id_med == s.IDMed) &&
@@ -127,6 +134,7 @@ namespace SD_Gestion_Hopital
                     else
                     {
                         bool trouve = false;
+                        // Recherche par date d'opération
                         foreach (C_t_soigner s in lTmp_Soi)
                         {
                             if (DateTime.Parse(tbDateOperationOccSup.Text) == s.DateOperation)
@@ -154,6 +162,7 @@ namespace SD_Gestion_Hopital
                         }
                         if (trouve)
                         {
+                            // Affiche si correspond aux citères
                             bs_soigner = new BindingSource();
                             bs_soigner.DataSource = t_soigner;
                             dgvResRecSoinSup.DataSource = bs_soigner;
@@ -170,6 +179,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (id_pat != 0 || id_med != 0)
                     {
+                        // Recherche par patient/médecin
                         foreach (C_t_soigner s in lTmp_Soi)
                         {
                             if (id_pat == s.IDPat || id_med == s.IDMed)
@@ -229,6 +239,7 @@ namespace SD_Gestion_Hopital
             {
                 if (dgvResRecSoinSup.SelectedRows[0].Selected == true)
                 {
+                    // Suppression du soin sélectionné
                     if (MessageBox.Show("Souhaitez-vous supprimer l'opération sélectionnée?", "Information",
                                         MessageBoxButtons.OKCancel, MessageBoxIcon.Information) ==
                         DialogResult.OK)

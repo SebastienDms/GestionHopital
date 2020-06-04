@@ -17,11 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranDisponibiliteChambres : Form
     {
+        #region Donnees
         private DataTable t_dispo_chambre;
         private BindingSource bs_dispo_chambre;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         private List<C_t_chambres> lTmp_Cha;
         private List<C_t_occuper> lTmp_Occ;
+        #endregion
 
         public EcranDisponibiliteChambres()
         {
@@ -113,6 +116,7 @@ namespace SD_Gestion_Hopital
                 {
                     int[] Lit_occupe = new int[] {0, 0, 0, 0, 0, 0, 0};
                     lTmp_Occ = new G_t_occuper(sConnexion).Lire("IDOcc");
+                    // Vérifie la disponibilité de la chambre pour la semaine en cours
                     for (int i = 0; i < 7; i++)
                     {
                         DateTime Date_Comp = Premier_J_Semaine.AddDays(i);
@@ -209,7 +213,6 @@ namespace SD_Gestion_Hopital
         private void btnReinitRecherche_Click(object sender, EventArgs e)
         {
             tbNumChaChercher.ReadOnly = false;
-
         }
     }
 }

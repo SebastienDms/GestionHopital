@@ -17,9 +17,12 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSpecialites : Form
     {
+        #region Donnees
         private DataTable t_specialites;
         private BindingSource bs_specialites;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranSpecialites()
         {
@@ -48,6 +51,12 @@ namespace SD_Gestion_Hopital
             bs_specialites = new BindingSource();
             bs_specialites.DataSource = t_specialites;
             dgvSpecialites.DataSource = bs_specialites;
+            // Bloque du tri sur les colonnes \\
+            dgvSpecialites.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvSpecialites.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvSpecialites.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+            // désactive le fait d'avoir la première cellule sélectionnée \\
+            dgvSpecialites.FirstDisplayedCell.Selected = false;
         }
 
         private void EcranSpecialites_Load(object sender, EventArgs e)

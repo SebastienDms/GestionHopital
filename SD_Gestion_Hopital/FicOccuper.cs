@@ -17,9 +17,12 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranOccuper : Form
     {
+        #region Donnees
         private DataTable t_occuper;
         private BindingSource bs_occuper;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranOccuper()
         {

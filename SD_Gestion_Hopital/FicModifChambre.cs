@@ -17,10 +17,13 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranModifChambre : Form
     {
+        #region Donnees
         private DataTable t_chambres;
         private BindingSource bs_chambres;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         List<C_t_chambres> lTmp_Cha;
+        #endregion
 
         public EcranModifChambre()
         {
@@ -36,7 +39,7 @@ namespace SD_Gestion_Hopital
             t_chambres = new DataTable();
             t_chambres.Columns.Add(new DataColumn("ID", System.Type.GetType("System.Int32")));
             t_chambres.Columns.Add(new DataColumn("Nom"));
-            t_chambres.Columns.Add(new DataColumn("Nombre de lit"));
+            t_chambres.Columns.Add(new DataColumn("Nombre de lits"));
             t_chambres.Columns.Add(new DataColumn("Type"));
             t_chambres.Columns.Add(new DataColumn("Etage"));
             t_chambres.Columns.Add(new DataColumn("Service"));
@@ -54,6 +57,7 @@ namespace SD_Gestion_Hopital
         {
             tbIDCha.Text = tbModifChaNom.Text = tbModifQuantiteLit.Text = tbModifTypeCha.Text = tbModifEtageCha.Text = tbModifServiceCha.Text = "";
         }
+
         // test count row et column  ==> colonnes correspondent /!\ ligne compte en plus la ligne vide en fin de liste \\
         //MessageBox.Show("Le nombre de colonne est de : " + dgvChambresModif.ColumnCount.ToString() + " ." +
         //"Le nombre de ligne est de : " + dgvChambresModif.RowCount.ToString() + " .");
@@ -124,7 +128,7 @@ namespace SD_Gestion_Hopital
                         else
                         {
                             MessageBox.Show(
-                                "La chambre ne sera pas modifiée!\nVérifiez que le type de chambre correspond à la quantité de lit indiquée.",
+                                "La chambre ne sera pas modifiée!\nVérifiez que le type de chambre correspond à la quantité de lits indiquée.",
                                 "Attention", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }

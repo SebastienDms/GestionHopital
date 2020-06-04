@@ -18,17 +18,19 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranModifSoin : Form
     {
+        #region Donnees
         private DataTable t_soigner;
         private BindingSource bs_soigner;
         private DataTable t_patients;
         private BindingSource bs_patients;
         private DataTable t_medecins;
         private BindingSource bs_medecins;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
-
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         List<C_t_medecins> lTmp_Med;
         List<C_t_patients> lTmp_Pat;
         List<C_t_soigner> lTmp_Soi;
+        #endregion
 
         public EcranModifSoin()
         {
@@ -227,7 +229,8 @@ namespace SD_Gestion_Hopital
 
         private void btnConfirmerModifSoi_Click(object sender, EventArgs e)
         {
-            if (tbModifSoiIDPat.Text == "" || tbModifSoiIDMed.Text == "" || tbModifSoiDateOperation.Text == "" || tbModifSoiPrixOperation.Text == "")
+            if (tbModifSoiIDPat.Text == "" || tbModifSoiIDMed.Text == "" || tbModifSoiDateOperation.Text == "" ||
+                tbModifSoiDateAuthSortie.Text == "" || tbModifSoiPrixOperation.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
@@ -262,7 +265,8 @@ namespace SD_Gestion_Hopital
                                     MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     new G_t_soigner(sConnexion).Modifier(int.Parse(tbModifIDSoi.Text), int.Parse(tbModifSoiIDMed.Text),
-                        int.Parse(tbModifSoiIDPat.Text),DateTime.Parse(tbModifSoiDateOperation.Text), VerifieDateSortie(),
+                        int.Parse(tbModifSoiIDPat.Text),DateTime.Parse(tbModifSoiDateOperation.Text),
+                        DateTime.Parse(tbModifSoiDateAuthSortie.Text)/*VerifieDateSortie()*/,
                     int.Parse(tbModifSoiPrixOperation.Text));
                     MessageBox.Show("La résevation a bien été modifiée", "Attention", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
@@ -277,7 +281,6 @@ namespace SD_Gestion_Hopital
                                     MessageBoxIcon.Warning);
                 }
             }
-
         }
         private void btnAnnulerModifSoi_Click(object sender, EventArgs e)
         {
@@ -285,17 +288,17 @@ namespace SD_Gestion_Hopital
                 MessageBoxIcon.Warning);
             ViderTB();
         }
-        private DateTime VerifieDateSortie()
-        {
-            if (tbModifSoiDateAuthSortie.Text == "")
-            {
-                return new DateTime(1753, 1, 1);
+        //private DateTime VerifieDateSortie()
+        //{
+        //    if (tbModifSoiDateAuthSortie.Text == "")
+        //    {
+        //        return new DateTime(1753, 1, 1);
 
-            }
-            else
-            {
-                return DateTime.Parse(tbModifSoiDateAuthSortie.Text);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        return DateTime.Parse(tbModifSoiDateAuthSortie.Text);
+        //    }
+        //}
     }
 }

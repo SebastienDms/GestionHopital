@@ -18,17 +18,19 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranModifOccupation : Form
     {
+        #region Donnees
         private DataTable t_occuper;
         private BindingSource bs_occuper;
         private DataTable t_patients;
         private BindingSource bs_patients;
         private DataTable t_chambres;
         private BindingSource bs_chambres;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
-
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         List<C_t_chambres> lTmp_Cha;
         List<C_t_patients> lTmp_Pat;
         List<C_t_occuper> lTmp_Occ;
+        #endregion
 
         public EcranModifOccupation()
         {

@@ -120,6 +120,7 @@
             this.Name = "EcranAjoutSpecialite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ajout d\'une spécialité";
+            this.Load += new System.EventHandler(this.EcranAjoutSpecialite_Load);
             this.gbAjoutSpe.ResumeLayout(false);
             this.gbAjoutSpe.PerformLayout();
             this.ResumeLayout(false);

@@ -26,15 +26,18 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranFacturationDuJour : Form
     {
+        #region Donnees
         private DataTable t_occuper;
         private BindingSource bs_occuper;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         private List<C_t_occuper> lTmp_Occ;
         private List<C_t_patients> lTmp_Pat;
         private List<C_t_chambres> lTmp_Cha;
         private List<C_t_soigner> lTmp_Soi;
         List<string> Liste_Num_Fac = new List<string>();
         List<string> soins = new List<string>();
+        #endregion
 
         public EcranFacturationDuJour()
         {
@@ -58,6 +61,7 @@ namespace SD_Gestion_Hopital
             lTmp_Cha = new G_t_chambres(sConnexion).Lire("IDCha");
             lTmp_Soi = new G_t_soigner(sConnexion).Lire("IDSoi");
             lTmp_Occ = new G_t_occuper(sConnexion).Lire("IDOcc");
+            // Recherche et affiche les séjours à l'hopital terminé ce jour, à facturer
             foreach (C_t_occuper o in lTmp_Occ)
             {
                 if (o.DateSortie == DateTime.Today /*|| o.DateSortie==DateTime.Today.AddDays(-1)*/)
@@ -94,12 +98,14 @@ namespace SD_Gestion_Hopital
 
             if (aFacturer)
             {
+                // Affiche la liste
                 bs_occuper = new BindingSource();
                 bs_occuper.DataSource = t_occuper;
                 dgvAFacturer.DataSource = bs_occuper;
             }
             else
             {
+                // Sinon affiche un message
                 dgvAFacturer.Hide();
                 btnFacturation.Visible = false;
                 lblNoFacture.Visible = true;
@@ -112,6 +118,7 @@ namespace SD_Gestion_Hopital
 
         private void btnFacturation_Click(object sender, EventArgs e)
         {
+            // Génère un fichier pdf pour les facture du jour
 
             for (int i = 0; i < Liste_Num_Fac.Count; i++)
             {
@@ -123,6 +130,7 @@ namespace SD_Gestion_Hopital
                 List<string> DateOpe = new List<string>();
                 List<int?> PrixOpe = new List<int?>();
 
+                // Recherche les infos des opération pendant le séjour du patient
                 foreach (string s in soins)
                 {
                     string[] soin = s.Split('-');
@@ -140,6 +148,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
 
+                // Recherche les infos du patient concerné
                 foreach (C_t_patients p in lTmp_Pat)
                 {
                     if (int.Parse(ID[1]) == p.IDPat)
@@ -148,6 +157,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
 
+                // Recherche les infos du séjour
                 foreach (C_t_occuper o in lTmp_Occ)
                 {
                     if (int.Parse(ID[0]) == o.IDOcc)

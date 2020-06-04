@@ -17,7 +17,11 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutSpecialite : Form
     {
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        #region Donnees
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
+
         public EcranAjoutSpecialite()
         {
             InitializeComponent();
@@ -32,7 +36,7 @@ namespace SD_Gestion_Hopital
             }
             else
             {
-                // Force la majuscule au nom de la spécialité \\
+                // Majuscule au nom de la spécialité \\
                 tbNomSpe.Text = tbNomSpe.Text[0].ToString().ToUpper() + tbNomSpe.Text.Substring(1);
 
                 new G_t_specialites(sConnexion).Ajouter(tbNomSpe.Text);
@@ -47,6 +51,11 @@ namespace SD_Gestion_Hopital
             MessageBox.Show("La spécialité ne sera pas ajoutée.", "Attention", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             tbNomSpe.Text = "";
+        }
+
+        private void EcranAjoutSpecialite_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

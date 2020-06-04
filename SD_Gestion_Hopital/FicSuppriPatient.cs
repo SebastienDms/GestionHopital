@@ -17,10 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriPatient : Form
     {
+        #region Donnees
         private DataTable t_patients;
         private BindingSource bs_patients;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+
         private List<C_t_patients> lTmp_Pat;
+        #endregion
 
         public EcranSuppriPatient()
         {
@@ -86,9 +90,12 @@ namespace SD_Gestion_Hopital
             ViderTBResultat();
             try
             {
+                // Majuscule aux nom et prénom recherchés
                 tbNomPatRech.Text = tbNomPatRech.Text[0].ToString().ToUpper() + tbNomPatRech.Text.Substring(1);
                 tbPrenomPatRech.Text = tbPrenomPatRech.Text[0].ToString().ToUpper() + tbPrenomPatRech.Text.Substring(1);
+
                 lTmp_Pat = new G_t_patients(sConnexion).Lire("NomPat");
+                // Recherche du patient
                 foreach (C_t_patients p in lTmp_Pat)
                 {
                     if (tbNomPatRech.Text == p.NomPat && tbPrenomPatRech.Text == p.PrenomPat)
@@ -121,6 +128,7 @@ namespace SD_Gestion_Hopital
             int ID_Sup = 0;
             if (tbIDPatSup.Text != "")
             {
+                // Récupère l'ID du patient cherché
                 ID_Sup = int.Parse(tbIDPatSup.Text);
                 if (MessageBox.Show("Souhaitez-vous supprimer le patient " +
                                     tbNomPatSup.Text + " " + tbPrenomPatSup.Text + " ?",
@@ -154,6 +162,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (dgvPatSup.SelectedRows[0].Selected == true)
                     {
+                        // Récupère l'ID du patient sélectionné
                         ID_Sup = (int)dgvPatSup.SelectedRows[0].Cells["ID"].Value;
                         if (MessageBox.Show("Souhaitez-vous supprimer le patient " +
                                             dgvPatSup.SelectedRows[0].Cells["Nom"].Value.ToString() + " " +

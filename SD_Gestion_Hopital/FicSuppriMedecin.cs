@@ -17,11 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriMedecin : Form
     {
+        #region Donnees
         private DataTable t_medecins;
         private BindingSource bs_medecins;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         private List<C_t_medecins> lTmp_Med;
         private List<C_t_specialites> lTmp_Spe;
+        #endregion
 
         public EcranSuppriMedecin()
         {
@@ -100,8 +103,10 @@ namespace SD_Gestion_Hopital
             ViderTBResultat();
             try
             {
+                // Majuscule aux nom et prénom
                 tbNomMedRech.Text = tbNomMedRech.Text[0].ToString().ToUpper() + tbNomMedRech.Text.Substring(1);
                 tbPrenomMedRech.Text = tbPrenomMedRech.Text[0].ToString().ToUpper() + tbPrenomMedRech.Text.Substring(1);
+
                 lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
                 lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
                 foreach (C_t_medecins m in lTmp_Med)
@@ -143,6 +148,7 @@ namespace SD_Gestion_Hopital
             int ID_Sup = 0;
             if (tbIDMedSup.Text != "")
             {
+                // Récupère l'ID du médecin à supprimer
                 ID_Sup = int.Parse(tbIDMedSup.Text);
                 if (MessageBox.Show("Souhaitez-vous supprimer le médecin " +
                                     tbNomMedSup.Text + " " + tbPrenomMedSup.Text + " ?",
@@ -175,7 +181,9 @@ namespace SD_Gestion_Hopital
                 {
                     if (dgvMedSup.SelectedRows[0].Selected == true)
                     {
+                        // Récupère l'ID du médecin sélectionné
                         ID_Sup = (int)dgvMedSup.SelectedRows[0].Cells["ID"].Value;
+
                         if (MessageBox.Show("Souhaitez-vous supprimer le médecin " +
                                             dgvMedSup.SelectedRows[0].Cells["Nom"].Value.ToString() + " " +
                                             dgvMedSup.SelectedRows[0].Cells["Prénom"].Value.ToString() + " ?",

@@ -17,8 +17,10 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutPatient : Form
     {
-        private BindingSource bs_patients;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        #region Donnees
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranAjoutPatient()
         {
@@ -42,7 +44,7 @@ namespace SD_Gestion_Hopital
             else
             {
                 bool ajout_pat=false;
-
+                // Majuscule pour les noms et prénoms
                 tbNomPat.Text = tbNomPat.Text[0].ToString().ToUpper() + tbNomPat.Text.Substring(1);
                 tbPrePat.Text = tbPrePat.Text[0].ToString().ToUpper() + tbPrePat.Text.Substring(1);
                 

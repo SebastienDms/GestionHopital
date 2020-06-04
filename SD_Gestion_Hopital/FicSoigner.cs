@@ -17,14 +17,22 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSoigner : Form
     {
+        #region Donnees
         private DataTable t_soigner;
         private BindingSource bs_soigner;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranSoigner()
         {
             InitializeComponent();
         }
+        private void EcranSoigner_Load(object sender, EventArgs e)
+        {
+            AfficherSoins();
+        }
+
         private void AfficherSoins()
         {
             t_soigner = new DataTable();
@@ -40,7 +48,7 @@ namespace SD_Gestion_Hopital
             foreach (C_t_soigner s in lTmp_Soin)
             {
                 string Medecin = "", Patient = "";
-
+                // Recherche du nom et prénom du médecin
                 foreach (C_t_medecins m in lTmp_Med)
                 {
                     if (s.IDMed == m.IDMed)
@@ -49,6 +57,8 @@ namespace SD_Gestion_Hopital
                         break;
                     }
                 }
+
+                // Recherche du nom et prénom du patient
                 foreach (C_t_patients p in lTmp_Pat)
                 {
                     if (s.IDPat == p.IDPat)
@@ -64,11 +74,6 @@ namespace SD_Gestion_Hopital
             bs_soigner = new BindingSource();
             bs_soigner.DataSource = t_soigner;
             dgvSoins.DataSource = bs_soigner;
-        }
-
-        private void EcranSoigner_Load(object sender, EventArgs e)
-        {
-            AfficherSoins();
         }
     }
 }

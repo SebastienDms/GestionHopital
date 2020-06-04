@@ -17,11 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutOccupation : Form
     {
+        #region Donnees
         private DataTable t_patients;
         private BindingSource bs_patients;
         private DataTable t_chambres;
         private BindingSource bs_chambres;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranAjoutOccupation()
         {
@@ -91,7 +94,7 @@ namespace SD_Gestion_Hopital
         private void btnConfirmerAjOcc_Click(object sender, EventArgs e)
         {
             if (tbAjOccIDPat.Text == "" || tbAjOccIDCha.Text == "" || tbAjOccDateEntree.Text == "" ||
-                tbAjOccPrixJour.Text == "")
+                tbAjOccDateSortie.Text == "" || tbAjOccPrixJour.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de données.", "Attention", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -106,7 +109,7 @@ namespace SD_Gestion_Hopital
                                     MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     new G_t_occuper(sConnexion).Ajouter(int.Parse(tbAjOccIDPat.Text), int.Parse(tbAjOccIDCha.Text),
-                        DateTime.Parse(tbAjOccDateEntree.Text), VerifieDateSortie(),
+                        DateTime.Parse(tbAjOccDateEntree.Text), DateTime.Parse(tbAjOccDateSortie.Text)/*VerifieDateSortie()*/,
                         int.Parse(tbAjOccPrixJour.Text));
                     MessageBox.Show("La résevation a bien été effectuée", "Attention", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
@@ -126,17 +129,17 @@ namespace SD_Gestion_Hopital
                 MessageBoxIcon.Warning);
             tbAjOccIDPat.Text = tbAjOccIDCha.Text = tbAjOccDateEntree.Text = tbAjOccDateSortie.Text = tbAjOccPrixJour.Text = "";
         }
-        private DateTime VerifieDateSortie()
-        {
-            if (tbAjOccDateSortie.Text == "")
-            {
-                return new DateTime(1753, 1, 1);
+        //private DateTime VerifieDateSortie()
+        //{
+        //    if (tbAjOccDateSortie.Text == "")
+        //    {
+        //        return new DateTime(1753, 1, 1);
 
-            }
-            else
-            {
-                return DateTime.Parse(tbAjOccDateSortie.Text);
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        return DateTime.Parse(tbAjOccDateSortie.Text);
+        //    }
+        //}
     }
 }

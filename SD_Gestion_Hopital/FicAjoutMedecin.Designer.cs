@@ -95,7 +95,7 @@
             // lblFicheAjMedSpe
             // 
             this.lblFicheAjMedSpe.AutoSize = true;
-            this.lblFicheAjMedSpe.Location = new System.Drawing.Point(42, 311);
+            this.lblFicheAjMedSpe.Location = new System.Drawing.Point(42, 299);
             this.lblFicheAjMedSpe.Name = "lblFicheAjMedSpe";
             this.lblFicheAjMedSpe.Size = new System.Drawing.Size(59, 13);
             this.lblFicheAjMedSpe.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             // tbMedIDSpe
             // 
-            this.tbMedIDSpe.Location = new System.Drawing.Point(45, 330);
+            this.tbMedIDSpe.Location = new System.Drawing.Point(45, 318);
             this.tbMedIDSpe.Name = "tbMedIDSpe";
             this.tbMedIDSpe.Size = new System.Drawing.Size(100, 20);
             this.tbMedIDSpe.TabIndex = 4;

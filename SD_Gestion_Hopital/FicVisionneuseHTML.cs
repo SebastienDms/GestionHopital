@@ -20,18 +20,23 @@ namespace SD_Gestion_Hopital
 
         private void EcranVisionneuseHTML_Load(object sender, EventArgs e)
         {
+            // Page d'accueil dans la fenêtre html
             wbDispoChaSem.Url= new Uri(@"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\accueil.html");
-            Teste();
+            AfficheContenuDossier();
         }
 
         private void btnOuvrirDossier_Click(object sender, EventArgs e)
         {
+            // Ouvre une fenêtre directement au dossier indiqué
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = @"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Dispo_chambres";
+
             // Affiche uniquement les fichier .html \\
             ofd.Filter = "Fichiers HTML |*.html";
+
             // Permet de sélectionner un fichier à la fois \\
             ofd.Multiselect = false;
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string url = string.Empty;
@@ -40,11 +45,11 @@ namespace SD_Gestion_Hopital
                 // Lecture du fichier sélectionné dans la visionneuse \\
                 wbDispoChaSem.Url = new Uri(@url);
             }
-            
         }
 
-        private void Teste()
+        private void AfficheContenuDossier()
         {
+            // Chemin par défaut du dépot des disponibilités des chambres
             string sRep = @"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Dispo_chambres";
             try
             {
@@ -71,6 +76,7 @@ namespace SD_Gestion_Hopital
 
             try
             {
+                // Obtient la liste des fichiers dans le répertoire
                 string[] sFichiers = Directory.GetFiles(sRep);
                 string[] sColonnes = new string[4];
                 string stemp1 = "";
@@ -82,9 +88,13 @@ namespace SD_Gestion_Hopital
                     stemp1 = sf.ToUpper();
                     if (stemp1 != "PAGEFILE.SYS")
                     {
+                        // Récupère les info de chaque fichier
                         fiFichier = new FileInfo(sf);
+                        // Taille du fichier
                         tailleFichier = fiFichier.Length;
+                        // Nom du fichier
                         sColonnes[0] = NomFichier(sf);
+                        // Affiche taille
                         if (tailleFichier > 1024 * 1024 * 1024)
                         {
                             sColonnes[1] = (tailleFichier / (1024 * 1024 * 1024)).ToString() + " gb";
@@ -101,8 +111,11 @@ namespace SD_Gestion_Hopital
                         {
                             sColonnes[1] = tailleFichier.ToString() + " b";
                         }
+                        // Dat e de création du fichier
                         sColonnes[2] = fiFichier.CreationTime.ToString("dd/MM/yyyy");
+                        // Date de modification du ficher
                         sColonnes[3] = fiFichier.LastWriteTime.ToString("dd/MM/yyyy");
+                        // Ajoute les infos
                         lvFichier.Items.Add(new ListViewItem(sColonnes, 0));
                     }
                 }
@@ -114,14 +127,16 @@ namespace SD_Gestion_Hopital
         }
         private String NomFichier(string sFichier)
         {
+            // Permet de récupérer uniuement le nom du ficher d'après son chemin d'accès
             return sFichier.Substring(1 + sFichier.LastIndexOf('\\'));
         }
 
         private void lvFichier_ItemActivate(object sender, EventArgs e)
         {
-            FileInfo fiFicSelect = new FileInfo(lvFichier.SelectedItems[0].Text);
+            // Affiche le fichier sélectionné dans la fenêtre html
+
             string url = @"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Dispo_chambres\" + lvFichier.SelectedItems[0].Text;
-            //MessageBox.Show(url);
+            // Envoie du chemin d'accès du ficher au WebBrowser
             wbDispoChaSem.Url = new Uri(@url);
         }
     }

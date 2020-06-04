@@ -71,6 +71,8 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.btnAjouterPat = new System.Windows.Forms.Button();
+            this.btnSemainePrecedente = new System.Windows.Forms.Button();
+            this.btnSemaineSuivante = new System.Windows.Forms.Button();
             this.dgvDispoChambre = new System.Windows.Forms.DataGridView();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,8 +99,7 @@
             this.lblFicheAjDateOut = new System.Windows.Forms.Label();
             this.lblFicheAjDateIn = new System.Windows.Forms.Label();
             this.tbAjPrix = new System.Windows.Forms.TextBox();
-            this.btnSemaineSuivante = new System.Windows.Forms.Button();
-            this.btnSemainePrecedente = new System.Windows.Forms.Button();
+            this.btnRefreshDGV = new System.Windows.Forms.Button();
             this.MSHopital.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -523,6 +524,28 @@
             this.btnAjouterPat.UseVisualStyleBackColor = true;
             this.btnAjouterPat.Click += new System.EventHandler(this.btnAjouterPat_Click);
             // 
+            // btnSemainePrecedente
+            // 
+            this.btnSemainePrecedente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSemainePrecedente.Location = new System.Drawing.Point(3, 538);
+            this.btnSemainePrecedente.Name = "btnSemainePrecedente";
+            this.btnSemainePrecedente.Size = new System.Drawing.Size(189, 34);
+            this.btnSemainePrecedente.TabIndex = 16;
+            this.btnSemainePrecedente.Text = "<--  Semaine précédente";
+            this.btnSemainePrecedente.UseVisualStyleBackColor = true;
+            this.btnSemainePrecedente.Click += new System.EventHandler(this.btnSemainePrecedente_Click);
+            // 
+            // btnSemaineSuivante
+            // 
+            this.btnSemaineSuivante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSemaineSuivante.Location = new System.Drawing.Point(223, 538);
+            this.btnSemaineSuivante.Name = "btnSemaineSuivante";
+            this.btnSemaineSuivante.Size = new System.Drawing.Size(188, 34);
+            this.btnSemaineSuivante.TabIndex = 15;
+            this.btnSemaineSuivante.Text = "Semaine suivante  -->";
+            this.btnSemaineSuivante.UseVisualStyleBackColor = true;
+            this.btnSemaineSuivante.Click += new System.EventHandler(this.btnSemaineSuivante_Click);
+            // 
             // dgvDispoChambre
             // 
             this.dgvDispoChambre.AllowUserToAddRows = false;
@@ -802,33 +825,23 @@
             this.tbAjPrix.Size = new System.Drawing.Size(100, 20);
             this.tbAjPrix.TabIndex = 3;
             // 
-            // btnSemaineSuivante
+            // btnRefreshDGV
             // 
-            this.btnSemaineSuivante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSemaineSuivante.Location = new System.Drawing.Point(223, 538);
-            this.btnSemaineSuivante.Name = "btnSemaineSuivante";
-            this.btnSemaineSuivante.Size = new System.Drawing.Size(188, 34);
-            this.btnSemaineSuivante.TabIndex = 15;
-            this.btnSemaineSuivante.Text = "Semaine suivante  -->";
-            this.btnSemaineSuivante.UseVisualStyleBackColor = true;
-            this.btnSemaineSuivante.Click += new System.EventHandler(this.btnSemaineSuivante_Click);
-            // 
-            // btnSemainePrecedente
-            // 
-            this.btnSemainePrecedente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSemainePrecedente.Location = new System.Drawing.Point(3, 538);
-            this.btnSemainePrecedente.Name = "btnSemainePrecedente";
-            this.btnSemainePrecedente.Size = new System.Drawing.Size(189, 34);
-            this.btnSemainePrecedente.TabIndex = 16;
-            this.btnSemainePrecedente.Text = "<--  Semaine précédente";
-            this.btnSemainePrecedente.UseVisualStyleBackColor = true;
-            this.btnSemainePrecedente.Click += new System.EventHandler(this.btnSemainePrecedente_Click);
+            this.btnRefreshDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshDGV.Location = new System.Drawing.Point(27, 762);
+            this.btnRefreshDGV.Name = "btnRefreshDGV";
+            this.btnRefreshDGV.Size = new System.Drawing.Size(243, 39);
+            this.btnRefreshDGV.TabIndex = 15;
+            this.btnRefreshDGV.Text = "A C T U A L I S E R";
+            this.btnRefreshDGV.UseVisualStyleBackColor = true;
+            this.btnRefreshDGV.Click += new System.EventHandler(this.btnRefreshDGV_Click);
             // 
             // FicMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 854);
+            this.Controls.Add(this.btnRefreshDGV);
             this.Controls.Add(this.gbAj);
             this.Controls.Add(this.btnAjouterOcc);
             this.Controls.Add(this.btnAjouterRDV);
@@ -948,5 +961,6 @@
         private System.Windows.Forms.Button btnAjouterID1;
         private System.Windows.Forms.Button btnSemainePrecedente;
         private System.Windows.Forms.Button btnSemaineSuivante;
+        private System.Windows.Forms.Button btnRefreshDGV;
     }
 }

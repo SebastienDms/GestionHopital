@@ -17,12 +17,15 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranModifMedecin : Form
     {
+        #region Donnees
         private DataTable t_medecins;
         private BindingSource bs_medecins;
         private DataTable t_specialites;
         private BindingSource bs_specialites;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
         List<C_t_specialites> lTmp_Spe;
+        #endregion
 
         public EcranModifMedecin()
         {
@@ -33,11 +36,11 @@ namespace SD_Gestion_Hopital
         {
             lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
             AfficherMedecins();
-            ActiverBouton(false);
+            ActiverBoutons(false);
             btnModifMedSpe.Enabled = false;
         }
 
-        private void ActiverBouton(bool active)
+        private void ActiverBoutons(bool active)
         {
             btnConfirmerModifMed.Enabled = btnAnnulerModifMed.Enabled = active;
         }
@@ -91,7 +94,7 @@ namespace SD_Gestion_Hopital
                     tbModifMedIDSpe.Text = s.IDSpe.ToString();
                 }
             }
-            ActiverBouton(true);
+            ActiverBoutons(true);
         }
 
         private void btnModifMedSpe_Click(object sender, EventArgs e)
@@ -124,7 +127,7 @@ namespace SD_Gestion_Hopital
                 MessageBox.Show("Le médecin a été modifié.", "Info:", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 tbModifIDMed.Text = tbModifMedNom.Text = tbModifMedPrenom.Text = tbModifMedGSM.Text = tbModifMedIDSpe.Text = "";
-                ActiverBouton(false);
+                ActiverBoutons(false);
             }
         }
 
@@ -133,8 +136,7 @@ namespace SD_Gestion_Hopital
             MessageBox.Show("Le médecin ne sera pas modifié.", "Attention", MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             tbModifIDMed.Text = tbModifMedNom.Text = tbModifMedPrenom.Text = tbModifMedGSM.Text = tbModifMedIDSpe.Text = "";
-            ActiverBouton(false);
+            ActiverBoutons(false);
         }
-
     }
 }

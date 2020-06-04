@@ -17,9 +17,12 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranAjoutMedecin : Form
     {
+        #region Donnees
         private DataTable t_specialites;
         private BindingSource bs_specialites;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranAjoutMedecin()
         {
@@ -59,7 +62,7 @@ namespace SD_Gestion_Hopital
                 // Ajout du médecin \\
                 new G_t_medecins(sConnexion).Ajouter(tbMedNom.Text, tbMedPrenom.Text, int.Parse(tbMedGSM.Text),
                     int.Parse(tbMedIDSpe.Text));
-                MessageBox.Show("Le médecin a été ajoutée", "Info:", MessageBoxButtons.OK,
+                MessageBox.Show("Le médecin a été ajouté", "Info:", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 tbMedNom.Text = tbMedPrenom.Text = tbMedGSM.Text = tbMedIDSpe.Text = "";
             }

@@ -17,10 +17,14 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranSuppriSpecialite : Form
     {
+        #region Donnees
         private DataTable t_specialites;
         private BindingSource bs_specialites;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+
         private List<C_t_specialites> lTmp_Spe;
+        #endregion
 
         public EcranSuppriSpecialite()
         {
@@ -36,20 +40,10 @@ namespace SD_Gestion_Hopital
             t_specialites = new DataTable();
             t_specialites.Columns.Add(new DataColumn("ID", System.Type.GetType("System.Int32")));
             t_specialites.Columns.Add(new DataColumn("Spécialité"));
-            //t_specialites.Columns.Add(new DataColumn("Médecin"));
-            //List<C_t_medecins> lTmp_Med = new G_t_medecins(sConnexion).Lire("Nom");
             lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
             foreach (C_t_specialites spe in lTmp_Spe)
             {
                 t_specialites.Rows.Add(spe.IDSpe, spe.NomSpe);
-
-                //foreach (C_t_medecins m in lTmp_Med)
-                //{
-                //    if (spe.IDSpe == m.IDSpe)
-                //    {
-                //        t_specialites.Rows.Add(null, "", m.NomMed + " " + m.PrenomMed);
-                //    }
-                //}
             }
             bs_specialites = new BindingSource();
             bs_specialites.DataSource = t_specialites;
@@ -65,8 +59,11 @@ namespace SD_Gestion_Hopital
             ViderTB();
             try
             {
+                // Majuscule au nom de la spécialité
                 tblNomSpeRech.Text = tblNomSpeRech.Text[0].ToString().ToUpper() + tblNomSpeRech.Text.Substring(1);
+
                 lTmp_Spe = new G_t_specialites(sConnexion).Lire("NomSpe");
+                // Recherche  la psécialité par le nom saisi
                 foreach (C_t_specialites s in lTmp_Spe)
                 {
                     if (tblNomSpeRech.Text == s.NomSpe)
@@ -105,6 +102,7 @@ namespace SD_Gestion_Hopital
             int ID_Sup = 0;
             if (tblIDSpeSup.Text !="")
             {
+                // Récupère l'ID recherché
                 ID_Sup = int.Parse(tblIDSpeSup.Text);
                 if (MessageBox.Show("Souhaitez-vous supprimer " + tblNomSpeRech.Text + " ?",
                     "Information", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK
@@ -126,6 +124,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (dgvSpeSup.SelectedRows[0].Selected == true)
                     {
+                        // Récupère l'ID de la spécialité sélectionnée
                         ID_Sup = (int) dgvSpeSup.SelectedRows[0].Cells["ID"].Value;
                         if (MessageBox.Show("Souhaitez-vous supprimer " +
                                             dgvSpeSup.SelectedRows[0].Cells["Spécialité"].Value.ToString() + " ?",

@@ -17,14 +17,22 @@ namespace SD_Gestion_Hopital
 {
     public partial class EcranMedecins : Form
     {
+        #region Donnees
         private DataTable t_medecins;
         private BindingSource bs_medecins;
-        private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        private string sConnexion = TablesDeDonnees.SConnexion;
+        #endregion
 
         public EcranMedecins()
         {
             InitializeComponent();
         }
+        private void EcranMedecins_Load(object sender, EventArgs e)
+        {
+            AfficherMedecins();
+        }
+
         private void AfficherMedecins()
         {
             t_medecins = new DataTable();
@@ -53,11 +61,6 @@ namespace SD_Gestion_Hopital
             bs_medecins = new BindingSource();
             bs_medecins.DataSource = t_medecins;
             dgvMedecins.DataSource = bs_medecins;
-        }
-
-        private void EcranMedecins_Load(object sender, EventArgs e)
-        {
-            AfficherMedecins();
         }
     }
 }

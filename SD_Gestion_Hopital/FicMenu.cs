@@ -254,14 +254,14 @@ namespace SD_Gestion_Hopital
                     dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["Adresse"].Value.ToString(),
                     dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells["GSM"].Value.ToString());
                 ViderDGV2();
-                dataGridView2.DataSource = GestionDGV.ReafficherPatients();
-                dataGridView2.AllowUserToAddRows = true;
             }
             catch (Exception exception)
             {
                 MessageBox.Show("Veuillez remplir la dernière ligne de la grille!", "Attention", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+            dataGridView2.DataSource = GestionDGV.AfficherPatients();
+            dataGridView2.AllowUserToAddRows = true;
         }
         private void ViderDGV2()
         {
@@ -318,6 +318,7 @@ namespace SD_Gestion_Hopital
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
+            // Met en avant les dates aux quelles le médecins est déjà pris par une opération
             monthCalendar1.BoldedDates = GestionDisponibilite.DispoMed(dataGridView1.SelectedRows[0].Cells["Nom"].Value.ToString(),
                 dataGridView1.SelectedRows[0].Cells["Prénom"].Value.ToString()).ToArray();
             monthCalendar1.UpdateBoldedDates();
@@ -325,6 +326,8 @@ namespace SD_Gestion_Hopital
 
         private void btnAjouterRDV_Click(object sender, EventArgs e)
         {
+            // Gestion des labels pour l'ajout d"une opération
+
             ViderTB();
             gbAj.Text = "Fiche d'opération :";
             lblFicheAjID1.Text = "Patient :";
@@ -339,6 +342,8 @@ namespace SD_Gestion_Hopital
 
         private void btnAjouterOcc_Click(object sender, EventArgs e)
         {
+            // Gestion des labels pour l'ajout d"une prise en charge
+
             ViderTB();
             gbAj.Text = "Fiche de prise en charge :";
             lblFicheAjID1.Text = "Patient :";
@@ -450,6 +455,26 @@ namespace SD_Gestion_Hopital
             }
         }
         #endregion
+
+        private void btnRefreshDGV_Click(object sender, EventArgs e)
+        {
+            ViderDGV();
+
+            dataGridView1.DataSource = GestionDGV.AfficherMedecins();
+            dataGridView2.DataSource = GestionDGV.AfficherPatients();
+            dataGridView3.DataSource = GestionDGV.AfficherChambres();
+        }
+        private void ViderDGV()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Invalidate();
+
+            dataGridView2.DataSource = null;
+            dataGridView2.Invalidate();
+
+            dataGridView3.DataSource = null;
+            dataGridView3.Invalidate();
+        }
 
     }
 }

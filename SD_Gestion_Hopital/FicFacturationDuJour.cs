@@ -32,7 +32,9 @@ namespace SD_Gestion_Hopital
         private List<C_t_occuper> lTmp_Occ;
         private List<C_t_patients> lTmp_Pat;
         private List<C_t_chambres> lTmp_Cha;
+        private List<C_t_soigner> lTmp_Soi;
         List<string> Liste_Num_Fac = new List<string>();
+        List<string> soins = new List<string>();
 
         public EcranFacturationDuJour()
         {
@@ -54,17 +56,27 @@ namespace SD_Gestion_Hopital
             t_occuper.Columns.Add(new DataColumn("est sorti le"));
             lTmp_Pat = new G_t_patients(sConnexion).Lire("IDPat");
             lTmp_Cha = new G_t_chambres(sConnexion).Lire("IDCha");
+            lTmp_Soi = new G_t_soigner(sConnexion).Lire("IDSoi");
             lTmp_Occ = new G_t_occuper(sConnexion).Lire("IDOcc");
             foreach (C_t_occuper o in lTmp_Occ)
             {
-                if (o.DateSortie == DateTime.Today || o.DateSortie==DateTime.Today.AddDays(-1))
+                if (o.DateSortie == DateTime.Today /*|| o.DateSortie==DateTime.Today.AddDays(-1)*/)
                 {
-                    string patient = "", chambre = "";
+                    string patient = "", chambre = "", soin = "";
+
                     foreach (C_t_patients p in lTmp_Pat)
                     {
                         if (o.IDPat == p.IDPat)
                         {
                             patient = p.NomPat + " " + p.PrenomPat;
+                            foreach (C_t_soigner s in lTmp_Soi)
+                            {
+                                if (s.DateOperation >= o.DateEntree && s.DateOperation <= o.DateSortie && s.IDPat == p.IDPat)
+                                {
+                                    soin = s.IDPat.ToString() + "-" + s.IDSoi.ToString();
+                                    soins.Add(soin);
+                                }
+                            }
                         }
                     }
                     foreach (C_t_chambres c in lTmp_Cha)
@@ -100,12 +112,34 @@ namespace SD_Gestion_Hopital
 
         private void btnFacturation_Click(object sender, EventArgs e)
         {
+
             for (int i = 0; i < Liste_Num_Fac.Count; i++)
             {
                 string Coordonnées_client = "";
                 string Date_entree = "", Date_Sortie = "", Prix_journalier = "";
                 int Nbr_jour_sejour = 0, Prix_total_sejour = 0;
+                int? prix_total_ope = 0;
                 string[] ID = Liste_Num_Fac[i].Split('-');
+                List<string> DateOpe = new List<string>();
+                List<int?> PrixOpe = new List<int?>();
+
+                foreach (string s in soins)
+                {
+                    string[] soin = s.Split('-');
+                    if (soin[0] == ID[1])
+                    {
+                        foreach (C_t_soigner so in lTmp_Soi)
+                        {
+                            if (soin[1] == so.IDSoi.ToString())
+                            {
+                                DateOpe.Add(so.DateOperation.ToShortDateString());
+                                PrixOpe.Add(so.PrixOperation);
+                                prix_total_ope = prix_total_ope + so.PrixOperation;
+                            }
+                        }
+                    }
+                }
+
                 foreach (C_t_patients p in lTmp_Pat)
                 {
                     if (int.Parse(ID[1]) == p.IDPat)
@@ -128,6 +162,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
 
+                // création du fichier de facturation dans le dossier indiqué et portera le nom "Facture num_client.pdf
                 PdfWriter writer = new PdfWriter(@"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Facturations\Facture " +
                                                  Liste_Num_Fac[i] + ".pdf");
                 PdfDocument pdf = new PdfDocument(writer);
@@ -200,6 +235,53 @@ namespace SD_Gestion_Hopital
                 tableau.AddCell(cell23);
                 tableau.AddCell(cell24);
                 tableau.AddCell(cell25);
+                //Tableau séjour
+                Table tableau1 = new Table(2, false).UseAllAvailableWidth();
+                //Ligne de titre du tableau
+                Cell cellbis11 = new Cell(1, 1)
+                    .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("Date d'opération"));
+                Cell cellbis12 = new Cell(1, 1)
+                    .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("Prix de l'opération"));
+                tableau1.AddCell(cellbis11);
+                tableau1.AddCell(cellbis12);
+                //Contenu du taleau
+                for (int j = 0; j < DateOpe.Count; j++)
+                {
+                    Cell cellbis1 = new Cell(1, 1)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph(DateOpe[j]));
+                    Cell cellbis2 = new Cell(1, 1)
+                        .SetTextAlignment(TextAlignment.CENTER)
+                        .Add(new Paragraph(PrixOpe[j].ToString()));
+                    tableau1.AddCell(cellbis1);
+                    tableau1.AddCell(cellbis2);
+                }
+                // Ligne prix total pour l'ensemble des opérations
+                Cell cellbisDer1 = new Cell(1, 1)
+                    .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("Prix total opération(s) :"));
+                Cell cellbisDer2 = new Cell(1, 1)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph(prix_total_ope.ToString()));
+                tableau1.AddCell(cellbisDer1);
+                tableau1.AddCell(cellbisDer2);
+                // Ligne prix total de facuration
+                Table tableau2 = new Table(2, false).UseAllAvailableWidth();
+                //Ligne de titre du tableau
+                Cell cellTer1 = new Cell(1, 1)
+                    .SetBackgroundColor(ColorConstants.LIGHT_GRAY)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph("Prix total"));
+                Cell cellTer2 = new Cell(1, 1)
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .Add(new Paragraph((Prix_total_sejour + prix_total_ope).ToString()));
+                tableau2.AddCell(cellTer1);
+                tableau2.AddCell(cellTer2);
                 //Ligne séparatrice
                 LineSeparator ls = new LineSeparator(new SolidLine());
 
@@ -207,6 +289,10 @@ namespace SD_Gestion_Hopital
                 document.Add(Données_client);
                 document.Add(titre);
                 document.Add(tableau);
+                document.Add(espace);
+                document.Add(tableau1);
+                document.Add(espace);
+                document.Add(tableau2);
                 document.Add(espace);
                 document.Add(ls);
                 document.Close();

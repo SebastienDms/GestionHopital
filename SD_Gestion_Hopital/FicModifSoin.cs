@@ -84,7 +84,7 @@ namespace SD_Gestion_Hopital
                 }
                 else
                 {
-                    Date = s.DateAuthorisationSortie.ToLongDateString();
+                    Date = s.DateAuthorisationSortie.ToString();
                 }
                 t_soigner.Rows.Add(s.IDSoi, Medecin, Patient, s.DateOperation.ToShortDateString(),
                     Date, s.PrixOperation.ToString());

@@ -13,9 +13,8 @@ namespace SD_Gestion_Hopital
     static class TablesDeDonnees
     {
         #region ChaineDeConnexionDB
-        //private static string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
-        private static string sConnexion = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\Users\sebas\Documents\HEL - Informatique\BLOC 2\Travaux\Q2\2-1 Progra Even\BDD\DB\BD_Perso.mdf;Integrated Security=True;Connect Timeout=30";
-
+        private static string sConnexion = @"Data Source=DESKTOP-GES02KU;Initial Catalog=BD_Hopital;Integrated Security=True";
+        //private static string sConnexion = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=C:\Users\sebas\Documents\HEL - Informatique\BLOC 2\Travaux\Q2\2-1 Progra Even\BDD\DB\BD_Perso.mdf;Integrated Security=True;Connect Timeout=30";
         #endregion
         #region Datatables
         public static DataTable t_specialites = new DataTable();

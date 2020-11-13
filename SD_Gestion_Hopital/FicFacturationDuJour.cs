@@ -21,6 +21,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using Color = System.Drawing.Color;
+using System.Threading;
 
 namespace SD_Gestion_Hopital
 {
@@ -90,12 +91,12 @@ namespace SD_Gestion_Hopital
                             chambre = c.NomCha.ToString();
                         }
                     }
-                    t_occuper.Rows.Add(patient, chambre, o.DateSortie.ToShortDateString());
+                    t_occuper.Rows.Add(patient, chambre, o.DateSortie.ToString());
                     Liste_Num_Fac.Add(o.IDOcc.ToString() + "-" + o.IDPat.ToString());
                     aFacturer = true;
                 }
             }
-
+            
             if (aFacturer)
             {
                 // Affiche la liste
@@ -117,6 +118,14 @@ namespace SD_Gestion_Hopital
         }
 
         private void btnFacturation_Click(object sender, EventArgs e)
+        {
+            Thread tAFacture = new Thread(GenererPDF);
+            tAFacture.Start();
+            //GenererPDF();
+            MessageBox.Show("Facturation effectuée", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void GenererPDF()
         {
             // Génère un fichier pdf pour les facture du jour
 
@@ -153,7 +162,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (int.Parse(ID[1]) == p.IDPat)
                     {
-                        Coordonnées_client = p.NomPat + " " + p.PrenomPat +"\n"+p.AdressePat;
+                        Coordonnées_client = p.NomPat + " " + p.PrenomPat + "\n" + p.AdressePat;
                     }
                 }
 
@@ -163,10 +172,10 @@ namespace SD_Gestion_Hopital
                     if (int.Parse(ID[0]) == o.IDOcc)
                     {
                         Date_entree = o.DateEntree.ToShortDateString();
-                        Date_Sortie = o.DateSortie.ToShortDateString();
+                        Date_Sortie = o.DateSortie.ToString();
                         Prix_journalier = o.PrixJournalier.ToString();
-                        Nbr_jour_sejour = (o.DateSortie - o.DateEntree).Days;
-                        if (Nbr_jour_sejour==0)
+                        Nbr_jour_sejour = (o.DateSortie.Value - o.DateEntree).Days;
+                        if (Nbr_jour_sejour == 0)
                             Nbr_jour_sejour = 1;
                         Prix_total_sejour = Nbr_jour_sejour * int.Parse(Prix_journalier);
                     }
@@ -307,8 +316,6 @@ namespace SD_Gestion_Hopital
                 document.Add(ls);
                 document.Close();
             }
-
-            MessageBox.Show("Facturation effectuée", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

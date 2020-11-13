@@ -30,6 +30,9 @@ namespace SD_Gestion_Hopital
         }
         private void EcranAjoutMedecin_Load(object sender, EventArgs e)
         {
+            // Permet de sélectionner une date et non une plage de date dans le calendrier \\
+            monthCalendar1.MaxSelectionCount = 1;
+
             btnAjouterMedSpe.Enabled = false;
         }
         private void AfficherSpecialites()
@@ -49,7 +52,7 @@ namespace SD_Gestion_Hopital
 
         private void btnConfirmerAjMed_Click(object sender, EventArgs e)
         {
-            if (tbMedNom.Text == "" || tbMedPrenom.Text == "" || tbMedGSM.Text == "" || tbMedIDSpe.Text == "")
+            if (tbMedNom.Text == "" || tbMedPrenom.Text == "" || tbMedGSM.Text == "" || tbMedIDSpe.Text == "" || tbMedDateNais.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de donnée", "Attention", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -61,7 +64,7 @@ namespace SD_Gestion_Hopital
                 tbMedPrenom.Text = tbMedPrenom.Text[0].ToString().ToUpper() + tbMedPrenom.Text.Substring(1);
                 // Ajout du médecin \\
                 new G_t_medecins(sConnexion).Ajouter(tbMedNom.Text, tbMedPrenom.Text, int.Parse(tbMedGSM.Text),
-                    int.Parse(tbMedIDSpe.Text));
+                    int.Parse(tbMedIDSpe.Text), DateTime.Parse(tbMedDateNais.Text));
                 MessageBox.Show("Le médecin a été ajouté", "Info:", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 tbMedNom.Text = tbMedPrenom.Text = tbMedGSM.Text = tbMedIDSpe.Text = "";
@@ -84,6 +87,11 @@ namespace SD_Gestion_Hopital
         {
             AfficherSpecialites();
             btnAjouterMedSpe.Enabled = true;
+        }
+
+        private void btnAjDateNaisMed_Click(object sender, EventArgs e)
+        {
+            tbMedDateNais.Text = monthCalendar1.SelectionStart.ToShortDateString();
         }
     }
 }

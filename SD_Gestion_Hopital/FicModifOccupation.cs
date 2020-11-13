@@ -86,7 +86,7 @@ namespace SD_Gestion_Hopital
                 }
 
                 t_occuper.Rows.Add(o.IDOcc, Patient, Chambre, o.DateEntree.ToShortDateString(),
-                    o.DateSortie.ToLongDateString(), o.PrixJournalier.ToString());
+                    o.DateSortie.ToString(), o.PrixJournalier.ToString());
             }
             bs_occuper = new BindingSource();
             bs_occuper.DataSource = t_occuper;

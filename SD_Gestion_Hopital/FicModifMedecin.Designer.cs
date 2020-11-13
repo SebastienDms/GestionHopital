@@ -48,6 +48,10 @@
             this.gbModifMedAfficheSpe = new System.Windows.Forms.GroupBox();
             this.btnModifMedSpe = new System.Windows.Forms.Button();
             this.dgvModifMedAfficheSpe = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbModifMedDateNais = new System.Windows.Forms.TextBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnAjDateNaisMed = new System.Windows.Forms.Button();
             this.gbModifAfficheMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModifAfficheMed)).BeginInit();
             this.gbModifMed.SuspendLayout();
@@ -91,6 +95,10 @@
             // gbModifMed
             // 
             this.gbModifMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gbModifMed.Controls.Add(this.btnAjDateNaisMed);
+            this.gbModifMed.Controls.Add(this.monthCalendar1);
+            this.gbModifMed.Controls.Add(this.label1);
+            this.gbModifMed.Controls.Add(this.tbModifMedDateNais);
             this.gbModifMed.Controls.Add(this.lblFicheModifMedSpe);
             this.gbModifMed.Controls.Add(this.lblFicheModifMedGSM);
             this.gbModifMed.Controls.Add(this.lblFicheModifMedPrenom);
@@ -103,7 +111,7 @@
             this.gbModifMed.Controls.Add(this.tbModifIDMed);
             this.gbModifMed.Location = new System.Drawing.Point(12, 12);
             this.gbModifMed.Name = "gbModifMed";
-            this.gbModifMed.Size = new System.Drawing.Size(377, 378);
+            this.gbModifMed.Size = new System.Drawing.Size(377, 597);
             this.gbModifMed.TabIndex = 8;
             this.gbModifMed.TabStop = false;
             this.gbModifMed.Text = "Modification d\'un médecin :";
@@ -194,7 +202,7 @@
             // 
             // btnAnnulerModifMed
             // 
-            this.btnAnnulerModifMed.Location = new System.Drawing.Point(231, 396);
+            this.btnAnnulerModifMed.Location = new System.Drawing.Point(231, 615);
             this.btnAnnulerModifMed.Name = "btnAnnulerModifMed";
             this.btnAnnulerModifMed.Size = new System.Drawing.Size(158, 42);
             this.btnAnnulerModifMed.TabIndex = 7;
@@ -204,7 +212,7 @@
             // 
             // btnConfirmerModifMed
             // 
-            this.btnConfirmerModifMed.Location = new System.Drawing.Point(12, 396);
+            this.btnConfirmerModifMed.Location = new System.Drawing.Point(12, 615);
             this.btnConfirmerModifMed.Name = "btnConfirmerModifMed";
             this.btnConfirmerModifMed.Size = new System.Drawing.Size(158, 42);
             this.btnConfirmerModifMed.TabIndex = 6;
@@ -245,11 +253,45 @@
             this.dgvModifMedAfficheSpe.Size = new System.Drawing.Size(301, 305);
             this.dgvModifMedAfficheSpe.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 345);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Date de Naissance :";
+            // 
+            // tbModifMedDateNais
+            // 
+            this.tbModifMedDateNais.Location = new System.Drawing.Point(45, 361);
+            this.tbModifMedDateNais.Name = "tbModifMedDateNais";
+            this.tbModifMedDateNais.ReadOnly = true;
+            this.tbModifMedDateNais.Size = new System.Drawing.Size(100, 20);
+            this.tbModifMedDateNais.TabIndex = 10;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(45, 407);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 12;
+            // 
+            // btnAjDateNaisMed
+            // 
+            this.btnAjDateNaisMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjDateNaisMed.Location = new System.Drawing.Point(284, 471);
+            this.btnAjDateNaisMed.Name = "btnAjDateNaisMed";
+            this.btnAjDateNaisMed.Size = new System.Drawing.Size(75, 47);
+            this.btnAjDateNaisMed.TabIndex = 13;
+            this.btnAjDateNaisMed.Text = "Ajouter date";
+            this.btnAjDateNaisMed.UseVisualStyleBackColor = true;
+            this.btnAjDateNaisMed.Click += new System.EventHandler(this.btnAjDateNaisMed_Click);
+            // 
             // EcranModifMedecin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 450);
+            this.ClientSize = new System.Drawing.Size(1196, 669);
             this.Controls.Add(this.gbModifMedAfficheSpe);
             this.Controls.Add(this.gbModifAfficheMed);
             this.Controls.Add(this.gbModifMed);
@@ -291,5 +333,9 @@
         private System.Windows.Forms.GroupBox gbModifMedAfficheSpe;
         private System.Windows.Forms.Button btnModifMedSpe;
         private System.Windows.Forms.DataGridView dgvModifMedAfficheSpe;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbModifMedDateNais;
+        private System.Windows.Forms.Button btnAjDateNaisMed;
     }
 }

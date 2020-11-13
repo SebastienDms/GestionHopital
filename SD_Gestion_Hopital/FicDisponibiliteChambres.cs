@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Projet_BD_Hopital.Gestion;
 using Projet_BD_Hopital.Classes;
+using System.Threading;
 
 
 namespace SD_Gestion_Hopital
@@ -123,7 +124,7 @@ namespace SD_Gestion_Hopital
                         foreach (C_t_occuper o in lTmp_Occ)
                         {
                             if (o.IDCha == id &&
-                                (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Date))
+                                (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Value))
                             {
                                 Lit_occupe[i] += 1;
                             }
@@ -160,17 +161,29 @@ namespace SD_Gestion_Hopital
 
         private void btnGenererHtml_Click(object sender, EventArgs e)
         {
+            Thread tGenererHTML = new Thread(GenererHTML);
+            tGenererHTML.Start();
+            MessageBox.Show("Fichier sauvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnReinitRecherche_Click(object sender, EventArgs e)
+        {
+            tbNumChaChercher.ReadOnly = false;
+        }
+
+        private void GenererHTML()
+        {
             string html = "<!DOCTYPE html>" +
-                          "\r\n<html>" +
-                          "\r\n\t<head>" +
-                          "\r\n\t\t<meta charset=\"utf-8\" />" +
-                          "\r\n\t\t<title>Vue hebdomadaire</title>" +
-                          "\r\n\t</head>" +
-                          "\r\n\t<body>" +
-                          "\r\n\t\t<header>" +
-                          "\r\n\t\t\t<h1 align='center'>Vue hebdomadaire de la chambre " + tbNumChaChercher.Text +
-                          " semaine " + NumeroSemaineEnCours().ToString() + "</h1>" +
-                          "\r\n\t\t</header><br>";
+              "\r\n<html>" +
+              "\r\n\t<head>" +
+              "\r\n\t\t<meta charset=\"utf-8\" />" +
+              "\r\n\t\t<title>Vue hebdomadaire</title>" +
+              "\r\n\t</head>" +
+              "\r\n\t<body>" +
+              "\r\n\t\t<header>" +
+              "\r\n\t\t\t<h1 align='center'>Vue hebdomadaire de la chambre " + tbNumChaChercher.Text +
+              " semaine " + NumeroSemaineEnCours().ToString() + "</h1>" +
+              "\r\n\t\t</header><br>";
             //Table start.
             html +=
                 "<table align='center' cellpadding='5' cellspacing='0' style='border: 1px solid #ccc;font-size: 9pt;font-family:arial'>";
@@ -205,14 +218,8 @@ namespace SD_Gestion_Hopital
                     "\r\n\t</body>" +
                     "\r\n</html>";
 
-            File.WriteAllText(@"C:\Users\sebas\Documents\HEL - Informatique\Dispo_chambres\" +
+            File.WriteAllText(@"C:\Users\sebas\Documents\HEL - Informatique\Fichiers_hopital\Dispo_chambres\" +
                               NumeroSemaineEnCours().ToString() + "-" + tbNumChaChercher.Text + ".html", html);
-            MessageBox.Show("Fichier sauvé!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnReinitRecherche_Click(object sender, EventArgs e)
-        {
-            tbNumChaChercher.ReadOnly = false;
         }
     }
 }

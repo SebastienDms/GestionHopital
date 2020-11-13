@@ -22,6 +22,7 @@ namespace SD_Gestion_Hopital
             t_medecins.Columns.Add(new DataColumn("Prénom"));
             t_medecins.Columns.Add(new DataColumn("GSM"));
             t_medecins.Columns.Add(new DataColumn("Spécialité"));
+            t_medecins.Columns.Add(new DataColumn("Date de naissance"));
             List<C_t_medecins> lTmp_Med = new G_t_medecins(TablesDeDonnees.SConnexion).Lire("ID");
             List<C_t_specialites> lTmp_Spe = new G_t_specialites(TablesDeDonnees.SConnexion).Lire("ID");
             foreach (C_t_medecins m in lTmp_Med)
@@ -37,7 +38,7 @@ namespace SD_Gestion_Hopital
                     }
                 }
 
-                t_medecins.Rows.Add(m.NomMed, m.PrenomMed, m.GSMMed.ToString(), Nom_Spe);
+                t_medecins.Rows.Add(m.NomMed, m.PrenomMed, m.GSMMed.ToString(), Nom_Spe, m.DateNaisMed.Value.ToShortDateString());
             }
             BindingSource bs_medecins = TablesDeDonnees.bs_medecins;
             bs_medecins.DataSource = t_medecins;

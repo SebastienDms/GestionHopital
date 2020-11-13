@@ -52,6 +52,7 @@ namespace SD_Gestion_Hopital
             t_medecins.Columns.Add(new DataColumn("Prénom"));
             t_medecins.Columns.Add(new DataColumn("GSM"));
             t_medecins.Columns.Add(new DataColumn("Spécialité"));
+            t_medecins.Columns.Add(new DataColumn("Date de naissance"));
             List<C_t_medecins> lTmp_Med = new G_t_medecins(sConnexion).Lire("NomMed");
             foreach (C_t_medecins m in lTmp_Med)
             {
@@ -59,7 +60,7 @@ namespace SD_Gestion_Hopital
                 {
                     if (m.IDSpe == s.IDSpe)
                     {
-                        t_medecins.Rows.Add(m.IDMed, m.NomMed, m.PrenomMed, m.GSMMed, s.NomSpe);
+                        t_medecins.Rows.Add(m.IDMed, m.NomMed, m.PrenomMed, m.GSMMed, s.NomSpe, m.DateNaisMed);
                     }
                 }
             }
@@ -94,6 +95,7 @@ namespace SD_Gestion_Hopital
                     tbModifMedIDSpe.Text = s.IDSpe.ToString();
                 }
             }
+            tbModifMedDateNais.Text = dgvModifAfficheMed.SelectedRows[0].Cells["Date de naissance"].Value.ToString();
             ActiverBoutons(true);
         }
 
@@ -111,7 +113,8 @@ namespace SD_Gestion_Hopital
 
         private void btnConfirmerModifMed_Click(object sender, EventArgs e)
         {
-            if (tbModifMedNom.Text == "" || tbModifMedPrenom.Text == "" || tbModifMedGSM.Text == "" || tbModifMedIDSpe.Text == "")
+            if (tbModifMedNom.Text == "" || tbModifMedPrenom.Text == "" || tbModifMedGSM.Text == "" || tbModifMedIDSpe.Text == ""
+            || tbModifMedDateNais.Text == "")
             {
                 MessageBox.Show("Veuillez remplir chaque champs de donnée.", "Attention", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -123,7 +126,7 @@ namespace SD_Gestion_Hopital
                 tbModifMedPrenom.Text = tbModifMedPrenom.Text[0].ToString().ToUpper() + tbModifMedPrenom.Text.Substring(1);
                 // Ajout du médecin modifié \\
                 new G_t_medecins(sConnexion).Modifier(int.Parse(tbModifIDMed.Text), tbModifMedNom.Text, tbModifMedPrenom.Text, int.Parse(tbModifMedGSM.Text),
-                    int.Parse(tbModifMedIDSpe.Text));
+                    int.Parse(tbModifMedIDSpe.Text), DateTime.Parse(tbModifMedDateNais.Text));
                 MessageBox.Show("Le médecin a été modifié.", "Info:", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 tbModifIDMed.Text = tbModifMedNom.Text = tbModifMedPrenom.Text = tbModifMedGSM.Text = tbModifMedIDSpe.Text = "";
@@ -137,6 +140,11 @@ namespace SD_Gestion_Hopital
                 MessageBoxIcon.Warning);
             tbModifIDMed.Text = tbModifMedNom.Text = tbModifMedPrenom.Text = tbModifMedGSM.Text = tbModifMedIDSpe.Text = "";
             ActiverBoutons(false);
+        }
+
+        private void btnAjDateNaisMed_Click(object sender, EventArgs e)
+        {
+            tbModifMedDateNais.Text = monthCalendar1.SelectionStart.ToShortDateString();
         }
     }
 }

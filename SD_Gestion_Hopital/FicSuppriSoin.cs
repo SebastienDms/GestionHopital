@@ -123,7 +123,7 @@ namespace SD_Gestion_Hopital
                                     }
                                 }
                                 t_soigner.Rows.Add(s.IDSoi, Medecin, Patient, s.DateOperation.ToShortDateString(),
-                                    s.DateAuthorisationSortie.ToShortDateString(), s.PrixOperation.ToString());
+                                    s.DateAuthorisationSortie.ToString(), s.PrixOperation.ToString());
                             }
                         }
                         bs_soigner = new BindingSource();
@@ -156,7 +156,7 @@ namespace SD_Gestion_Hopital
                                     }
                                 }
                                 t_soigner.Rows.Add(s.IDSoi, Medecin, Patient, s.DateOperation.ToShortDateString(),
-                                    s.DateAuthorisationSortie.ToShortDateString(), s.PrixOperation.ToString());
+                                    s.DateAuthorisationSortie.ToString(), s.PrixOperation.ToString());
                                 trouve = true;
                             }
                         }
@@ -201,7 +201,7 @@ namespace SD_Gestion_Hopital
                                     }
                                 }
                                 t_soigner.Rows.Add(s.IDSoi, Medecin, Patient, s.DateOperation.ToShortDateString(),
-                                    s.DateAuthorisationSortie.ToShortDateString(), s.PrixOperation.ToString());
+                                    s.DateAuthorisationSortie.ToString(), s.PrixOperation.ToString());
                             }
                         }
                         bs_soigner = new BindingSource();

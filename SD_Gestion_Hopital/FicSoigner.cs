@@ -69,7 +69,7 @@ namespace SD_Gestion_Hopital
                 }
 
                 t_soigner.Rows.Add(s.IDSoi, Medecin, Patient, s.DateOperation.ToShortDateString(),
-                    s.DateAuthorisationSortie.ToLongDateString(), s.PrixOperation.ToString());
+                    s.DateAuthorisationSortie.ToString(), s.PrixOperation.ToString());
             }
             bs_soigner = new BindingSource();
             bs_soigner.DataSource = t_soigner;

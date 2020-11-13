@@ -107,7 +107,7 @@ namespace SD_Gestion_Hopital
                             if ((id_pat == o.IDPat || id_cha == o.IDCha) && DateTime.Parse(tbDateEntreeOccSup.Text) == o.DateEntree)
                             {
                                 t_occuper.Rows.Add(o.IDOcc, o.IDPat, o.IDCha, o.DateEntree.ToShortDateString(),
-                                    o.DateSortie.ToShortDateString(), o.PrixJournalier.ToString());
+                                    o.DateSortie.ToString(), o.PrixJournalier.ToString());
                             }
                         }
                         bs_occuper = new BindingSource();
@@ -124,7 +124,7 @@ namespace SD_Gestion_Hopital
                             if (DateTime.Parse(tbDateEntreeOccSup.Text) == o.DateEntree)
                             {
                                 t_occuper.Rows.Add(o.IDOcc, o.IDPat, o.IDCha, o.DateEntree.ToShortDateString(),
-                                    o.DateSortie.ToShortDateString(), o.PrixJournalier.ToString());
+                                    o.DateSortie.ToString(), o.PrixJournalier.ToString());
                                 trouve = true;
                             }
                         }
@@ -154,7 +154,7 @@ namespace SD_Gestion_Hopital
                             if (id_pat == o.IDPat || id_cha == o.IDCha)
                             {
                                 t_occuper.Rows.Add(o.IDOcc, o.IDPat, o.IDCha, o.DateEntree.ToShortDateString(),
-                                    o.DateSortie.ToShortDateString(), o.PrixJournalier.ToString());
+                                    o.DateSortie.ToString(), o.PrixJournalier.ToString());
                             }
                         }
                         bs_occuper = new BindingSource();

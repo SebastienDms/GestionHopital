@@ -58,7 +58,7 @@ namespace SD_Gestion_Hopital
                         foreach (C_t_occuper o in lTmp_Occ)
                         {
                             if (o.IDCha == id &&
-                                (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Date))
+                                (Date_Comp.Date >= o.DateEntree.Date && Date_Comp.Date <= o.DateSortie.Value))
                             {
                                 Lit_occupe[j] += 1;
                             }
